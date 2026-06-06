@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#1e3d1a">
+    <title>Hifz Program | MCIAA Association</title>
+    
+    <!-- Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Amiri&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+        <link rel="stylesheet" href="../assets/css/common.css">
+<!-- 1. Link the Main Styles (This has your grid and nav rules) -->
+    <link rel="stylesheet" href="../HOME/home.css"> 
+    
+    <!-- 2. Link the Hifz Specific Styles (This has your badges and hero logic) -->
+    <link rel="stylesheet" href="hifz.css">
+</head>
+<body>
+
+    <!-- Reuse your Nav Bar from Index.html -->
+      <!-- Header / Navigation -->
+    <nav class="main-nav" aria-label="Primary navigation">
+        <div class="nav-container">
+            <a href="../INDEX/index.html" class="logo" data-i18n="nav.brand" aria-label="Home">
+                <i class="fas fa-moon"></i> MCIAA <span>Association</span>
+            </a>
+            <ul class="nav-menu">
+                <li><a href="../INDEX/index.html" data-i18n="nav.home">Home</a></li>
+                <li><a href="../ABOUT/about.html" data-i18n="nav.about">About Us</a></li>
+                <li><a href="../HIFZ/hifz.html" data-i18n="nav.programs">Programs</a></li>
+                <li><a href="../ASK_IMAM/ask_imam.html" data-i18n="nav.askImam">Ask Imam</a></li>
+                <li><a href="../NEWS/news.html" data-i18n="nav.news">News</a></li>
+                <li><a href="../DONATE/donate.html" data-i18n="nav.donate">Donate</a></li>
+                <li><a href="../CONTACT/contact.html" data-i18n="nav.contact">Contact Us</a></li>
+            </ul>
+            <div class="nav-actions">
+                <div class="nav-control-group">
+                    <label for="languageSelect" class="sr-only">Language</label>
+                    <select id="languageSelect" class="language-select" aria-label="Choose site language">
+                        <option value="en">English</option>
+                        <option value="sw">Kiswahili</option>
+                        <option value="ar">العربية</option>
+                    </select>
+                    <button id="themeToggle" class="theme-toggle" aria-label="Toggle color theme">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </div>
+                <div class="nav-auth">
+                    <a href="../LOGIN/login.html" class="login-link" data-i18n="nav.login">Login</a>
+                    <a href="../REGISTER/register.html" class="cta-btn" data-i18n="nav.join">Join Us</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hifz Hero Section -->
+    <header class="hifz-hero">
+        <div class="hero-overlay">
+            <div class="hero-text">
+                <div class="spiritual-lead">
+                    <p class="arabic-small">خَيْرُكُمْ مَنْ تَعَلَّمَ الْقُرْآنَ وَعَلَّمَهُ</p>
+                    <span class="translation">"The best of you are those who learn the Quran and teach it"</span>
+                </div>
+                <h1>Hifz & Tajweed <br><span>Excellence Program</span></h1>
+                <p>A structured journey for the youth of Arusha to master the word of Allah with proper pronunciation, discipline, and deep understanding.</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Program Levels (Interactive Cards) -->
+    <section class="hifz-levels">
+        <div class="section-header">
+            <h2>Our Learning Path</h2>
+            <div class="underline"></div>
+        </div>
+
+        <div class="program-grid">
+            <!-- Level 1 -->
+            <div class="program-card hifz-card">
+                <div class="level-badge">Level 01</div>
+                <i class="fas fa-microphone-alt"></i>
+                <h3>Tajweed Basics</h3>
+                <p>Mastering the rules of recitation, articulation points (Makharij), and melodic flow.</p>
+                <ul class="level-details">
+                    <li><i class="fas fa-check"></i> Basic Pronunciation</li>
+                    <li><i class="fas fa-check"></i> Makharij Points</li>
+                </ul>
+            </div>
+
+            <!-- Level 2 -->
+            <div class="program-card hifz-card">
+                <div class="level-badge">Level 02</div>
+                <i class="fas fa-book-open"></i>
+                <h3>Juz 'Hifz</h3>
+                <p>Memorizing individual Juz with a focus on individual Surahs and correct application of Tajweed.</p>
+                <ul class="level-details">
+                    <li><i class="fas fa-check"></i>  Surahs</li>
+                    <li><i class="fas fa-check"></i> Monthly Evaluations</li>
+                </ul>
+            </div>
+
+            <!-- Level 3 -->
+            <div class="program-card hifz-card">
+                <div class="level-badge">Advanced</div>
+                <i class="fas fa-heart"></i>
+                <h3>Full Hifz</h3>
+                <p>A personalized timeline to complete the memorization of the entire Quran Al-Kareem.</p>
+                <ul class="level-details">
+                    <li><i class="fas fa-check"></i> Custom Pace</li>
+                    <li><i class="fas fa-check"></i> Ijazah Preparation</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <!-- Hifz Timetable Section -->
+<section class="hifz-schedule">
+    <div class="section-header">
+        <h2>Weekly Hifz Schedule</h2>
+        <p>Consistent discipline is the key to memorization.</p>
+        <div class="underline"></div>
+    </div>
+    
+    <div class="table-container">
+        <table class="schedule-table">
+            <thead>
+                <tr>
+                    <th>Days</th>
+                    <th>Time Slot</th>
+                    <th>Focus Area</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Monday - Friday</strong></td>
+                    <td>17:30 - 18:30</td>
+                    <td>New Lesson (Sabaq) & Tajweed Correction</td>
+                </tr>
+                <tr>
+                    <td><strong>Saturday</strong></td>
+                    <td>11:00 - 12:00</td>
+                    <td>Weekly Revision (Sabqi)</td>
+                </tr>
+                <tr>
+                    <td><strong>Sunday</strong></td>
+                    <td>11:00 - 12:00</td>
+                    <td>Group Assessment & Spiritual Reminders</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+<!-- Footer -->
+    <footer class="main-footer">
+        <p>&copy; 2026 Muslim Youth Association. All Rights Reserved.</p>
+    </footer><script src="../assets/js/common.js"></script>
+
+    <script src="hifz.js"></script>
+</body>
+</html>

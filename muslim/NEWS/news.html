@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#1e3d1a">
+    <title>News | MCIAA Association</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+        <link rel="stylesheet" href="../assets/css/common.css">
+<link rel="stylesheet" href="news.css">
+</head>
+<body>
+    <nav class="main-nav" aria-label="Primary navigation">
+        <div class="nav-container">
+            <a href="../INDEX/index.html" class="logo" data-i18n="nav.brand" aria-label="Home">
+                <i class="fas fa-moon"></i> MCIAA <span>Association</span>
+            </a>
+            <ul class="nav-menu">
+                <li><a href="../INDEX/index.html" data-i18n="nav.home">Home</a></li>
+                <li><a href="../ABOUT/about.html" data-i18n="nav.about">About Us</a></li>
+                <li><a href="../HIFZ/hifz.html" data-i18n="nav.programs">Programs</a></li>
+                <li><a href="../ASK_IMAM/ask_imam.html" data-i18n="nav.askImam">Ask Imam</a></li>
+                <li><a href="../NEWS/news.html" data-i18n="nav.news">News</a></li>
+                <li><a href="../DONATE/donate.html" data-i18n="nav.donate">Donate</a></li>
+                <li><a href="../CONTACT/contact.html" data-i18n="nav.contact">Contact Us</a></li>
+            </ul>
+            <div class="nav-actions">
+                <div class="nav-control-group">
+                    <label for="languageSelect" class="sr-only">Language</label>
+                    <select id="languageSelect" class="language-select" aria-label="Choose site language">
+                        <option value="en">English</option>
+                        <option value="sw">Kiswahili</option>
+                        <option value="ar">العربية</option>
+                    </select>
+                    <button id="themeToggle" class="theme-toggle" aria-label="Toggle color theme">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </div>
+                <div class="nav-auth">
+                    <a href="../LOGIN/login.html" class="login-link" data-i18n="nav.login">Login</a>
+                    <a href="../REGISTER/register.html" class="cta-btn" data-i18n="nav.join">Join Us</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <header class="news-header">
+        <div class="news-title">
+            <h1>Latest News & Updates</h1>
+            <p>Stay informed with announcements, community events, and program updates from MCIAA.</p>
+        </div>
+    </header>
+
+    <main class="news-page">
+        <section class="news-section">
+            <div id="newsGrid" class="news-grid"></div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <p>&copy; 2026 MCIAA Association. All Rights Reserved.</p>
+    </footer><script src="../assets/js/common.js"></script>
+
+
+    <script src="../assets/js/backend.js"></script>
+    <script src="news.js"></script>
+</body>
+</html>

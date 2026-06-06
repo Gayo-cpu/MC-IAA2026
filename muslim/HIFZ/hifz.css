@@ -1,0 +1,190 @@
+.hifz-hero {
+    min-height: 70vh; /* Increased height for a better look */
+    /* Update the path below to match your images folder */
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), 
+                url('../IMAGES/hifz.jpg'); 
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Optional: Creates a parallax effect */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #ffffff;
+    padding-top: 80px; /* Space for the navigation bar */
+}
+.level-badge {
+    background: #d4af37;
+    color: #1e3d1a;
+    padding: 5px 15px;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+.level-details {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+    text-align: left;
+}
+
+.level-details li {
+    font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.level-details i {
+    color: #2d5a27;
+    font-size: 0.8rem;
+}
+
+/* Inherit your existing .program-card:hover behavior for consistency */
+/* --- Hifz Card Hover & Dynamic Effects --- */
+
+.hifz-card {
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 1px solid rgba(212, 175, 55, 0.1); /* Subtle gold border */
+    position: relative;
+    overflow: hidden;
+}
+
+/* Inherited Hover Behavior */
+.hifz-card:hover {
+    transform: translateY(-15px); /* Lifts higher for emphasis */
+    box-shadow: 0 20px 40px rgba(30, 61, 26, 0.15);
+    border-color: #d4af37; /* Gold border lights up on hover */
+    background: #ffffff;
+}
+
+/* Icon Animation on Hover */
+.hifz-card:hover i {
+    color: #d4af37;
+    transform: scale(1.1) rotate(5deg);
+    transition: 0.3s ease;
+}
+
+/* Level Badge Pulse Effect */
+.hifz-card:hover .level-badge {
+    background: #1e3d1a;
+    color: #d4af37;
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+}
+
+/* Smooth Transition for the Details List */
+.level-details li {
+    transition: transform 0.3s ease;
+}
+
+.hifz-card:hover .level-details li {
+    transform: translateX(5px); /* List items nudge right on hover */
+}
+
+/* Add a subtle shine effect across the card */
+.hifz-card::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        45deg,
+        transparent,
+        rgba(212, 175, 55, 0.05),
+        transparent
+    );
+    transform: rotate(45deg);
+    transition: 0.6s;
+    opacity: 0;
+}
+
+.hifz-card:hover::after {
+    opacity: 1;
+    left: 100%;
+    top: 100%;
+}
+/* Add this to hifz.css */
+.main-nav {
+    background: rgba(255, 255, 255, 0.95); /* Makes it solid enough to read */
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+    z-index: 1000;
+}
+
+.nav-container {
+    height: 80px; /* Ensures it doesn't squash the links */
+    display: flex;
+    align-items: center;
+}
+.hifz-levels {
+    padding: 80px 10%; /* 10% on the sides creates that professional gap */
+    background-color: #f9f9f9; /* Subtle difference from the white cards */
+}
+
+.section-header h2 {
+    font-size: 2.5rem;
+    color: #1e3d1a;
+    margin-bottom: 10px;
+}
+.program-grid {
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.hifz-schedule {
+    padding: 80px 10%;
+    background-color: #fdfdfd; /* Slight off-white to make the table pop */
+    text-align: center;
+}
+
+.table-container {
+    margin-top: 40px;
+    overflow-x: auto; /* Ensures mobile users can swipe to see the time */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    border-radius: 10px;
+}
+
+.schedule-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+}
+
+.schedule-table th {
+    background-color: #1e3d1a; /* Dark Green */
+    color: #d4af37; /* Gold */
+    padding: 20px;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.schedule-table td {
+    padding: 20px;
+    border-bottom: 1px solid #eee;
+    color: #333;
+    font-size: 1rem;
+}
+
+.schedule-table tr:last-child td {
+    border-bottom: none;
+}
+
+/* Hover effect for a professional feel */
+.schedule-table tr:hover {
+    background-color: rgba(212, 175, 55, 0.08);
+    transition: 0.3s ease;
+}
+
+.schedule-table td strong {
+    color: #1e3d1a;
+}

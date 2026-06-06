@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#1e3d1a">
+    <title>Admin Control Panel | MCIAA Association</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+        <link rel="stylesheet" href="../assets/css/common.css">
+<link rel="stylesheet" href="admin.css">
+</head>
+<body>
+    <!-- help Sidebar Navigation -->
+    <aside class="admin-sidebar">
+        <div class="sidebar-header">
+            <h2>MCIAA Admin</h2>
+            <p id="adminInfo">System Admin</p>
+        </div>
+
+        <nav class="sidebar-menu">
+            <button class="nav-tab active" data-tab="dashboard">
+                <i class="fas fa-chart-line"></i> Dashboard
+            </button>
+            <button class="nav-tab" data-tab="members">
+                <i class="fas fa-users"></i> Members
+            </button>
+            <button class="nav-tab" data-tab="questions">
+                <i class="fas fa-question-circle"></i> Questions
+            </button>
+            <button class="nav-tab" data-tab="programs">
+                <i class="fas fa-book-quran"></i> Programs
+            </button>
+            <button class="nav-tab" data-tab="announcements">
+                <i class="fas fa-bullhorn"></i> Announcements
+            </button>
+            <button class="nav-tab" data-tab="news">
+                <i class="fas fa-newspaper"></i> News
+            </button>
+            <button class="nav-tab" data-tab="donations">
+                <i class="fas fa-hand-holding-heart"></i> Donations
+            </button>
+            <button class="nav-tab" data-tab="contacts">
+                <i class="fas fa-envelope"></i> Contacts
+            </button>
+            <button class="nav-tab" data-tab="team">
+                <i class="fas fa-users-cog"></i> Management Team
+            </button>
+            <button class="nav-tab" data-tab="settings">
+                <i class="fas fa-cog"></i> Settings
+            </button>
+        </nav>
+
+        <div class="sidebar-footer">
+            <button id="logoutBtn" class="btn-logout">
+                <i class="fas fa-sign-out-alt"></i> Logout
+            </button>
+        </div>
+    </aside>
+
+    <!-- help Main Content -->
+    <main class="admin-main">
+        <!-- help Header -->
+        <header class="admin-header">
+            <div class="header-left">
+                <h1>MCIAA Administration Center</h1>
+                <p id="currentTime"></p>
+            </div>
+            <div class="header-right">
+                <div class="user-profile">
+                    <img src="https://ui-avatars.com/api/?name=Admin&background=2d5a27&color=fff" alt="Admin">
+                    <span id="userName">Admin User</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- help Dashboard Tab -->
+        <section id="dashboard" class="tab-content active">
+            <div class="dashboard-grid">
+                <div class="stat-card stat-card-1">
+                    <div class="stat-icon"><i class="fas fa-users"></i></div>
+                    <div class="stat-content">
+                        <h3>Total Members</h3>
+                        <p id="statMembers">0</p>
+                    </div>
+                </div>
+                <div class="stat-card stat-card-2">
+                    <div class="stat-icon"><i class="fas fa-question-circle"></i></div>
+                    <div class="stat-content">
+                        <h3>Pending Questions</h3>
+                        <p id="statQuestions">0</p>
+                    </div>
+                </div>
+                <div class="stat-card stat-card-3">
+                    <div class="stat-icon"><i class="fas fa-book-quran"></i></div>
+                    <div class="stat-content">
+                        <h3>Active Programs</h3>
+                        <p id="statPrograms">5</p>
+                    </div>
+                </div>
+                <div class="stat-card stat-card-5">
+                    <div class="stat-icon"><i class="fas fa-bullhorn"></i></div>
+                    <div class="stat-content">
+                        <h3>Active Announcements</h3>
+                        <p id="statAnnouncements">0</p>
+                    </div>
+                </div>
+                <div class="stat-card stat-card-4">
+                    <div class="stat-icon"><i class="fas fa-users-cog"></i></div>
+                    <div class="stat-content">
+                        <h3>Management Team</h3>
+                        <p id="statTeam">5</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dashboard-content">
+                <div class="welcome-card">
+                    <h2>Welcome to the Admin Control Panel</h2>
+                    <p>Manage all aspects of the MCIAA Association platform. Use the sidebar to navigate through different management sections.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- help Announcements Management -->
+        <section id="announcements" class="tab-content">
+            <div class="section-header">
+                <h2>Announcements</h2>
+                <button class="btn-primary" id="addAnnouncementBtn">
+                    <i class="fas fa-plus"></i> Add Announcement
+                </button>
+            </div>
+
+            <div id="announcementsList" class="list-container"></div>
+
+            <!-- Add/Edit Announcement Modal -->
+            <div id="announcementModal" class="modal">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3>Add Announcement</h3>
+                        <button class="modal-close">&times;</button>
+                    </div>
+                    <form id="announcementForm">
+                        <input type="hidden" id="announcementId">
+                        <div class="form-group">
+                            <label>Title *</label>
+                            <input type="text" id="announcementTitle" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Message *</label>
+                            <textarea id="announcementMessage" rows="4" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>Status *</label>
+                            <select id="announcementStatus" required>
+                                <option value="">Select status</option>
+                                <option value="Active">Active</option>
+                                <option value="Inactive">Inactive</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Announcement Image</label>
+                            <input type="file" id="announcementImage" accept="image/*">
+                            <div id="announcementImagePreview" class="image-preview"></div>
+                        </div>
+                        <div class="form-actions">
+                            <button type="submit" class="btn-primary">Save</button>
+                            <button type="button" class="btn-secondary" onclick="closeAnnouncementModal()">Cancel</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- help News Management -->
+        <section id="news" class="tab-content">
+            <div class="section-header">
+                <h2>News Management</h2>
+                <button class="btn-primary" id="addNewsBtn">
+                    <i class="fas fa-plus"></i> Add News
+                </button>
+            </div>
+            <div id="newsList" class="list-container"></div>
+            <div id="newsModal" class="modal">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3>Add News Item</h3>
+                        <button class="modal-close">&times;</button>
+                    </div>
+                    <form id="newsForm">
+                        <input type="hidden" id="newsId">
+                        <div class="form-group">
+                            <label>Title *</label>
+                            <input type="text" id="newsTitle" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Summary *</label>
+                            <textarea id="newsSummary" rows="4" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>Status *</label>
+                            <select id="newsStatus" required>
+                                <option value="">Select status</option>
+                                <option value="Published">Published</option>
+                                <option value="Draft">Draft</option>
+                            </select>
+                        </div>
+                        <div class="form-actions">
+                            <button type="submit" class="btn-primary">Save</button>
+                            <button type="button" class="btn-secondary" onclick="closeNewsModal()">Cancel</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- help Donations Requests -->
+        <section id="donations" class="tab-content">
+            <div class="section-header">
+                <h2>Donation Requests</h2>
+            </div>
+            <div id="donationsList" class="list-container"></div>
+        </section>
+
+        <!-- help Contact Messages -->
+        <section id="contacts" class="tab-content">
+            <div class="section-header">
+                <h2>Contact Messages</h2>
+            </div>
+            <div id="contactsList" class="list-container"></div>
+        </section>
+
+        <!-- help Members Management -->
+        <section id="members" class="tab-content">
+            <div class="section-header">
+                <h2>Members Management</h2>
+                <button class="btn-primary" id="addMemberBtn">
+                    <i class="fas fa-plus"></i> Add Member
+                </button>
+            </div>
+
+            <div id="membersList" class="list-container"></div>
+
+            <!-- help Add/Edit Member Modal -->
+            <div id="memberModal" class="modal">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3>Add New Member</h3>
+                        <button class="modal-close">&times;</button>
+                    </div>
+                    <form id="memberForm">
+                        <input type="hidden" id="memberId">
+                        <div class="form-group">
+                            <label>Full Name *</label>
+                            <input type="text" id="memberName" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Email *</label>
+                            <input type="email" id="memberEmail" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Phone (Optional)</label>
+                            <input type="tel" id="memberPhone">
+                        </div>
+                        <div class="form-actions">
+                            <button type="submit" class="btn-primary">Save</button>
+                            <button type="button" class="btn-secondary" onclick="closeMemberModal()">Cancel</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- help Questions Management -->
+        <section id="questions" class="tab-content">
+            <div class="section-header">
+                <h2>Questions & Answers</h2>
+            </div>
+
+            <div id="questionsList" class="list-container"></div>
+
+            <!-- help Question Detail Modal -->
+            <div id="questionModal" class="modal">
+                <div class="modal-content modal-lg">
+                    <div class="modal-header">
+                        <h3>Question Details</h3>
+                        <button class="modal-close">&times;</button>
+                    </div>
+                    <div class="question-detail">
+                        <div class="detail-info">
+                            <p><strong>From:</strong> <span id="qAsker"></span></p>
+                            <p><strong>Category:</strong> <span id="qCategory"></span></p>
+                            <p><strong>Status:</strong> <span id="qStatus"></span></p>
+                        </div>
+                        <div class="detail-question">
+                            <h4>Question:</h4>
+                            <p id="qText"></p>
+                        </div>
+                        <form id="answerForm">
+                            <label>Imam's Response:</label>
+                            <textarea id="qAnswer" rows="5" placeholder="Write the answer here..."></textarea>
+                            <div class="form-actions">
+                                <button type="submit" class="btn-primary">Post Answer</button>
+                                <button type="button" class="btn-secondary" onclick="closeQuestionModal()">Close</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- help Programs Management -->
+        <section id="programs" class="tab-content">
+            <div class="section-header whatsapp-topbar">
+                <h2>Programs Management</h2>
+                <button class="btn-primary" id="addProgramBtn">
+                    <i class="fas fa-plus"></i> Add Program
+                </button>
+            </div>
+
+            <div id="programsList" class="list-container"></div>
+
+            <!-- Add/Edit Program Modal -->
+            <div id="programModal" class="modal">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3>Add Program</h3>
+                        <button class="modal-close">&times;</button>
+                    </div>
+                    <form id="programForm">
+                        <input type="hidden" id="programId">
+                        <div class="form-group">
+                            <label>Program Name *</label>
+                            <input type="text" id="programName" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Schedule *</label>
+                            <input type="text" id="programSchedule" placeholder="e.g. Saturday 10 AM" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Capacity *</label>
+                            <input type="number" id="programCapacity" min="1" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Description *</label>
+                            <textarea id="programDescription" rows="4" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>Status *</label>
+                            <select id="programStatus" required>
+                                <option value="">Select status</option>
+                                <option value="Active">Active</option>
+                                <option value="Inactive">Inactive</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Program Image</label>
+                            <input type="file" id="programImage" accept="image/*">
+                            <div id="programImagePreview" class="image-preview"></div>
+                        </div>
+                        <div class="form-actions">
+                            <button type="submit" class="btn-primary">Save</button>
+                            <button type="button" class="btn-secondary" onclick="closeProgramModal()">Cancel</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- help Management Team -->
+        <section id="team" class="tab-content">
+            <div class="section-header">
+                <h2>Management Team Roles</h2>
+                <button class="btn-primary" id="addAssistantBtn">
+                    <i class="fas fa-plus"></i> Add Assistant
+                </button>
+            </div>
+
+            <div id="teamList" class="list-container"></div>
+
+            <!-- help Add/Edit Assistant Modal -->
+            <div id="assistantModal" class="modal">
+                <div class="modal-content modal-large">
+                    <div class="modal-header">
+                        <h3>Add Team Member</h3>
+                        <button class="modal-close">&times;</button>
+                    </div>
+                    <form id="assistantForm">
+                        <input type="hidden" id="assistantId">
+                        <div class="form-group">
+                            <label>Full Name *</label>
+                            <input type="text" id="assistantName" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Email *</label>
+                            <input type="email" id="assistantEmail" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Password *</label>
+                            <div class="password-group">
+                                <input type="text" id="assistantPassword" placeholder="Enter or generate password" required>
+                                <button type="button" class="btn-sm btn-info" onclick="generateAssistantPassword()">Generate</button>
+                            </div>
+                            <small>Systems will use this password for assistant login</small>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Permissions - What can this assistant manage? *</label>
+                            <div class="permissions-grid">
+                                <label class="permission-item">
+                                    <input type="checkbox" name="permissions" value="manage_members"> Members & Registration
+                                </label>
+                                <label class="permission-item">
+                                    <input type="checkbox" name="permissions" value="manage_questions"> Islamic Questions
+                                </label>
+                                <label class="permission-item">
+                                    <input type="checkbox" name="permissions" value="manage_programs"> Programs & Events
+                                </label>
+                                <label class="permission-item">
+                                    <input type="checkbox" name="permissions" value="manage_announcements"> Announcements
+                                </label>
+                                <label class="permission-item">
+                                    <input type="checkbox" name="permissions" value="manage_news"> News & Content
+                                </label>
+                                <label class="permission-item">
+                                    <input type="checkbox" name="permissions" value="manage_donations"> Donations
+                                </label>
+                                <label class="permission-item">
+                                    <input type="checkbox" name="permissions" value="view_contacts"> View Contacts
+                                </label>
+                                <label class="permission-item">
+                                    <input type="checkbox" name="permissions" value="manage_team"> Manage Team
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button type="submit" class="btn-primary">Save Assistant</button>
+                            <button type="button" class="btn-secondary" onclick="closeAssistantModal()">Cancel</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- help Settings Tab -->
+        <section id="settings" class="tab-content">
+            <div class="section-header">
+                <h2>System Settings</h2>
+            </div>
+            <div class="settings-content">
+                <div class="setting-group">
+                    <h3>Admin Account</h3>
+                    <p>Change your account credentials</p>
+                    <button class="btn-secondary" onclick="alert('Feature coming soon')">Change Password</button>
+                </div>
+                <div class="setting-group">
+                    <h3>Data Management</h3>
+                    <p>Clear or backup system data</p>
+                    <button class="btn-secondary" onclick="exportData()">Export Data</button>
+                    <button class="btn-danger" onclick="if(confirm('Clear all data?')) { localStorage.clear(); location.reload(); }">Clear Data</button>
+                </div>
+            </div>
+        </section>
+    </main><script src="../assets/js/common.js"></script>
+
+
+    <script src="../assets/js/backend.js"></script>
+    <script src="admin.js"></script>
+</body>
+</html>

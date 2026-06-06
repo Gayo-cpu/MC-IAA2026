@@ -1,0 +1,177 @@
+/* --- About Hero Section --- */
+.about-hero {
+    height: 60vh; /* Fills 60% of the viewport height */
+    /* Use a linear-gradient overlay so the white text is readable */
+    background: linear-gradient(rgba(30, 61, 26, 0.75), rgba(30, 61, 26, 0.85)), 
+                url('../IMAGES/about.jpg'); 
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Creates a smooth parallax effect on scroll */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+.hero-text h1 span {
+    color: #d4af37; /* Your signature MCIAA Gold */
+    text-shadow: 0 0 10px rgba(212, 175, 55, 0.4);
+}
+/* --- Vision & Mission Split --- */
+.about-split {
+    display: flex;
+    gap: 30px;
+    padding: 80px 10%;
+    margin-top: -50px; /* Slight overlap with hero */
+}
+
+.info-card {
+    flex: 1;
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+    border-top: 5px solid #d4af37;
+}
+
+.info-card:hover {
+    transform: translateY(-10px);
+}
+
+.card-icon {
+    font-size: 3rem;
+    color: #1e3d1a;
+    margin-bottom: 20px;
+}
+
+/* --- Objectives --- */
+.objectives-section {
+    padding: 80px 10%;
+    background: #f9f9f9;
+}
+
+.obj-container {
+    max-width: 800px;
+    margin: 40px auto 0;
+}
+
+.obj-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background: white;
+    padding: 20px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: 0.3s;
+}
+
+.obj-item:hover {
+    transform: translateX(10px);
+    border-left: 5px solid #1e3d1a;
+}
+
+.obj-item i {
+    color: #d4af37;
+    font-size: 1.5rem;
+}
+
+/* --- Team Section --- */
+.team-section {
+    padding: 80px 10%;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.team-card {
+    background: #fff;
+    padding: 40px 25px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+    transition: all 0.4s ease;
+    border: 1px solid #eee;
+}
+
+.team-card:hover {
+    transform: translateY(-15px);
+    border-color: #d4af37;
+    box-shadow: 0 20px 45px rgba(30, 61, 26, 0.12);
+}
+
+.member-img {
+    width: 90px;
+    height: 90px;
+    background: #f0f4ef;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    color: #1e3d1a;
+}
+
+.member-name {
+    font-size: 1.3rem;
+    color: #1e3d1a;
+    margin-bottom: 5px;
+}
+
+.member-position {
+    color: #d4af37;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+}
+
+.member-social {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.member-social a {
+    color: #1e3d1a;
+    font-size: 1.1rem;
+    transition: 0.3s;
+}
+
+.member-social a:hover {
+    color: #d4af37;
+    transform: scale(1.2);
+}
+
+/* --- Interactive Reveal Classes --- */
+.reveal-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+}
+
+.reveal-on-scroll.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+    .about-split {
+        flex-direction: column;
+        padding: 40px 5%;
+    }
+}

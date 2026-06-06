@@ -1,0 +1,274 @@
+/* --- Global Portal Layout --- */
+.portal-wrapper {
+    min-height: 80vh;
+    padding: 60px 5%;
+    margin-top: -40px; /* Slight overlap with hero */
+}
+
+.portal-section {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.portal-section.active {
+    display: block;
+    opacity: 1;
+}
+
+.announcement-summary {
+    background: #f1faf2;
+    border-left: 6px solid #d4af37;
+    padding: 22px 24px;
+    border-radius: 18px;
+    margin-bottom: 30px;
+    box-shadow: 0 16px 35px rgba(0, 0, 0, 0.06);
+}
+
+.announcement-summary h3 {
+    margin-bottom: 10px;
+    color: #1e3d1a;
+}
+
+.announcement-summary p {
+    margin: 0;
+    color: #47585a;
+    line-height: 1.7;
+}
+
+.announcement-pill {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    background: #1e3d1a;
+    color: #ffffff;
+    padding: 6px 14px;
+    border-radius: 999px;
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+
+/* --- SECTION A: STUDENT FORM --- */
+.form-container {
+    background: #ffffff;
+    max-width: 650px;
+    margin: 0 auto;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(30, 61, 26, 0.1);
+    border-top: 6px solid #d4af37; /* MCIAA Gold */
+}
+
+.form-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.form-header h2 {
+    color: #1e3d1a; /* Dark Green */
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.input-group select, 
+.input-group textarea {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid #e1e1e1;
+    border-radius: 10px;
+    font-family: 'Poppins', sans-serif;
+    transition: border-color 0.3s ease;
+}
+
+.input-group textarea:focus, 
+.input-group select:focus {
+    border-color: #d4af37;
+    outline: none;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 15px;
+    background: #1e3d1a;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    transition: all 0.3s ease;
+}
+
+.submit-btn:hover {
+    background: #d4af37;
+    transform: translateY(-3px);
+}
+
+/* --- SECTION B: IMAM DASHBOARD --- */
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+    background: #fff;
+    padding: 20px 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.status-badge {
+    background: #1e3d1a;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-weight: 600;
+}
+
+.questions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 25px;
+}
+
+.q-card {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+    border-left: 5px solid #d4af37;
+    transition: transform 0.3s ease;
+}
+
+.q-card:hover {
+    transform: translateY(-5px);
+}
+
+.q-card h3 {
+    font-size: 1.1rem;
+    color: #1e3d1a;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.q-card p {
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.reply-btn {
+    background: #f0f4ef;
+    color: #1e3d1a;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-block;
+    transition: 0.3s;
+}
+
+.reply-btn:hover {
+    background: #1e3d1a;
+    color: white;
+}
+
+/* Success Alert Styles */
+.success-alert {
+    text-align: center;
+    margin-top: 20px;
+    padding: 20px;
+    background: #e8f5e9;
+    color: #2e7d32;
+    border-radius: 10px;
+}
+
+.success-alert i {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+/* --- Hero Section with Background --- */
+.ask-hero {
+    height: 50vh; /* Adjust height for the portal feel */
+    background: linear-gradient(rgba(30, 61, 26, 0.75), rgba(30, 61, 26, 0.85)), 
+                url('../images/mosque-interior.jpg'); /* Replace with your image path */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Parallax effect for professional look */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+/* --- Page Body Background --- */
+body {
+    background-color: #f4f7f4; /* Light tint to match MCIAA green */
+    /* Optional: Subtle pattern or faint image for the whole page */
+    background-image: url('../IMAGES/register.jpg'); 
+    background-repeat: repeat;
+}
+
+/* --- Hero Text Styling --- */
+.hero-text h1 span {
+    color: #d4af37; /* Signature MCIAA Gold */
+    text-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+}
+/*@keyframes heroZoom {
+    from { background-size: 110%; }
+    to { background-size: 100%; }
+}
+
+.ask-hero {
+    animation: heroZoom 2.5s ease-out forwards;
+}*/
+/* --- Reduced Hero Height --- */
+.ask-hero {
+    height: 35vh; /* Reduced from 50vh to 35vh */
+    background: linear-gradient(rgba(30, 61, 26, 0.7), rgba(30, 61, 26, 0.8)), 
+                url('../images/mosque-interior.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+/* --- Adjusted Portal Spacing --- */
+.portal-wrapper {
+    min-height: 60vh;
+    padding: 30px 5%; /* Reduced top padding from 60px to 30px */
+    margin-top: -60px; /* Pulls the white card higher into the hero area */
+    position: relative;
+    z-index: 10;
+}
+
+/* --- Hero Text Scaling --- */
+.hero-text h1 {
+    font-size: 2.2rem; /* Slightly smaller to fit the tighter space */
+    margin-bottom: 5px;
+}
+
+.hero-text p {
+    font-size: 0.9rem;
+}

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#1e3d1a">
+    <title>Ask Imam Portal | MCIAA Association</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+        <link rel="stylesheet" href="../assets/css/common.css">
+<!-- External Styles -->
+    <link rel="stylesheet" href="../HOME/home.css">
+    <link rel="stylesheet" href="ask_imam.css">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="main-nav" aria-label="Primary navigation">
+        <div class="nav-container">
+            <a href="../INDEX/index.html" class="logo" data-i18n="nav.brand" aria-label="Home">
+                <i class="fas fa-moon"></i> MCIAA <span>Association</span>
+            </a>
+            <ul class="nav-menu">
+                <li><a href="../INDEX/index.html" data-i18n="nav.home">Home</a></li>
+                <li><a href="../ABOUT/about.html" data-i18n="nav.about">About Us</a></li>
+                <li><a href="../HIFZ/hifz.html" data-i18n="nav.programs">Programs</a></li>
+                <li><a href="../ASK_IMAM/ask_imam.html" data-i18n="nav.askImam">Ask Imam</a></li>
+                <li><a href="../NEWS/news.html" data-i18n="nav.news">News</a></li>
+                <li><a href="../DONATE/donate.html" data-i18n="nav.donate">Donate</a></li>
+                <li><a href="../CONTACT/contact.html" data-i18n="nav.contact">Contact Us</a></li>
+            </ul>
+            <div class="nav-actions">
+                <div class="nav-control-group">
+                    <label for="languageSelect" class="sr-only">Language</label>
+                    <select id="languageSelect" class="language-select" aria-label="Choose site language">
+                        <option value="en">English</option>
+                        <option value="sw">Kiswahili</option>
+                        <option value="ar">العربية</option>
+                    </select>
+                    <button id="themeToggle" class="theme-toggle" aria-label="Toggle color theme">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </div>
+                <div class="nav-auth">
+                    <a href="../LOGIN/login.html" class="login-link" data-i18n="nav.login">Login</a>
+                    <a href="../REGISTER/register.html" class="cta-btn" data-i18n="nav.join">Join Us</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Header -->
+    <header class="ask-hero">
+        <div class="hero-overlay">
+            <div class="hero-text reveal-on-scroll">
+                <h1>Guidance & <span>Wisdom</span></h1>
+                <p>Direct access to knowledge for the youth of Arusha.</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN PORTAL CONTAINER -->
+    <main class="portal-wrapper container">
+        <section id="askAnnouncements" class="announcement-summary"></section>
+        
+        <!-- SECTION A: STUDENT VIEW (SUBMISSION FORM) -->
+        <section id="studentView" class="portal-section active">
+            <div class="form-container">
+                <div class="form-header">
+                    <h2>Submit Your Question</h2>
+                    <p>Your question will be delivered to the Imam with full privacy (Amanah).</p>
+                </div>
+                
+                <form id="studentForm">
+                    <div class="input-group">
+                        <label for="category">Subject Category</label>
+                        <select id="category" name="category" required>
+                            <option value="">Select Category</option>
+                            <option value="fiqh">Fiqh (Jurisprudence)</option>
+                            <option value="social">Social & Family</option>
+                            <option value="youth">Youth Issues</option>
+                            <option value="general">General Inquiry</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="question">Detailed Question</label>
+                        <textarea id="question" name="question_text" rows="6" placeholder="Write your question here..." required></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn">
+                        <span>Deliver to Imam</span> 
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </form>
+                
+                <div id="successMsg" class="success-alert" style="display:none;">
+                    <i class="fas fa-check-circle"></i>
+                    <p>Alhamdulillah! Your question has been delivered. The Imam will review it shortly.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION B: IMAM VIEW (DASHBOARD) -->
+        <section id="imamView" class="portal-section">
+            <div class="dashboard-header">
+                <div>
+                    <h2>Imam's Dashboard</h2>
+                    <p>Review and provide guidance to the pending queries.</p>
+                </div>
+                <div class="status-badge">
+                    <span id="pendingCount">0</span> Pending
+                </div>
+            </div>
+
+            <!-- This grid is populated by JS -->
+            <div id="questionsGrid" class="questions-grid">
+                <!-- Mock questions will appear here -->
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer Consistency -->
+    <footer class="main-footer">
+        <p>&copy; 2026 MCIAA Association - Arusha, Tanzania.</p>
+    </footer>
+
+    <!-- Scripts --><script src="../assets/js/common.js"></script>
+
+    <script src="ask_imam.js"></script>
+</body>
+</html>
