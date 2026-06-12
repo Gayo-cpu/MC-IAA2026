@@ -1,138 +1,177 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#1e3d1a">
-    <title>Ask Imam Portal | MCIAA Association</title>
-    
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Font Awesome for Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    
-        <link rel="stylesheet" href="../assets/css/common.css">
-<!-- External Styles -->
-    <link rel="stylesheet" href="../HOME/home.css">
+    <title>Ask Imam | MCIAA Association</title>
+    <!-- Font Awesome for sleek modern icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Links to your global style rules and new specific stylesheet -->
     <link rel="stylesheet" href="ask_imam.css">
 </head>
+
 <body>
 
-    <!-- Navigation Bar -->
-    <nav class="main-nav" aria-label="Primary navigation">
+    <!-- UNIFIED GLOBAL NAVIGATION BAR -->
+    <nav class="global-navbar">
         <div class="nav-container">
-            <a href="../INDEX/index.html" class="logo" data-i18n="nav.brand" aria-label="Home">
-                <i class="fas fa-moon"></i> MCIAA <span>Association</span>
+            <!-- Brand Branding Title -->
+            <a href="../INDEX/index.html" class="nav-logo">
+                MCIAA Association
             </a>
+
+            <!-- Middle Centered Links Routing Matrix -->
             <ul class="nav-menu">
-                <li><a href="../INDEX/index.html" data-i18n="nav.home">Home</a></li>
-                <li><a href="../ABOUT/about.html" data-i18n="nav.about">About Us</a></li>
-                <li><a href="../HIFZ/hifz.html" data-i18n="nav.programs">Programs</a></li>
-                <li><a href="../ASK_IMAM/ask_imam.html" data-i18n="nav.askImam">Ask Imam</a></li>
-                <li><a href="../NEWS/news.html" data-i18n="nav.news">News</a></li>
-                <li><a href="../DONATE/donate.html" data-i18n="nav.donate">Donate</a></li>
-                <li><a href="../CONTACT/contact.html" data-i18n="nav.contact">Contact Us</a></li>
+                <li><a href="../INDEX/index.html">Home</a></li>
+                <li><a href="../ABOUT/about.html">About Us</a></li>
+                <li><a href="../HIFZ/hifz.html" class="active">Programs</a></li>
+                <li><a href="../ASK_IMAM/ask-imam.html">Ask Imam</a></li>
+                <li><a href="../NEWS/news.html">News</a></li>
+                <li><a href="../DONATE/donate.html">Donate</a></li>
+                <li><a href="../CONTACT/contact.html">Contact Us</a></li>
             </ul>
-            <div class="nav-actions">
-                <div class="nav-control-group">
-                    <label for="languageSelect" class="sr-only">Language</label>
-                    <select id="languageSelect" class="language-select" aria-label="Choose site language">
+
+            <!-- Right System Functionalities Cluster -->
+            <div class="nav-utilities">
+                <!-- Language Dropdown -->
+                <div class="lang-selector">
+                    <select id="languageDropdown">
                         <option value="en">English</option>
                         <option value="sw">Kiswahili</option>
                         <option value="ar">العربية</option>
                     </select>
-                    <button id="themeToggle" class="theme-toggle" aria-label="Toggle color theme">
-                        <i class="fas fa-moon"></i>
-                    </button>
                 </div>
-                <div class="nav-auth">
-                    <a href="../LOGIN/login.html" class="login-link" data-i18n="nav.login">Login</a>
-                    <a href="../REGISTER/register.html" class="cta-btn" data-i18n="nav.join">Join Us</a>
+
+                <!-- Theme Mode Interactive Toggle Trigger -->
+                <button class="theme-toggle-btn" id="themeToggle" title="Toggle Dark Mode">
+                    <i class="fa-regular fa-moon"></i>
+                </button>
+
+                <!-- Access Portals Links -->
+                <div class="auth-actions">
+                    <a href="../LOGIN/login.html" class="btn-login">Login</a>
+                    <a href="../REGISTER/register.html" class="btn-join">Join Us</a>
                 </div>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Header -->
-    <header class="ask-hero">
+    <!-- HERO SECTION: Complete Edge-to-Edge Green Radiance Overlay -->
+    <header class="imam-hero">
         <div class="hero-overlay">
-            <div class="hero-text reveal-on-scroll">
-                <h1>Guidance & <span>Wisdom</span></h1>
-                <p>Direct access to knowledge for the youth of Arusha.</p>
+            <div class="hero-text">
+                <div class="hero-arabic">فَاسْأَلُوا أَهْلَ الذِّكْرِ إِن كُنتُمْ لَا تَعْلَمُونَ</div>
+                <h2>Seek Clarity, <br><span>Deepen Knowledge</span></h2>
+                <p class="hero-subtitle">"Ask the people of the remembrance if you do not know." — Surah An-Nahl [16:43]
+                </p>
             </div>
         </div>
     </header>
 
-    <!-- MAIN PORTAL CONTAINER -->
-    <main class="portal-wrapper container">
-        <section id="askAnnouncements" class="announcement-summary"></section>
-        
-        <!-- SECTION A: STUDENT VIEW (SUBMISSION FORM) -->
-        <section id="studentView" class="portal-section active">
-            <div class="form-container">
-                <div class="form-header">
-                    <h2>Submit Your Question</h2>
-                    <p>Your question will be delivered to the Imam with full privacy (Amanah).</p>
+    <!-- MAIN INTERFACE: Split Layout Grid (Form on Left, Live Accordion on Right) -->
+    <main class="imam-grid container">
+
+        <!-- SECTION A: PRIVATE QUESTION SUBMISSION ENGINE -->
+        <section class="form-card">
+            <div class="card-header">
+                <div class="form-icon"><i class="fa-solid fa-paper-plane"></i></div>
+                <h3>Submit Your Query</h3>
+                <p>Your questions are handled with strict privacy and academic integrity.</p>
+            </div>
+
+            <form id="askImamForm" autocomplete="off">
+                <div class="input-group">
+                    <label for="userName"><i class="fa-solid fa-user"></i> Name (Optional)</label>
+                    <input type="text" id="userName" placeholder="Leave blank for anonymity">
                 </div>
-                
-                <form id="studentForm">
-                    <div class="input-group">
-                        <label for="category">Subject Category</label>
-                        <select id="category" name="category" required>
-                            <option value="">Select Category</option>
-                            <option value="fiqh">Fiqh (Jurisprudence)</option>
-                            <option value="social">Social & Family</option>
-                            <option value="youth">Youth Issues</option>
-                            <option value="general">General Inquiry</option>
-                        </select>
-                    </div>
 
-                    <div class="input-group">
-                        <label for="question">Detailed Question</label>
-                        <textarea id="question" name="question_text" rows="6" placeholder="Write your question here..." required></textarea>
-                    </div>
+                <div class="input-group">
+                    <label for="userEmail"><i class="fa-solid fa-envelope"></i> Email Address</label>
+                    <input type="email" id="userEmail" required placeholder="To receive your private answer">
+                </div>
 
-                    <button type="submit" class="submit-btn">
-                        <span>Deliver to Imam</span> 
-                        <i class="fas fa-paper-plane"></i>
+                <div class="input-group">
+                    <label for="queryCategory"><i class="fa-solid fa-tags"></i> Question Category</label>
+                    <select id="queryCategory" required>
+                        <option value="" disabled selected>Select a category...</option>
+                        <option value="fiqh">Fiqh (Islamic Jurisprudence)</option>
+                        <option value="hifz">Hifz & Tajweed Guidance</option>
+                        <option value="academic">Academic & Youth Affairs</option>
+                        <option value="general">General Consultation</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label for="userMessage"><i class="fa-solid fa-pen-to-square"></i> Your Question</label>
+                    <textarea id="userMessage" rows="6" required
+                        placeholder="Type your question clearly and precisely here..."></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn">
+                    <span>Send to Imam</span> <i class="fa-solid fa-arrow-right"></i>
+                </button>
+            </form>
+            <div id="formResponse" class="response-message hidden"></div>
+        </section>
+
+        <!-- SECTION B: FREQUENTLY ASKED QUESTIONS (ACCORDION ARCHITECTURE) -->
+        <section class="faq-panel">
+            <div class="panel-header">
+                <span class="panel-tag">Knowledge Hub</span>
+                <h3>Recent Public Answers</h3>
+                <p>Browse through previously answered questions for immediate guidance.</p>
+            </div>
+
+            <div class="accordion-container">
+                <!-- Accordion Item 1 -->
+                <div class="accordion-item">
+                    <button class="accordion-trigger">
+                        <span class="cat-badge">Fiqh</span>
+                        <span class="trigger-text">What is the best way to maintain consistency in daily Dhikr?</span>
+                        <i class="fa-solid fa-chevron-down acc-arrow"></i>
                     </button>
-                </form>
-                
-                <div id="successMsg" class="success-alert" style="display:none;">
-                    <i class="fas fa-check-circle"></i>
-                    <p>Alhamdulillah! Your question has been delivered. The Imam will review it shortly.</p>
+                    <div class="accordion-content">
+                        <p>Consistency is built upon small, manageable habits. The Prophet Muhammad (ﷺ) stated that the
+                            most beloved deeds to Allah are those done regularly, even if they are small. Start by
+                            anchoring 5-10 minutes of morning and evening supplications immediately after your Fard
+                            prayers.</p>
+                    </div>
+                </div>
+
+                <!-- Accordion Item 2 -->
+                <div class="accordion-item">
+                    <button class="accordion-trigger">
+                        <span class="cat-badge">Hifz</span>
+                        <span class="trigger-text">How can I balance technical studies with Quran memorization?</span>
+                        <i class="fa-solid fa-chevron-down acc-arrow"></i>
+                    </button>
+                    <div class="accordion-content">
+                        <p>Utilize the early morning hours (Barakah of Fajr time) for your core memorization before your
+                            mind is occupied by daily coding or administrative tasks. Treat your Quran path as a source
+                            of mental clarity rather than an extra structural burden.</p>
+                    </div>
+                </div>
+
+                <!-- Accordion Item 3 -->
+                <div class="accordion-item">
+                    <button class="accordion-trigger">
+                        <span class="cat-badge">Academic</span>
+                        <span class="trigger-text">How does the MCIAA Association support local youth in Arusha?</span>
+                        <i class="fa-solid fa-chevron-down acc-arrow"></i>
+                    </button>
+                    <div class="accordion-content">
+                        <p>We provide a structural environment where high-tier digital mentorship converges safely with
+                            spiritual learning. We achieve this through regular workshops, dynamic peer groups, and
+                            direct consultation pipelines with learned scholars.</p>
+                    </div>
                 </div>
             </div>
         </section>
-
-        <!-- SECTION B: IMAM VIEW (DASHBOARD) -->
-        <section id="imamView" class="portal-section">
-            <div class="dashboard-header">
-                <div>
-                    <h2>Imam's Dashboard</h2>
-                    <p>Review and provide guidance to the pending queries.</p>
-                </div>
-                <div class="status-badge">
-                    <span id="pendingCount">0</span> Pending
-                </div>
-            </div>
-
-            <!-- This grid is populated by JS -->
-            <div id="questionsGrid" class="questions-grid">
-                <!-- Mock questions will appear here -->
-            </div>
-        </section>
-
     </main>
 
-    <!-- Footer Consistency -->
-    <footer class="main-footer">
-        <p>&copy; 2026 MCIAA Association - Arusha, Tanzania.</p>
-    </footer>
-
-    <!-- Scripts --><script src="../assets/js/common.js"></script>
-
+    <!-- Injection of programmatic interaction -->
     <script src="ask_imam.js"></script>
 </body>
+
 </html>

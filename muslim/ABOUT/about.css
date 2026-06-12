@@ -1,8 +1,131 @@
+
+.global-navbar {
+    position: fixed !important;
+    top: 25px !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    width: 90%;
+    max-width: 1200px;
+    height: 70px;
+    background-color: #ffffff !important;
+    border-radius: 50px !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08) !important;
+    z-index: 9999 !important; /* Holds it safely on top of all hero background images */
+    transition: all 0.3s ease;
+}
+
+.nav-container {
+    width: 100%;
+    height: 100%;
+    padding: 0 35px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+
+/* Brand Branding Text Styling Lines */
+.nav-logo {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #1e3d1a !important; /* Core Signature Islamic Green */
+    text-decoration: none;
+    letter-spacing: -0.5px;
+}
+
+/* Center Links Matrix */
+.nav-menu {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 20px;
+}
+
+.nav-menu li a {
+    text-decoration: none;
+    color: #2b2b2b;
+    font-size: 0.92rem;
+    font-weight: 600;
+    transition: color 0.25s ease;
+}
+
+.nav-menu li a:hover,
+.nav-menu li a.active {
+    color: #1e3d1a;
+}
+
+/* Utilities Controls Layer */
+.nav-utilities {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+/* Dropdown styling */
+.lang-selector select {
+    padding: 6px 12px;
+    border-radius: 20px;
+    border: 1px solid #e2e8e2;
+    font-weight: 500;
+    font-size: 0.85rem;
+    outline: none;
+    cursor: pointer;
+}
+
+/* Theme Toggle Button */
+.theme-toggle-btn {
+    background: none;
+    border: none;
+    font-size: 1.1rem;
+    color: #2b2b2b;
+    cursor: pointer;
+    padding: 5px;
+    transition: color 0.2s ease;
+}
+.theme-toggle-btn:hover {
+    color: #d4af37; /* Pops into Gold on hover mechanics */
+}
+
+/* Auth Actions Typography Links */
+.auth-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    border-left: 1px solid #e2e8e2;
+    padding-left: 15px;
+}
+
+.btn-login {
+    text-decoration: none;
+    color: #0000ff !important; /* Blue link visibility accent */
+    font-weight: 600;
+    font-size: 0.92rem;
+}
+
+.btn-join {
+    text-decoration: none;
+    color: #800080 !important; /* Purple link visibility accent */
+    font-weight: 600;
+    font-size: 0.92rem;
+}
+
+/* Responsive Adaptive Collapse Pipeline */
+@media (max-width: 1024px) {
+    .nav-menu {
+        display: none; /* Safely hides text strings on compressed tablets */
+    }
+    .global-navbar {
+        width: 95%;
+        top: 15px !important;
+    }
+}
 /* --- About Hero Section --- */
 .about-hero {
-    height: 60vh; /* Fills 60% of the viewport height */
-    /* Use a linear-gradient overlay so the white text is readable */
-    background: linear-gradient(rgba(30, 61, 26, 0.75), rgba(30, 61, 26, 0.85)), 
+    position: relative;
+    min-height: 80vh; /* Increased height to cleanly fit the main title + verses */
+    background: linear-gradient(rgba(20, 43, 18, 0.85), rgba(15, 32, 14, 0.92)),
                 url('../IMAGES/about.jpg'); 
     background-size: cover;
     background-position: center;
@@ -12,11 +135,59 @@
     justify-content: center;
     text-align: center;
     color: white;
+    flex-direction: column;
+    width: 100%;
+}
+
+.hero-text {
+    position: relative !important;
+    top: 0 !important;
+    left: 0 !important;
+    transform: none !important;
+    width: 100%;
+    max-width: 950px;
+    padding: 0 20px;
+    text-align: center;
+    box-sizing: border-box;
 }
 
 .hero-text h1 span {
     color: #d4af37; /* Your signature MCIAA Gold */
     text-shadow: 0 0 10px rgba(212, 175, 55, 0.4);
+}
+.hero-overlay {
+    width: 100%;
+    flex-grow: 1;
+    display: flex;
+    align-items: center; /* Vertically centers whatever remains */
+    justify-content: center;
+    background: transparent !important; /* Prevents double-darkening layouts */
+    /* CRUCIAL FIX: Creates a structural wall that forces everything below the navbar */
+    padding-top: 160px !important; 
+    padding-bottom: 60px !important;
+    box-sizing: border-box;
+}
+/* --- Golden Sacred Arabic Typography --- */
+.hero-arabic {
+    color: #d4af37 !important; /* Premium metallic gold color choice */
+    font-size: 1.6rem;         /* Scales up the size to make the calligraphy readable */
+    font-weight: 600;
+    margin-bottom: 15px;
+    text-align: center;
+    direction: rtl;           
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4); 
+}
+/* --- Golden Sacred Arabic Typography --- */
+.hero-citation {
+    color: #d4af37 !important; /* Premium metallic gold color choice */
+    font-size: 1.2rem;         /* Scales up the size to make the calligraphy readable */
+    font-weight: 600;
+    margin-bottom: 15px;
+    text-align: center;
+    direction: rtl;            /* Forces correct Right-to-Left Arabic presentation flow */
+    
+    /* Elegant soft shadow to help the gold pop off the background image artwork */
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4); 
 }
 /* --- Vision & Mission Split --- */
 .about-split {
@@ -174,4 +345,95 @@
         flex-direction: column;
         padding: 40px 5%;
     }
+}
+/* terrific */
+/* --- Balanced Objectives Container Layout --- */
+.obj-container {
+    display: grid;
+    grid-template-columns: 1fr; /* Default to single column for mobile phones */
+    gap: 25px;
+}
+
+/* Desktop and Tablet Adjustment for Left/Right Split */
+@media (min-width: 769px) {
+    .obj-container {
+        grid-template-columns: repeat(2, 1fr); /* Exactly 2 columns: 3 on left, 3 on right */
+        gap: 30px;
+    }
+}
+
+.obj-item {
+    display: flex;
+    align-items: center; /* Centered layout block */
+    gap: 20px;
+    padding: 22px;
+    background: var(--bg-tint);
+    border-radius: 12px;
+    border-left: 5px solid var(--primary-green);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Subtle Hover micro-interaction */
+.obj-item:hover {
+    transform: translateX(5px);
+    box-shadow: 0 5px 15px rgba(30, 61, 26, 0.05);
+}
+
+.obj-icon {
+    background: var(--clean-white);
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+    flex-shrink: 0;
+}
+
+.obj-icon i {
+    color:  #d4af37;
+    font-size: 1.3rem;
+}
+
+.obj-item p {
+    color: var(--dark-green);
+    font-size: 0.95rem;
+    font-weight: 600;
+    line-height: 1.5;
+    margin: 0;
+}
+/* last */
+/* --- Card Pillar Spacing Mechanics --- */
+.main-vision-text, 
+.main-mission-text {
+    margin-bottom: 25px;
+    padding-bottom: 20px;
+    border-bottom: 1px dashed rgba(30, 61, 26, 0.12);
+}
+
+.card-pillars {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    text-align: left; /* Ensures readability for structured lists */
+}
+
+.pillar-line {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.pillar-line i {
+    color:  #d4af37;
+    font-size: 0.9rem;
+    margin-top: 4px;
+    flex-shrink: 0;
+}
+
+.pillar-line span {
+    font-size: 0.88rem;
+    color: var(--text-muted);
+    line-height: 1.5;
 }
