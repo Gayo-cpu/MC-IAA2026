@@ -13,50 +13,40 @@
 
 <body>
 
-    <!-- UNIFIED GLOBAL NAVIGATION BAR -->
-    <nav class="global-navbar">
+    <!-- [Paste your existing navigation bar markup component right here] -->
+    <nav class="main-nav" aria-label="Primary navigation">
         <div class="nav-container">
-            <!-- Brand Branding Title -->
-            <a href="../INDEX/index.html" class="nav-logo">
-                MCIAA Association
+            <a href="../INDEX/index.html" class="logo" data-i18n="nav.brand" aria-label="Home">
+                <i class="fas fa-moon"></i> MCIAA <span>Association</span>
             </a>
-
-            <!-- Middle Centered Links Routing Matrix -->
             <ul class="nav-menu">
-                <li><a href="../INDEX/index.html">Home</a></li>
-                <li><a href="../ABOUT/about.html">About Us</a></li>
-                <li><a href="../HIFZ/hifz.html" class="active">Programs</a></li>
-                <li><a href="../ASK_IMAM/ask-imam.html">Ask Imam</a></li>
-                <li><a href="../NEWS/news.html">News</a></li>
-                <li><a href="../DONATE/donate.html">Donate</a></li>
-                <li><a href="../CONTACT/contact.html">Contact Us</a></li>
+                <li><a href="../INDEX/index.html" data-i18n="nav.home">Home</a></li>
+                <li><a href="../ABOUT/about.html" data-i18n="nav.about">About Us</a></li>
+                <li><a href="../HIFZ/hifz.html" data-i18n="nav.programs">Programs</a></li>
+                <li><a href="../ASK_IMAM/ask_imam.html" data-i18n="nav.askImam">Ask Imam</a></li>
+                <li><a href="../NEWS/news.php" data-i18n="nav.news">News</a></li>
+                <li><a href="../DONATE/donate.html" data-i18n="nav.donate">Donate</a></li>
+                <li><a href="../CONTACT/contact.html" data-i18n="nav.contact">Contact Us</a></li>
             </ul>
-
-            <!-- Right System Functionalities Cluster -->
-            <div class="nav-utilities">
-                <!-- Language Dropdown -->
-                <div class="lang-selector">
-                    <select id="languageDropdown">
+            <div class="nav-actions">
+                <div class="nav-control-group">
+                    <label for="languageSelect" class="sr-only">Language</label>
+                    <select id="languageSelect" class="language-select" aria-label="Choose site language">
                         <option value="en">English</option>
                         <option value="sw">Kiswahili</option>
                         <option value="ar">العربية</option>
                     </select>
+                    <button id="themeToggle" class="theme-toggle" aria-label="Toggle color theme">
+                        <i class="fas fa-moon"></i>
+                    </button>
                 </div>
-
-                <!-- Theme Mode Interactive Toggle Trigger -->
-                <button class="theme-toggle-btn" id="themeToggle" title="Toggle Dark Mode">
-                    <i class="fa-regular fa-moon"></i>
-                </button>
-
-                <!-- Access Portals Links -->
-                <div class="auth-actions">
-                    <a href="../LOGIN/login.html" class="btn-login">Login</a>
-                    <a href="../REGISTER/register.html" class="btn-join">Join Us</a>
+                <div class="nav-auth">
+                    <a href="../LOGIN/login.html" class="login-link" data-i18n="nav.login">Login</a>
+                    <a href="../REGISTER/register.html" class="cta-btn" data-i18n="nav.join">Join Us</a>
                 </div>
             </div>
         </div>
     </nav>
-
     <!-- HERO SECTION: Complete Edge-to-Edge Green Radiance Overlay -->
     <header class="imam-hero">
         <div class="hero-overlay">

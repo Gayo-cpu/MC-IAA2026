@@ -28,23 +28,10 @@ body {
 
 /* --- DYNAMIC FLOATING NAVIGATION --- */
 .main-nav {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    padding: 2rem 5%;
-    display: flex;
-    justify-content: center;
+    background: rgba(255, 255, 255, 0.95); /* Makes it solid enough to read */
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.2);
     z-index: 1000;
-    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-}
-/* Ensure the menu stays horizontal */
-.nav-menu {
-    display: flex;
-    flex-direction: row; /* Force horizontal */
-    list-style: none;
-    gap: 1.2rem;
-    margin: 0;
-    padding: 0;
 }
 
 .nav-menu a {
@@ -60,7 +47,7 @@ body {
 .main-nav.scrolled {
     padding: 1rem 5%;
 }
-.global-navbar {
+ .global-navbar {
     position: fixed !important;
     top: 25px !important;
     left: 50% !important;
@@ -72,8 +59,8 @@ body {
     border-radius: 50px !important;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08) !important;
     z-index: 9999 !important; /* Holds it safely on top of all hero background images */
-    transition: all 0.3s ease;
-}
+     transition: all 0.3s ease; 
+ } 
 
 .nav-container {
     width: 100%;
@@ -319,24 +306,12 @@ body {
     transition: color 0.25s ease;
 }
 
-.nav-menu li a::after {
-    content: '';
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: #2d5a27;
-    transition: width 0.3s ease;
-}
-
-.nav-menu li a:hover::after {
-    width: 100%;
-}
 .nav-menu li a:hover,
 .nav-menu li a.active {
     color: #1e3d1a;
 }
+
+
 /* Utilities Controls Layer */
 .nav-utilities {
     display: flex;
