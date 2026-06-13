@@ -5,52 +5,54 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#1e3d1a">
-    <title>MUSLIM COMMUNITY INSTITUTE OF ACCOUNTANCY ARUSHA | Home</title>
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <!-- Font Awesome -->
+    <title>Programs | MCIAA Association</title>
+
+    <!-- Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Amiri&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
     <link rel="stylesheet" href="../assets/css/common.css">
+    <!-- 1. Link the Main Styles (This has your grid and nav rules) -->
     <link rel="stylesheet" href="index.css">
+
+    <!-- 2. Link the Hifz Specific Styles (This has your badges and hero logic) -->
+    <link rel="stylesheet" href="../HIFZ/hifz.css">
 </head>
 
 <body>
 
-    <!-- FULL-WIDTH EDGE-TO-EDGE NAVBAR (Matches About Page) -->
-    <nav class="global-navbar full-width-variant">
+    <!-- Reuse your Nav Bar from Index.html -->
+    <!-- Header / Navigation -->
+    <nav class="main-nav" aria-label="Primary navigation">
         <div class="nav-container">
-
-            <!-- Left Section: Online Status Badge & Brand Link -->
-            <div class="nav-left-group">
-                <a href="../INDEX/index.html" class="nav-logo">MCIAA Association</a>
-            </div>
-
-            <!-- Middle Centered Link Matrix -->
+            <a href="../INDEX/index.html" class="logo" data-i18n="nav.brand" aria-label="Home">
+                <i class="fas fa-moon"></i> MCIAA <span>Association</span>
+            </a>
             <ul class="nav-menu">
-                <li><a href="../INDEX/index.html" class="active">Home</a></li>
-                <li><a href="../ABOUT/about.html">About Us</a></li>
-                <li><a href="../PROGRAMS/programs.html">Programs</a></li>
-                <li><a href="../ASK_IMAM/ask_imam.html">Ask Imam</a></li>
-                <li><a href="../NEWS/news.html">News</a></li>
-                <li><a href="../DONATE/donate.html">Donate</a></li>
-                <li><a href="../CONTACT/contact.html">Contact Us</a></li>
+                <li><a href="../INDEX/index.html" data-i18n="nav.home">Home</a></li>
+                <li><a href="../ABOUT/about.html" data-i18n="nav.about">About Us</a></li>
+                <li><a href="../HIFZ/hifz.html" data-i18n="nav.programs">Programs</a></li>
+                <li><a href="../ASK_IMAM/ask_imam.html" data-i18n="nav.askImam">Ask Imam</a></li>
+                <li><a href="../NEWS/news.php" data-i18n="nav.news">News</a></li>
+                <li><a href="../DONATE/donate.html" data-i18n="nav.donate">Donate</a></li>
+                <li><a href="../CONTACT/contact.html" data-i18n="nav.contact">Contact Us</a></li>
             </ul>
-
-            <!-- Right Utilities Component -->
-            <div class="nav-utilities">
-                <div class="lang-selector">
-                    <select id="languageDropdown">
+            <div class="nav-actions">
+                <div class="nav-control-group">
+                    <label for="languageSelect" class="sr-only">Language</label>
+                    <select id="languageSelect" class="language-select" aria-label="Choose site language">
                         <option value="en">English</option>
                         <option value="sw">Kiswahili</option>
                         <option value="ar">العربية</option>
                     </select>
+                    <button id="themeToggle" class="theme-toggle" aria-label="Toggle color theme">
+                        <i class="fas fa-moon"></i>
+                    </button>
                 </div>
-                <button class="theme-toggle-btn" id="themeToggle">
-                    <i class="fa-regular fa-moon"></i>
-                </button>
-                <div class="auth-actions">
-                    <a href="../LOGIN/login.html" class="btn-login">Login</a>
-                    <a href="../REGISTER/register.html" class="btn-join">Join Us</a>
+                <div class="nav-auth">
+                    <a href="../LOGIN/login.html" class="login-link" data-i18n="nav.login">Login</a>
+                    <a href="../REGISTER/register.html" class="cta-btn" data-i18n="nav.join">Join Us</a>
                 </div>
             </div>
         </div>
@@ -131,7 +133,7 @@
                 <i class="fas fa-newspaper"></i>
                 <h3 style="color: #1e3d1a;">Latest News</h3>
                 <p style="color: #444;">Stay updated with our latest workshops and community events in Arusha.</p>
-                <a href="../NEWS/news.html">View News</a>
+                <a href="../NEWS/news.php">View News</a>
             </div>
 
             <!-- 5. About Us (NEW) -->
