@@ -1,17 +1,134 @@
-
+:root {
+    --nav-primary: #2d4a33; 
+    --nav-accent: #ffc107;
+    --nav-dark: #212529;
+    --brand-green: #2d4a33; 
+    --brand-gold: #ffb700;
+    --brand-gold-hover: #e5a400;
+    --text-dark: #212529;
+    --bg-light: #f8f9fa;
+    --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
 .global-navbar {
-    position: fixed !important;
-    top: 25px !important;
-    left: 50% !important;
-    transform: translateX(-50%) !important;
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--nav-primary);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    z-index: 9999; /* Ensures navbar always floats on top of sliding components */
+    padding: 15px 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.global-nav-container {
     width: 90%;
     max-width: 1200px;
-    height: 70px;
-    background-color: #ffffff !important;
-    border-radius: 50px !important;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08) !important;
-    z-index: 9999 !important; /* Holds it safely on top of all hero background images */
-    transition: all 0.3s ease;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.global-nav-brand {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.4rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.global-nav-brand .global-brand-sub {
+    color: var(--nav-accent);
+    font-weight: 400;
+}
+
+.global-nav-links {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.global-nav-item {
+    color: rgba(255, 255, 255, 0.85);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: color 0.3s ease;
+}
+
+.global-nav-item:hover {
+    color: var(--nav-accent);
+}
+
+.global-nav-btn-cta {
+    background-color: var(--nav-accent);
+    color: #111;
+    text-decoration: none;
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.3s ease;
+}
+
+.global-nav-btn-cta:hover {
+    background-color: #ffb700;
+    transform: scale(1.05);
+}
+
+.global-nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* ==========================================================================
+   MOBILE MEDIA QUERY BREAKPOINT
+   ========================================================================== */
+@media (max-width: 768px) {
+    .global-nav-toggle {
+        display: block;
+    }
+
+    .global-nav-links {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--nav-primary);
+        flex-direction: column;
+        gap: 0;
+        padding: 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease-in-out;
+        box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+    }
+
+    .global-nav-links.mobile-active {
+        max-height: 400px;
+    }
+
+    .global-nav-item {
+        width: 100%;
+        text-align: center;
+        padding: 15px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .global-nav-btn-cta {
+        width: 80%;
+        text-align: center;
+        margin: 15px 0;
+        border-radius: 5px;
+    }
 }
 
 .nav-container {
@@ -129,8 +246,8 @@
 /* --- About Hero Section --- */
 .about-hero {
     position: relative;
-    min-height: 80vh; /* Increased height to cleanly fit the main title + verses */
-    background: linear-gradient(rgba(20, 43, 18, 0.85), rgba(15, 32, 14, 0.92)),
+    min-height: 50vh; /* Increased height to cleanly fit the main title + verses */
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4)),
                 url('../IMAGES/about.jpg'); 
     background-size: cover;
     background-position: center;
@@ -143,7 +260,13 @@
     flex-direction: column;
     width: 100%;
 }
-
+.about-hero h1,
+.about-hero .arabic-small,
+.about-hero .translation,
+.about-hero p {
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8), 
+                 -1px -1px 0px rgba(0, 0, 0, 0.6);
+}
 .hero-text {
     position: relative !important;
     top: 0 !important;
@@ -166,7 +289,7 @@
     display: flex;
     align-items: center; /* Vertically centers whatever remains */
     justify-content: center;
-    background: transparent !important; /* Prevents double-darkening layouts */
+    background: rgba(0, 0, 0, 0.3);
     /* CRUCIAL FIX: Creates a structural wall that forces everything below the navbar */
     padding-top: 160px !important; 
     padding-bottom: 60px !important;

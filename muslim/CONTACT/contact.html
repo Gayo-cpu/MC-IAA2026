@@ -4,92 +4,134 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#1e3d1a">
-    <title>Contact Us | MCIAA Association</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="../assets/css/common.css">
-    <link rel="stylesheet" href="../INDEX/index.css">
+    <title>Contact Us - MCIAA Portal</title>
+    <!-- Font Awesome Icon Kit -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- External Shared & Page-Specific Stylesheets -->
+    <link rel="stylesheet" href="..//DONATE/donate.css">
     <link rel="stylesheet" href="contact.css">
 </head>
 
 <body>
-    <nav class="main-nav" aria-label="Primary navigation">
-        <div class="nav-container">
-            <a href="../INDEX/index.html" class="logo" data-i18n="nav.brand" aria-label="Home">
-                <i class="fas fa-moon"></i> MCIAA <span>Association</span>
+    <!-- Global Static Navbar -->
+    <nav class="global-navbar">
+        <div class="global-nav-container">
+            <a href="../INDEX/index.html" class="global-nav-brand">
+                MCIAA <span class="global-brand-sub">Portal</span>
             </a>
-            <ul class="nav-menu">
-                <li><a href="../INDEX/index.html" data-i18n="nav.home">Home</a></li>
-                <li><a href="../ABOUT/about.html" data-i18n="nav.about">About Us</a></li>
-                <li><a href="../HIFZ/hifz.html" data-i18n="nav.programs">Programs</a></li>
-                <li><a href="../ASK_IMAM/ask_imam.html" data-i18n="nav.askImam">Ask Imam</a></li>
-                <li><a href="../NEWS/news.php" data-i18n="nav.news">News</a></li>
-                <li><a href="../DONATE/donate.html" data-i18n="nav.donate">Donate</a></li>
-                <li><a href="../CONTACT/contact.html" data-i18n="nav.contact">Contact Us</a></li>
-            </ul>
-            <div class="nav-actions">
-                <div class="nav-control-group">
-                    <label for="languageSelect" class="sr-only">Language</label>
-                    <select id="languageSelect" class="language-select" aria-label="Choose site language">
-                        <option value="en">English</option>
-                        <option value="sw">Kiswahili</option>
-                        <option value="ar">العربية</option>
-                    </select>
-                    <button id="themeToggle" class="theme-toggle" aria-label="Toggle color theme">
-                        <i class="fas fa-moon"></i>
-                    </button>
-                </div>
-                <div class="nav-auth">
-                    <a href="../LOGIN/login.html" class="login-link" data-i18n="nav.login">Login</a>
-                    <a href="../REGISTER/register.html" class="cta-btn" data-i18n="nav.join">Join Us</a>
-                </div>
+            <div class="global-nav-links" id="global-nav-links">
+                <a href="../INDEX/index.html" class="global-nav-item">Home</a>
+                <a href="../ABOUT/about.html" class="global-nav-item">About Us</a>
+                <a href="../HIFZ/hifz.html" class="global-nav-item">Programs</a>
+                <a href="../ASK_IMAM/ask_imam.html" class="global-nav-item">Ask Imam</a>
+                <a href="../NEWS/news.html" class="global-nav-item">News</a>
+                <a href="../DONATE/donate.html" class="global-nav-item">Donate</a>
+                <a href="contact.html" class="global-nav-item">Contact Us</a>
+                <!-- <a href="../DONATE/donate.html" class="global-nav-btn-cta">Donate Now</a> -->
+            </div>
+
+            <div class="nav-auth">
+                <a href="../LOGIN/login.html" class="login-link" data-i18n="nav.login">Login</a>
+                <a href="../REGISTER/register.html" class="cta-btn" data-i18n="nav.join">Join Us</a>
             </div>
         </div>
+        </div>
     </nav>
+    <!-- Header Banner -->
+    <section class="contact-hero">
+        <div class="hero-content">
+            <h1>Get In Touch</h1>
+            <p>Have questions about events, announcements, or community programs? Drop us a message below.</p>
+        </div>
+    </section>
 
-    <main class="contact-page">
-        <section class="contact-intro">
-            <div>
-                <h1>Contact MCIAA</h1>
-                <p>Send us your questions, suggestions, or partner requests. We are here for the youth and community of
-                    Arusha.</p>
-            </div>
-        </section>
+    <!-- Main Content Layout Section -->
+    <main class="contact-wrapper">
+        <div class="contact-grid">
 
-        <section class="contact-form-section">
-            <div class="form-card">
-                <h2>Send a Message</h2>
-                <form id="contactForm">
-                    <label for="contactName">Your Name</label>
-                    <input type="text" id="contactName" required>
+            <!-- Left Side: Directory Information Card -->
+            <div class="info-card">
+                <h2>Community Hub</h2>
+                <p class="info-intro">Reach out to the MCIAA management team or visit our office platform directly on
+                    campus.</p>
 
-                    <label for="contactEmail">Email Address</label>
-                    <input type="email" id="contactEmail" required>
+                <div class="info-links-stack">
+                    <div class="info-item">
+                        <div class="icon-bubble"><i class="fa-solid fa-location-dot"></i></div>
+                        <div class="info-text">
+                            <h3>Our Location</h3>
+                            <p>Institute of Accountancy Arusha (IAA)</p>
+                            <p>Arusha, Tanzania</p>
+                        </div>
+                    </div>
 
-                    <label for="contactSubject">Subject</label>
-                    <input type="text" id="contactSubject" required>
+                    <div class="info-item">
+                        <div class="icon-bubble"><i class="fa-solid fa-envelope"></i></div>
+                        <div class="info-text">
+                            <h3>Email Address</h3>
+                            <p>info@mciaa-portal.org</p>
+                        </div>
+                    </div>
 
-                    <label for="contactMessage">Message</label>
-                    <textarea id="contactMessage" rows="5" required></textarea>
+                    <div class="info-item">
+                        <div class="icon-bubble"><i class="fa-solid fa-phone"></i></div>
+                        <div class="info-text">
+                            <h3>Phone Contact</h3>
+                            <p>+255 (0) 700 000 000</p>
+                        </div>
+                    </div>
 
-                    <button type="submit" class="btn-submit">Send Message</button>
-                </form>
-                <div id="contactSuccess" class="success-message" style="display:none;">
-                    <i class="fas fa-check-circle"></i>
-                    <p>Your message has been sent successfully. Our team will reply as soon as possible.</p>
+                    <div class="info-item">
+                        <div class="icon-bubble"><i class="fa-solid fa-clock"></i></div>
+                        <div class="info-text">
+                            <h3>Office Hours</h3>
+                            <p>Monday - Friday: 8:00 AM - 4:00 PM</p>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </section>
+
+            <!-- Right Side: Contact Intake Form Wrapper -->
+            <div class="form-card">
+                <h2>Send Us a Message</h2>
+                <form id="contactForm" action="process-contact.php" method="POST" class="contact-form">
+
+                    <div class="form-group">
+                        <label for="full_name">Full Name</label>
+                        <input type="text" id="full_name" name="full_name" required placeholder="Enter your full name">
+                        <span class="error-msg" id="nameError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email_address">Email Address</label>
+                        <input type="email" id="email_address" name="email_address" required
+                            placeholder="name@example.com">
+                        <span class="error-msg" id="emailError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="msg_subject">Subject</label>
+                        <input type="text" id="msg_subject" name="msg_subject" required
+                            placeholder="What is this regarding?">
+                        <span class="error-msg" id="subjectError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="user_message">Your Message</label>
+                        <textarea id="user_message" name="user_message" rows="6" required
+                            placeholder="Type your message details here..."></textarea>
+                        <span class="error-msg" id="messageError"></span>
+                    </div>
+
+                    <button type="submit" class="btn-gold-action">Send Message</button>
+                </form>
+            </div>
+
+        </div>
     </main>
 
-    <footer class="main-footer">
-        <p>&copy; 2026 MCIAA Association. All Rights Reserved.</p>
-    </footer>
-    <script src="../assets/js/common.js"></script>
-
-
-    <script src="../assets/js/backend.js"></script>
+    <!-- Layout Scripts linked sequentially at the baseline -->
+    <script src="navbar.js"></script>
     <script src="contact.js"></script>
 </body>
 

@@ -4,93 +4,303 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#1e3d1a">
-    <title>Donate | MCIAA Association</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="../assets/css/common.css">
-    <link rel="stylesheet" href="../INDEX/index.css">
+    <title>Donate to MCIAA - Support Our Mission</title>
+    <!-- FontAwesome for standard brand and interaction icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Link to Separate CSS Stylesheet -->
     <link rel="stylesheet" href="donate.css">
+    <link rel="stylesheet" href="../CONTACT/contact.css">
 </head>
 
 <body>
-    <nav class="main-nav" aria-label="Primary navigation">
-        <div class="nav-container">
-            <a href="../INDEX/index.html" class="logo" data-i18n="nav.brand" aria-label="Home">
-                <i class="fas fa-moon"></i> MCIAA <span>Association</span>
+    <nav class="global-navbar">
+        <div class="global-nav-container">
+            <a href="../INDEX/index.html" class="global-nav-brand">
+                MCIAA <span class="global-brand-sub">Portal</span>
             </a>
-            <ul class="nav-menu">
-                <li><a href="../INDEX/index.html" data-i18n="nav.home">Home</a></li>
-                <li><a href="../ABOUT/about.html" data-i18n="nav.about">About Us</a></li>
-                <li><a href="../HIFZ/hifz.html" data-i18n="nav.programs">Programs</a></li>
-                <li><a href="../ASK_IMAM/ask_imam.html" data-i18n="nav.askImam">Ask Imam</a></li>
-                <li><a href="../NEWS/news.php" data-i18n="nav.news">News</a></li>
-                <li><a href="../DONATE/donate.html" data-i18n="nav.donate">Donate</a></li>
-                <li><a href="../CONTACT/contact.html" data-i18n="nav.contact">Contact Us</a></li>
-            </ul>
-            <div class="nav-actions">
-                <div class="nav-control-group">
-                    <label for="languageSelect" class="sr-only">Language</label>
-                    <select id="languageSelect" class="language-select" aria-label="Choose site language">
-                        <option value="en">English</option>
-                        <option value="sw">Kiswahili</option>
-                        <option value="ar">العربية</option>
-                    </select>
-                    <button id="themeToggle" class="theme-toggle" aria-label="Toggle color theme">
-                        <i class="fas fa-moon"></i>
-                    </button>
+            <div class="global-nav-links" id="global-nav-links">
+                <a href="../INDEX/index.html" class="global-nav-item">Home</a>
+                <a href="../ABOUT/about.html" class="global-nav-item">About Us</a>
+                <a href="../HIFZ/hifz.html" class="global-nav-item">Programs</a>
+                <a href="../ASK_IMAM/ask_imam.html" class="global-nav-item">Ask Imam</a>
+                <a href="../NEWS/news.html" class="global-nav-item">News</a>
+                <a href="donate.html" class="global-nav-item">Donate</a>
+                <a href="../CONTACT/contact.html" class="global-nav-item">Contact Us</a>
+                <!-- <a href="donate.html" class="global-nav-btn-cta">Donate Now</a> -->
+            </div>
+
+            <div class="nav-auth">
+                <a href="../LOGIN/login.html" class="login-link" data-i18n="nav.login">Login</a>
+                <a href="../REGISTER/register.html" class="cta-btn" data-i18n="nav.join">Join Us</a>
+            </div>
+        </div>
+        </div>
+    </nav>
+    <!-- 1. HERO SECTION -->
+    <section class="hero">
+        <h1>Donate to MCIAA</h1>
+        <p>Empowering Muslim students, strengthening communities, and extending a helping hand to those in need. Your
+            contribution helps us serve communities, support education, provide emergency assistance, and create lasting
+            positive change.</p>
+        <!-- <a href="donate.html" class="btn-main">Donate Now</a> -->
+        <button onclick="selectCategory('Support MCIAA Association')" class="btn-main"> Donate
+        </button>
+    </section>
+
+    <div class="container">
+        <!-- 2. CATEGORY SELECTOR -->
+        <h2 class="section-title">Choose Where Your Donation Goes</h2>
+        <div class="grid-2">
+            <div class="card">
+                <div>
+                    <h3>1. Support MCIAA Association</h3>
+                    <p>Help sustain the Association's mission and operations.</p>
+                    <ul>
+                        <li>Educational programs</li>
+                        <li>Student development initiatives</li>
+                        <li>Conferences and events</li>
+                        <li>Community outreach projects</li>
+                        <li>Website and digital services</li>
+                        <li>Organizational growth</li>
+                    </ul>
                 </div>
-                <div class="nav-auth">
-                    <a href="../LOGIN/login.html" class="login-link" data-i18n="nav.login">Login</a>
-                    <a href="../REGISTER/register.html" class="cta-btn" data-i18n="nav.join">Join Us</a>
+                <button onclick="selectCategory('Support MCIAA Association')" class="btn-main">Donate to MCIAA</button>
+            </div>
+
+            <div class="card">
+                <div>
+                    <h3>2. Charity & Emergency Support Fund</h3>
+                    <p>Help individuals and families facing difficult circumstances.</p>
+                    <ul>
+                        <li>Medical assistance</li>
+                        <li>Sick members</li>
+                        <li>Emergency relief</li>
+                        <li>Educational sponsorships</li>
+                        <li>Orphans and vulnerable families</li>
+                        <li>Funeral and bereavement support</li>
+                    </ul>
+                </div>
+                <button onclick="selectCategory('Charity & Emergency Support Fund')" class="btn-main">Donate to Charity
+                    Fund</button>
+            </div>
+        </div>
+
+        <!-- 3. PROGRESS TRACKER -->
+        <div class="tracker-box">
+            <h3>Community Support Progress Tracker</h3>
+            <div class="progress-bar-container">
+                <div class="progress-bar" style="width: 72.5%;"></div>
+            </div>
+            <p class="progress-text">Goal: 1M | Raised: 13K | <span style="color:var(--secondary-color);">
+                    25.5% Complete
+                </span></p>
+            <p style="margin-top:10px; font-style:italic; color:#6c757d;">Every contribution brings us closer to making
+                a greater impact.</p>
+        </div>
+
+        <!-- 4. MAIN FORM CAPTURE -->
+        <span id="donation-form-section"></span>
+        <h2 class="section-title" style="margin-top: 60px;">Make a Donation</h2>
+
+        <div class="form-wrapper">
+            <form action="process-donation.php" method="POST">
+
+                <div class="form-group">
+                    <label>Donation Category</label>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="category" id="cat-assoc" value="Support MCIAA Association"
+                                required> Support MCIAA Association
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="category" id="cat-charity"
+                                value="Charity & Emergency Support Fund"> Charity & Emergency Support Fund
+                        </label>
+                    </div>
+                </div>
+
+                <div class="grid-2" style="grid-template-columns: 1fr 1fr; gap:15px; margin-bottom:0;">
+                    <div class="form-group">
+                        <label for="full_name">Full Name</label>
+                        <input type="text" name="full_name" id="full_name" class="form-control" placeholder="John Doe"
+                            required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" name="email" id="email" class="form-control" placeholder="john@example.com"
+                            required>
+                    </div>
+                </div>
+
+                <div class="grid-2" style="grid-template-columns: 1fr 1fr; gap:15px; margin-bottom:0;">
+                    <div class="form-group">
+                        <label for="phone">Phone Number (Optional)</label>
+                        <input type="text" name="phone" id="phone" class="form-control" placeholder="07XXXXXXXX">
+                    </div>
+                    <div class="form-group">
+                        <label for="amount">Donation Amount (TZS / USD)</label>
+                        <input type="number" name="amount" id="amount" class="form-control" placeholder="10000" min="1"
+                            required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Donation Type</label>
+                    <div class="radio-group">
+                        <label class="radio-option"><input type="radio" name="donation_type" value="One-Time Donation"
+                                checked> One-Time Donation</label>
+                        <label class="radio-option"><input type="radio" name="donation_type" value="Monthly Donation">
+                            Monthly Donation</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Payment Method</label>
+                    <div class="radio-group" id="payment-methods">
+                        <label class="radio-option"><input type="radio" name="payment_method" value="M-Pesa" required>
+                            M-Pesa</label>
+                        <label class="radio-option"><input type="radio" name="payment_method" value="Airtel Money">
+                            Airtel Money</label>
+                        <label class="radio-option"><input type="radio" name="payment_method" value="Tigo Pesa"> Tigo
+                            Pesa</label>
+                        <label class="radio-option"><input type="radio" name="payment_method" value="HaloPesa">
+                            HaloPesa</label>
+                        <label class="radio-option"><input type="radio" name="payment_method" value="Bank Transfer">
+                            Bank Transfer</label>
+                    </div>
+
+                    <!-- DYNAMIC SYSTEM INSTRUCTIONS BOX -->
+                    <div id="instruction-display" class="instruction-pane"></div>
+                </div>
+
+                <!-- VERIFICATION REFERENCE ENGINE FIELD -->
+                <div class="form-group">
+                    <label for="transaction_id" style="color: #b02a37;"><i class="fa-solid fa-receipt"></i> Transaction
+                        Reference ID / Token</label>
+                    <input type="text" name="transaction_id" id="transaction_id" class="form-control"
+                        style="border-color: #f5c2c7; background-color: #fff8f8;"
+                        placeholder="e.g., RK84920492XX or Bank Ref Number" required>
+                    <small style="color: #6c757d; display:block; margin-top:4px;">Paste the exact unique receipt
+                        transaction code received on your confirmation message to help administration match your
+                        claim.</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Message (Optional)</label>
+                    <textarea name="message" id="message" class="form-control" rows="3"
+                        placeholder="Leave an encouraging note..."></textarea>
+                </div>
+
+                <button type="submit" class="btn-main">Complete Donation</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- 5. WHY DONATE / ABOUT SUMMARY -->
+    <section class="bg-light" style="padding: 60px 0;">
+        <div class="container">
+            <h2 class="section-title">Why Donate?</h2>
+            <div class="grid-2">
+                <div>
+                    <h3 style="color:var(--primary-color); margin-bottom:10px;">Our Vision & Mission</h3>
+                    <p style="margin-bottom:15px;"><b>Vision:</b> To build a united, empowered, and impactful Muslim
+                        student community that contributes positively to society.</p>
+                    <p><b>Mission:</b> To support education, leadership development, community engagement, and welfare
+                        initiatives for members and society.</p>
+                </div>
+                <div>
+                    <h3 style="color:var(--primary-color); margin-bottom:10px;">Current Active Projects</h3>
+                    <ul style="padding-left:20px;">
+                        <li>Student mentorship programs</li>
+                        <li>Community outreach activities</li>
+                        <li>Educational workshops</li>
+                        <li>Welfare and emergency support</li>
+                        <li>Digital transformation initiatives</li>
+                    </ul>
                 </div>
             </div>
         </div>
-    </nav>
+    </section>
 
-    <main class="donate-page">
-        <section class="donate-hero">
-            <div>
-                <h1>Support MCIAA Programs</h1>
-                <p>Your contribution enables Qur'an classes, youth development, and community service projects in
-                    Arusha.</p>
-            </div>
-        </section>
-
-        <section class="donation-form-section">
-            <div class="form-card">
-                <h2>Make a Donation</h2>
-                <p>Fill in your details and the amount you wish to support.</p>
-                <form id="donationForm">
-                    <label for="donorName">Full Name</label>
-                    <input type="text" id="donorName" required>
-
-                    <label for="donorEmail">Email Address</label>
-                    <input type="email" id="donorEmail" required>
-
-                    <label for="donationAmount">Donation Amount (USD)</label>
-                    <input type="number" id="donationAmount" min="1" required>
-
-                    <label for="donationMessage">Message (optional)</label>
-                    <textarea id="donationMessage" rows="4"></textarea>
-
-                    <button type="submit" class="btn-submit">Submit Donation</button>
-                </form>
-                <div id="donationSuccess" class="success-message" style="display:none;">
-                    <i class="fas fa-check-circle"></i>
-                    <p>Thank you! Your donation request is recorded. Our team will contact you soon.</p>
+    <!-- 6. IMPACT & TESTIMONIALS -->
+    <section style="padding: 60px 0;">
+        <div class="container">
+            <h2 class="section-title">Success Stories & Testimonials</h2>
+            <p style="text-align:center; margin-bottom:4px; font-style:italic;">Through the generosity of donors, MCIAA
+                has supported students, assisted families in emergencies, and organized programs that continue to impact
+                lives positively.</p>
+            <div class="grid-2" style="margin-top:4px;">
+                <div class="faq-item" style="border-left: 4px solid var(--secondary-color);">
+                    <p>"The support I received transformed my educational journey and gave me hope during a difficult
+                        time."</p>
+                    <small><b>— Beneficiary</b></small>
+                </div>
+                <div class="faq-item" style="border-left: 4px solid var(--secondary-color);">
+                    <p>"Donating through MCIAA gave me confidence that my contribution would reach those who truly
+                        needed it."</p>
+                    <small><b>— Donor</b></small>
                 </div>
             </div>
-        </section>
-    </main>
+        </div>
+    </section>
 
-    <footer class="main-footer">
-        <p>&copy; 2026 MCIAA Association. All Rights Reserved.</p>
+    <!-- 7. TRANSPARENCY & ACCOUNTABILITY -->
+    <section class="bg-light" style="padding: 60px 0;">
+        <div class="container">
+            <h2 class="section-title">Transparency & Accountability</h2>
+            <p style="text-align:center; margin-bottom:30px;">We are committed to responsible stewardship of every
+                contribution.</p>
+            <div class="grid-2" style="grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));">
+                <div class="faq-item">
+                    <h5>Financial Accountability</h5>
+                    <p style="font-size:0.9rem; color:#555;">All donations are recorded, monitored, and allocated
+                        according to their intended purpose.</p>
+                </div>
+                <div class="faq-item">
+                    <h5>Annual Reports</h5>
+                    <p style="font-size:0.9rem; color:#555;">Access yearly reports detailing donations received and
+                        their impact.</p>
+                </div>
+                <div class="faq-item">
+                    <h5>Project Reports</h5>
+                    <p style="font-size:0.9rem; color:#555;">Review updates and outcomes from projects funded through
+                        donations.</p>
+                </div>
+                <div class="faq-item">
+                    <h5>Donation Receipts</h5>
+                    <p style="font-size:0.9rem; color:#555;">Official receipts are provided for every contribution.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. FREQUENTLY ASKED QUESTIONS -->
+    <section style="padding: 60px 0;">
+        <div class="container" style="max-width: 800px;">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <div class="faq-item">
+                <h4>Is my donation secure?</h4>
+                <p>Yes. All donations are processed through secure payment verification channels monitored by the
+                    executive desk.</p>
+            </div>
+            <div class="faq-item">
+                <h4>Can I receive a receipt?</h4>
+                <p>Yes. An official digital donation receipt will be issued via your email after verification checks
+                    wrap up.</p>
+            </div>
+            <div class="faq-item">
+                <h4>Can I donate monthly?</h4>
+                <p>Yes. You can choose either a one-time execution prompt or a structured recurring monthly payment
+                    framework.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 MCIAA. Built with commitment by Code Vanguard. All Rights Reserved.</p>
     </footer>
-    <script src="../assets/js/common.js"></script>
 
-
-    <script src="../assets/js/backend.js"></script>
+    <!-- Link to Separate JS File -->
     <script src="donate.js"></script>
 </body>
 

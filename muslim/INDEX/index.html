@@ -12,49 +12,37 @@
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
-    <link rel="stylesheet" href="../assets/css/common.css">
+    <!-- <link rel="stylesheet" href="../assets/css/common.css"> -->
     <!-- 1. Link the Main Styles (This has your grid and nav rules) -->
     <link rel="stylesheet" href="index.css">
 
     <!-- 2. Link the Hifz Specific Styles (This has your badges and hero logic) -->
-    <link rel="stylesheet" href="../HIFZ/hifz.css">
+    <!-- <link rel="stylesheet" href="../HIFZ/hifz.css"> -->
 </head>
 
 <body>
 
-    <!-- Reuse your Nav Bar from Index.html -->
-    <!-- Header / Navigation -->
-    <nav class="main-nav" aria-label="Primary navigation">
-        <div class="nav-container">
-            <a href="../INDEX/index.html" class="logo" data-i18n="nav.brand" aria-label="Home">
-                <i class="fas fa-moon"></i> MCIAA <span>Association</span>
+    <nav class="global-navbar">
+        <div class="global-nav-container">
+            <a href="index.html" class="global-nav-brand">
+                MCIAA <span class="global-brand-sub">Portal</span>
             </a>
-            <ul class="nav-menu">
-                <li><a href="../INDEX/index.html" data-i18n="nav.home">Home</a></li>
-                <li><a href="../ABOUT/about.html" data-i18n="nav.about">About Us</a></li>
-                <li><a href="../HIFZ/hifz.html" data-i18n="nav.programs">Programs</a></li>
-                <li><a href="../ASK_IMAM/ask_imam.html" data-i18n="nav.askImam">Ask Imam</a></li>
-                <li><a href="../NEWS/news.php" data-i18n="nav.news">News</a></li>
-                <li><a href="../DONATE/donate.html" data-i18n="nav.donate">Donate</a></li>
-                <li><a href="../CONTACT/contact.html" data-i18n="nav.contact">Contact Us</a></li>
-            </ul>
-            <div class="nav-actions">
-                <div class="nav-control-group">
-                    <label for="languageSelect" class="sr-only">Language</label>
-                    <select id="languageSelect" class="language-select" aria-label="Choose site language">
-                        <option value="en">English</option>
-                        <option value="sw">Kiswahili</option>
-                        <option value="ar">العربية</option>
-                    </select>
-                    <button id="themeToggle" class="theme-toggle" aria-label="Toggle color theme">
-                        <i class="fas fa-moon"></i>
-                    </button>
-                </div>
-                <div class="nav-auth">
-                    <a href="../LOGIN/login.html" class="login-link" data-i18n="nav.login">Login</a>
-                    <a href="../REGISTER/register.html" class="cta-btn" data-i18n="nav.join">Join Us</a>
-                </div>
+            <div class="global-nav-links" id="global-nav-links">
+                <a href="index.html" class="global-nav-item">Home</a>
+                <a href="../ABOUT/about.html" class="global-nav-item">About Us</a>
+                <a href="../HIFZ/hifz.html" class="global-nav-item">Programs</a>
+                <a href="../ASK_IMAM/ask_imam.html" class="global-nav-item">Ask Imam</a>
+                <a href="../NEWS/news.html" class="global-nav-item">News</a>
+                <a href="../DONATE/donate.html" class="global-nav-item">Donate</a>
+                <a href="../CONTACT/contact.html" class="global-nav-item">Contact Us</a>
+                <!-- <a href="donate.html" class="global-nav-btn-cta">Donate Now</a> -->
             </div>
+
+            <div class="nav-auth">
+                <a href="../LOGIN/login.html" class="login-link" data-i18n="nav.login">Login</a>
+                <a href="../REGISTER/register.html" class="cta-btn" data-i18n="nav.join">Join Us</a>
+            </div>
+        </div>
         </div>
     </nav>
 

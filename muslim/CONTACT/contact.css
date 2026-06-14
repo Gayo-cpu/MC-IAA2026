@@ -1,166 +1,211 @@
 
 :root {
-    --bg: #f7faf6;
-    --surface: #ffffff;
-    --accent: #d4af37;
-    --dark: #203725;
-    --border: #e8ede5;
-}
-
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: 'Poppins', sans-serif;
+    --nav-primary: #2d4a33; 
+    --nav-accent: #ffc107;
+    --nav-dark: #212529;
+    --brand-green: #2d4a33; 
+    --brand-gold: #ffb700;
+    --brand-gold-hover: #e5a400;
+    --text-dark: #212529;
+    --bg-light: #f8f9fa;
+    --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
 }
 
 body {
-    background: var(--bg);
-    color: var(--dark);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-light);
+    color: var(--text-dark);
 }
 
-.main-nav {
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    background: white;
-    border-bottom: 1px solid rgba(0,0,0,0.05);
+/* --- Hero Showcase Strip --- */
+.contact-hero {
+    background-color: var(--brand-green);
+    color: #fff;
+    padding: 60px 0;
+    text-align: center;
 }
 
-.nav-container {
+.hero-content {
+    width: 90%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.contact-hero h1 {
+    font-size: 2.5rem;
+    margin: 0 0 15px 0;
+    font-weight: 700;
+}
+
+.contact-hero p {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.85);
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* --- Main Layout Grid Structural Setup --- */
+.contact-wrapper {
+    width: 90%;
     max-width: 1200px;
-    margin: 0 auto;
-    padding: 18px 24px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 24px;
+    margin: 40px auto 60px auto; /* Lifts contents slightly overlaying the hero block */
 }
 
-.nav-menu {
-    list-style: none;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 16px;
-}
-
-.nav-menu a {
-    color: var(--dark);
-    font-weight: 600;
-    text-decoration: none;
-}
-
-.nav-menu a.active,
-.nav-menu a:hover {
-    color: var(--accent);
-}
-
-.contact-page {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 60px 24px 80px;
-}
-
-.contact-intro {
-    background: linear-gradient(135deg, rgba(30,61,26,0.9), rgba(34,90,40,0.9));
-    border-radius: 30px;
-    padding: 60px 40px;
-    color: white;
-    margin-bottom: 40px;
-}
-
-.contact-intro h1 {
-    font-size: clamp(2.5rem, 4vw, 3.5rem);
-    margin-bottom: 16px;
-}
-
-.contact-intro p {
-    font-size: 1.05rem;
-    line-height: 1.8;
-    max-width: 760px;
-}
-
-.contact-form-section {
+.contact-grid {
     display: grid;
-    place-items: center;
+    grid-template-columns: 1fr 1.3fr;
+    gap: 30px;
 }
 
-.form-card {
-    width: 100%;
-    max-width: 660px;
-    background: var(--surface);
-    border-radius: 30px;
-    box-shadow: 0 18px 45px rgba(0,0,0,0.08);
+/* --- Left Card Content: Info Directory --- */
+.info-card {
+    background: #fff;
     padding: 40px;
+    border-radius: 8px;
+    box-shadow: var(--card-shadow);
+}
+
+.info-card h2 {
+    color: var(--brand-green);
+    font-size: 1.8rem;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.info-intro {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 35px;
+}
+
+.info-links-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.info-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.icon-bubble {
+    background-color: rgba(15, 81, 50, 0.08);
+    color: var(--brand-green);
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+}
+
+.info-text h3 {
+    margin: 0 0 5px 0;
+    font-size: 1.05rem;
+    color: var(--text-dark);
+}
+
+.info-text p {
+    margin: 0;
+    color: #555;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+/* --- Right Card Content: Form Frame & Green Trim --- */
+.form-card {
+    background: #fff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: var(--card-shadow);
+    border: 2px solid var(--brand-green); /* Identical to donation element frame styles */
 }
 
 .form-card h2 {
-    margin-bottom: 24px;
+    color: var(--brand-green);
+    font-size: 1.8rem;
+    margin-top: 0;
+    margin-bottom: 25px;
 }
 
-.form-card label {
-    display: block;
-    margin-bottom: 10px;
-    font-weight: 600;
-}
-
-.form-card input,
-.form-card textarea {
-    width: 100%;
-    padding: 16px;
-    border: 1px solid var(--border);
-    border-radius: 16px;
-    margin-bottom: 22px;
-    background: #fbfcfa;
-}
-
-.btn-submit {
-    width: 100%;
-    border: none;
-    background: var(--accent);
-    color: var(--dark);
-    padding: 18px;
-    border-radius: 16px;
-    font-weight: 700;
-    cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.btn-submit:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 18px 30px rgba(212,175,55,0.25);
-}
-
-.success-message {
-    margin-top: 20px;
-    background: #eaf2e6;
-    border: 1px solid #b8d2af;
-    color: #215c21;
-    padding: 22px;
-    border-radius: 18px;
+.contact-form {
     display: flex;
-    gap: 14px;
-    align-items: center;
+    flex-direction: column;
+    gap: 20px;
 }
 
-.success-message i {
-    font-size: 1.75rem;
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
 }
 
-.main-footer {
-    background: var(--dark);
-    color: white;
-    text-align: center;
-    padding: 28px 24px;
+.form-group label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #444;
 }
 
-.main-footer p {
-    margin: 0;
+.form-group input,
+.form-group textarea {
+    padding: 12px 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-family: inherit;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    background-color: #fafafa;
 }
 
-@media (max-width: 768px) {
-    .contact-intro,
-    .form-card {
-        padding: 32px 24px;
-    }
+/* Focused Element Interactions matching layout rings */
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--brand-green);
+    box-shadow: 0 0 0 3px rgba(15, 81, 50, 0.15);
+    background-color: #fff;
 }
+
+/* Form Inline Error Styling */
+.error-msg {
+    color: #dc3545;
+    font-size: 0.85rem;
+    font-weight: 500;
+    min-height: 18px;
+}
+
+/* --- Interactive Premium Action Button --- */
+.btn-gold-action {
+    background-color: var(--brand-gold);
+    color: #111;
+    border: none;
+    padding: 15px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-radius: 30px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.3s ease, box-shadow 0.3s ease;
+    will-change: transform, box-shadow;
+}
+
+.btn-gold-action:hover {
+    background-color: var(--brand-gold-hover);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(255, 183, 0, 0.35);
+}
+
+.btn-gold-action:active {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 10px rgba(255, 183, 0, 0.2);
+}
+

@@ -1,0 +1,150 @@
+/* ==========================================================================
+   NEWS ARTICLE LAYOUT STYLE GUIDE
+   ========================================================================== */
+
+:root {
+    --brand-green: #2d4a33;
+    --brand-gold: #ffb700;
+    --text-dark: #222222;
+    --text-muted: #666666;
+    --bg-light: #f9f9f9;
+}
+
+body {
+    font-family: 'Poppins', 'Segoe UI', sans-serif;
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+.news-container {
+    max-width: 800px; /* Keeps reading line-length perfectly comfortable */
+    margin: 60px auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.news-post {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+/* --- 1. Header Typography --- */
+.back-to-news {
+    display: inline-block;
+    color: var(--brand-green);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    transition: color 0.2s ease;
+}
+
+.back-to-news:hover {
+    color: var(--brand-gold);
+}
+
+.news-tag {
+    display: inline-block;
+    background-color: rgba(45, 74, 51, 0.1);
+    color: var(--brand-green);
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 4px 12px;
+    border-radius: 4px;
+    letter-spacing: 0.5px;
+    margin-bottom: 12px;
+}
+
+.news-headline {
+    font-size: 2.3rem;
+    color: var(--brand-green);
+    line-height: 1.25;
+    margin: 0 0 15px 0;
+    font-weight: 700;
+}
+
+.news-meta {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    border-bottom: 1px solid #eeeeee;
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+}
+
+.meta-item:not(:last-child)::after {
+    content: "•";
+    margin: 0 10px;
+    color: #ccc;
+}
+
+/* --- 2. Picture Presentation Area --- */
+.news-image-wrapper {
+    margin-bottom: 35px;
+}
+
+.news-featured-img {
+    width: 100%;
+    height: auto;
+    max-height: 450px;
+    object-fit: cover; /* Crops cleanly if image dimensions vary */
+    border-radius: 6px;
+}
+
+.image-caption {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-top: 8px;
+    font-style: italic;
+    text-align: center;
+}
+
+/* --- 3. Body Content & Quotes Formatting --- */
+.news-content p {
+    font-size: 1.05rem;
+    color: #333333;
+    margin-bottom: 22px;
+}
+
+.news-content .lead-paragraph {
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: var(--brand-green);
+    line-height: 1.5;
+}
+
+/* The Quote Element Box */
+.news-quote {
+    margin: 35px 0;
+    padding: 20px 30px;
+    background-color: #f4f7f5;
+    border-left: 5px solid var(--brand-green);
+    border-radius: 0 8px 8px 0;
+}
+
+.news-quote p {
+    font-size: 1.2rem;
+    font-style: italic;
+    color: var(--brand-green);
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.news-quote cite {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Responsive adjustment for clean mobile screens */
+@media (max-width: 600px) {
+    .news-post { padding: 20px; }
+    .news-headline { font-size: 1.75rem; }
+}

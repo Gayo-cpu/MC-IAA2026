@@ -1,177 +1,453 @@
-
 :root {
-    --bg: #f6f9f5;
-    --surface: #ffffff;
-    --accent: #d4af37;
-    --dark: #162d18;
-    --border: #e7ece3;
+    --nav-primary: #2d4a33; 
+    --nav-accent: #ffc107;
+    --nav-dark: #212529;
+    --brand-green: #2d4a33; 
+    --brand-gold: #ffb700;
+    --brand-gold-hover: #e5a400;
+    --text-dark: #212529;
+    --bg-light: #f8f9fa;
+    --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
 }
 
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: 'Poppins', sans-serif;
+
+* { 
+    box-sizing: border-box; 
+    margin: 0; 
+    padding: 0; 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
 }
 
-body {
-    background: var(--bg);
-    color: var(--dark);
+body { 
+    color: var(--dark-color); 
+    background-color: #fff; 
+    line-height: 1.6; 
 }
 
-.main-nav {
+.container { 
+    width: 90%; 
+    max-width: 1200px; 
+    margin: 0 auto; 
+    padding: 40px 20px; 
+}
+
+/* Hero Styling */
+.hero { 
+    background: linear-gradient(rgba(15,81,50,0.85), rgba(15,81,50,0.95)), url('../assets/images/hero-bg.jpg') center/cover; 
+    color: #fff; 
+    text-align: center; 
+    padding: 100px 20px; 
+}
+
+.hero h1 { 
+    font-size: 3rem; 
+    margin-bottom: 20px; 
+    text-transform: uppercase; 
+    letter-spacing: 1px; 
+}
+
+.hero p { 
+    font-size: 1.2rem; 
+    max-width: 800px; 
+    margin: 0 auto 30px; 
+    opacity: 0.9; 
+}
+
+.btn-main { 
+    background-color: #ffb700; 
+    color: auto;            
+    width: auto !important;
+    min-width: 200px;          /* ADD THIS: Gives it a standard baseline width */
+    display: inline-flex;      /* ADD THIS: Fits closely to the text size */
+    justify-content: center;   /* ADD THIS: Centers the text inside */
+    align-items: center;
+    padding: 12px 28px;
+    font-size: 1.2rem;
+    font-weight: 700;          
+    text-transform: uppercase; 
+    letter-spacing: 0.5px;
+    border: none;
+    border-radius: 6px;      
+    cursor: pointer;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.3s ease, box-shadow 0.3s ease;
+    will-change: transform, box-shadow;
+}
+
+.btn-main:hover { 
+    transform: translateY(-3px); 
+    box-shadow: 0 10px 25px rgba(255, 183, 0, 0.35);
+}
+.btn-main:active {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 10px rgba(255, 183, 0, 0.2);
+}
+
+/* Section Layouts */
+.section-title { 
+    text-align: center; 
+    font-size: 2.2rem; 
+    color: var(--primary-color); 
+    margin-bottom: 40px; 
+    position: relative; 
+}
+
+.section-title::after { 
+    content: ''; 
+    width: 80px; 
+    height: 4px; 
+    background: #ffc107; 
+    display: block; 
+    margin: 10px auto 0; 
+}
+
+.grid-2 { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); 
+    gap: 30px; 
+    margin-bottom: 50px; 
+}
+
+/* Category Cards */
+.card { 
+    background: #fff; 
+    padding: 30px; 
+    border-radius: var(--border-radius); 
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05); 
+    border-top: 5px solid var(--primary-color); 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: space-between; 
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease, border-top-color 0.3s ease;
+    will-change: transform, box-shadow;
+}
+.card:hover {
+    /* 1. Smoothly lift the card up up along the Y-axis */
+    transform: translateY(-10px);
+    
+    /* 2. Expand and tint the shadow using your primary green color to give a 3D depth effect */
+    box-shadow: 0 20px 35px rgba(15, 81, 50, 0.12);
+    
+    /* 3. Shift the top border accent to your secondary green to show active engagement */
+    border-top-color: var(--secondary-color);
+}
+
+/* Optional: Make the button inside the card scale slightly up when the card itself is hovered */
+.card:hover .btn-main {
+    background-color: #e0a800; /* Darkens the gold button slightly */
+    transform: scale(1.02);
+}
+
+.card h3 { 
+    font-size: 1.4rem; 
+    color: var(--primary-color); 
+    margin-bottom: 15px; 
+}
+
+.card ul { 
+    list-style: none; 
+    margin: 15px 0 25px; 
+}
+
+.card ul li { 
+    margin-bottom: 8px; 
+    padding-left: 20px; 
+    position: relative; 
+}
+
+.card ul li::before { 
+    content: "✓"; 
+    color: var(--secondary-color); 
+    position: absolute; 
+    left: 0; 
+    font-weight: bold; 
+}
+
+/* Progress Tracker */
+.tracker-box { 
+    background: var(--light-bg); 
+    padding: 40px; 
+    border-radius: var(--border-radius); 
+    text-align: center; 
+    margin: 40px 0; 
+    border: 1px solid #e9ecef; 
+}
+
+.progress-bar-container { 
+    background: #dee2e6; 
+    height: 25px; 
+    border-radius: 20px; 
+    margin: 20px 0; 
+    overflow: hidden; 
+    position: relative; 
+}
+
+.progress-bar { 
+    background: linear-gradient(90deg, var(--secondary-color), var(--primary-color)); 
+    height: 100%; 
+    border-radius: 20px; 
+    transition: width 1s ease-in-out; 
+}
+
+.progress-text { 
+    font-weight: bold; 
+    font-size: 1.2rem; 
+}
+
+/* Unified Form Styling */
+.form-wrapper { 
+    background: #fff; 
+    max-width: 700px; 
+    margin: 0 auto; 
+    padding: 40px; 
+    border-radius: var(--border-radius); 
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08); 
+    border: 1px solid #eee;
+     
+}
+
+.form-group { 
+    margin-bottom: 22px; 
+}
+
+.form-group label { 
+    display: block; 
+    font-weight: 600; 
+    margin-bottom: 8px; 
+    color: var(--dark-color); 
+}
+
+.form-control { 
+    width: 100%; 
+    padding: 12px; 
+    border: 1px solid #ced4da; 
+    border-radius: 5px; 
+    font-size: 1rem; 
+    transition: 0.3s; 
+}
+
+.form-control:focus { 
+    outline: none; 
+    border-color: var(--secondary-color); 
+    box-shadow: 0 0 0 3px rgba(25,135,84,0.15); 
+}
+
+.radio-group { 
+    display: flex; 
+    gap: 20px; 
+    flex-wrap: wrap; 
+    margin-top: 5px; 
+}
+
+.radio-option { 
+    display: flex; 
+    align-items: center; 
+    gap: 8px; 
+    cursor: pointer; 
+}
+
+/* Payment Instructions Chamber */
+.instruction-pane { 
+    background: #fff3cd; 
+    border-left: 5px solid #ffc107; 
+    padding: 15px; 
+    border-radius: 4px; 
+    margin-top: 10px; 
+    display: none; 
+    font-size: 0.95rem; 
+}
+
+/* Info grids & FAQs */
+.bg-light { 
+    background-color: var(--light-bg); 
+}
+
+.faq-item { 
+    background: #fff; 
+    padding: 20px; 
+    margin-bottom: 15px; 
+    border-radius: 5px; 
+    box-shadow: 0 2px 5px rgba(0,0,0,0.02); 
+    opacity: 0;
+    transition: 
+        transform 1s cubic-bezier(0.16, 1, 0.3, 1), 
+        opacity 0.8s ease-out, 
+        box-shadow 0.3s ease, 
+        border-left-color 0.3s ease,
+        background-color 0.3s ease;
+        
+    will-change: transform, opacity, box-shadow;
+    border-left: 4px solid transparent;
+}
+
+.faq-item h4 { 
+    color: var(--primary-color); 
+    margin-bottom: 8px; 
+}
+
+footer { 
+    background: var(--dark-color); 
+    color: #fff; 
+    text-align: center; 
+    padding: 30px 20px; 
+    font-size: 0.9rem; 
+}
+/* Odds: Set initial structural placement out to the Left */
+.faq-item:nth-of-type(odd) {
+    transform: translateX(-120px);
+}
+
+/* Evens: Set initial structural placement out to the Right */
+.faq-item:nth-of-type(even) {
+    transform: translateX(120px);
+}
+
+/* 3. The Active Target State: Snapped smoothly back to center */
+.faq-item.reveal-active {
+    opacity: 1;
+    transform: translateX(0);
+}
+.faq-item.reveal-active:hover {
+    /* 1. Lift the card up smoothly */
+    transform: translateY(-5px);
+    
+    /* 2. Deepen the shadow to give it a 3D elevation effect */
+    box-shadow: 0 12px 24px rgba(0,0,0,0.08);
+    
+    /* 3. Soften the background slightly to highlight focus */
+    background-color: #fdfdfd;
+    
+    /* 4. Illuminate the left accent border using your primary green */
+    border-left-color: var(--primary-color);
+}
+
+/* ==========================================================================
+   SHARED GLOBAL NAVBAR ARCHITECTURE
+   ========================================================================== */
+:root {
+    --nav-primary: #0f5132;
+    --nav-accent: #ffc107;
+    --nav-dark: #212529;
+}
+
+.global-navbar {
     position: sticky;
     top: 0;
-    background: white;
-    border-bottom: 1px solid rgba(0,0,0,0.05);
-    z-index: 100;
+    left: 0;
+    width: 100%;
+    background-color: var(--nav-primary);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    z-index: 9999; /* Ensures navbar always floats on top of sliding components */
+    padding: 15px 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.nav-container {
+.global-nav-container {
+    width: 90%;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 18px 24px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 20px;
 }
 
-.nav-menu {
-    list-style: none;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 16px;
-}
-
-.nav-menu a {
-    color: var(--dark);
-    font-weight: 600;
+.global-nav-brand {
+    color: #fff;
     text-decoration: none;
-}
-
-.nav-menu a.active,
-.nav-menu a:hover {
-    color: var(--accent);
-}
-
-.donate-page {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 60px 24px 80px;
-}
-
-.donate-hero {
-    background: linear-gradient(135deg, rgba(30,61,26,0.95), rgba(34,90,40,0.95));
-    border-radius: 30px;
-    padding: 60px 40px;
-    color: white;
-    margin-bottom: 40px;
-}
-
-.donate-hero h1 {
-    font-size: clamp(2.5rem, 4vw, 3.5rem);
-    margin-bottom: 16px;
-}
-
-.donate-hero p {
-    font-size: 1.05rem;
-    line-height: 1.8;
-    max-width: 760px;
-}
-
-.donation-form-section {
-    display: grid;
-    place-items: center;
-}
-
-.form-card {
-    width: 100%;
-    max-width: 640px;
-    background: var(--surface);
-    border-radius: 30px;
-    box-shadow: 0 18px 45px rgba(0,0,0,0.09);
-    padding: 40px;
-}
-
-.form-card h2 {
-    margin-bottom: 8px;
-}
-
-.form-card p {
-    margin-bottom: 24px;
-    color: #5c6d5f;
-    line-height: 1.7;
-}
-
-.form-card label {
-    display: block;
-    margin-bottom: 10px;
-    font-weight: 600;
-    color: var(--dark);
-}
-
-.form-card input,
-.form-card textarea {
-    width: 100%;
-    border: 1px solid var(--border);
-    border-radius: 16px;
-    padding: 16px;
-    margin-bottom: 20px;
-    background: #fbfdf8;
-    font-size: 1rem;
-    color: var(--dark);
-}
-
-.btn-submit {
-    width: 100%;
-    border: none;
-    background: var(--accent);
-    color: var(--dark);
-    padding: 18px;
-    border-radius: 16px;
+    font-size: 1.4rem;
     font-weight: 700;
-    font-size: 1rem;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.btn-submit:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 18px 30px rgba(212,175,55,0.3);
-}
-
-.success-message {
-    margin-top: 20px;
-    background: #e9f6e9;
-    border: 1px solid #b0d7b0;
-    color: #215c21;
-    padding: 22px;
-    border-radius: 18px;
+    letter-spacing: 0.5px;
     display: flex;
-    gap: 14px;
     align-items: center;
+    gap: 8px;
 }
 
-.success-message i {
-    font-size: 1.75rem;
+.global-nav-brand .global-brand-sub {
+    color: var(--nav-accent);
+    font-weight: 400;
 }
 
-.main-footer {
-    background: var(--dark);
-    color: white;
-    text-align: center;
-    padding: 28px 24px;
+.global-nav-links {
+    display: flex;
+    align-items: center;
+    gap: 25px;
 }
 
-.main-footer p {
-    margin: 0;
+.global-nav-item {
+    color: rgba(255, 255, 255, 0.85);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: color 0.3s ease;
 }
 
+.global-nav-item:hover {
+    color: var(--nav-accent);
+}
+
+.global-nav-btn-cta {
+    background-color: var(--nav-accent);
+    color: #111;
+    text-decoration: none;
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.3s ease;
+}
+
+.global-nav-btn-cta:hover {
+    background-color: #ffb700;
+    transform: scale(1.05);
+}
+
+.global-nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* ==========================================================================
+   MOBILE MEDIA QUERY BREAKPOINT
+   ========================================================================== */
 @media (max-width: 768px) {
-    .donate-hero {
-        padding: 40px 24px;
+    .global-nav-toggle {
+        display: block;
     }
-    .form-card {
-        padding: 30px 24px;
+
+    .global-nav-links {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--nav-primary);
+        flex-direction: column;
+        gap: 0;
+        padding: 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease-in-out;
+        box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+    }
+
+    .global-nav-links.mobile-active {
+        max-height: 400px;
+    }
+
+    .global-nav-item {
+        width: 100%;
+        text-align: center;
+        padding: 15px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .global-nav-btn-cta {
+        width: 80%;
+        text-align: center;
+        margin: 15px 0;
+        border-radius: 5px;
     }
 }
