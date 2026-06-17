@@ -1,0 +1,103 @@
+/* ==========================================================================
+   ADMIN DASHBOARD OVERVIEW TABLE STYLES
+   ========================================================================== */
+
+.news-management-card {
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    margin-top: 20px;
+}
+
+.news-management-card h3 {
+    color: #2d4a33; /* Your signature green */
+    margin-top: 0;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #ffb700; /* Gold underline accent */
+    padding-bottom: 10px;
+}
+
+.news-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.news-table th {
+    background-color: #2d4a33;
+    color: #ffffff;
+    padding: 12px;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+}
+
+.news-table td {
+    padding: 15px 12px;
+    border-bottom: 1px solid #dddddd;
+    vertical-align: middle;
+    font-size: 0.95rem;
+}
+
+/* Image Thumbnail in the list */
+.table-thumb {
+    width: 60px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+/* Status Badges */
+.status-badge {
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+.status-badge.live {
+    background-color: rgba(45, 74, 51, 0.1);
+    color: #2d4a33;
+}
+
+/* --- Clean Dashboard Buttons --- */
+.btn-action {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 14px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-right: 5px;
+    transition: all 0.2s ease;
+}
+
+/* Overview Button (Visible to all 5) */
+.btn-view {
+    background-color: #f4f7f5;
+    color: #2d4a33;
+    border: 1px solid #2d4a33;
+}
+.btn-view:hover {
+    background-color: #2d4a33;
+    color: #ffffff;
+}
+
+/* Edit Button (Master Only) */
+.btn-edit {
+    background-color: #ffb700;
+    color: #111111;
+}
+.btn-edit:hover {
+    background-color: #e5a400;
+}
+
+/* Delete Button (Master Only) */
+.btn-delete {
+    background-color: #d9534f;
+    color: #ffffff;
+}
+.btn-delete:hover {
+    background-color: #c9302c;
+}

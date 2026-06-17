@@ -1,0 +1,37 @@
+<div class="news-management-card">
+    <h3>📰 News Panel Overview</h3>
+    <table class="news-table">
+        <thead>
+            <tr>
+                <th>Image</th>
+                <th>Headline</th>
+                <th>Date</th>
+                <th>Status</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><img src="../IMAGES/about.jpg" class="table-thumb" alt="News"></td>
+                <td><strong>Building a Brighter Community: MCIAA Enters Next Phase</strong></td>
+                <td>June 15, 2026</td>
+                <td><span class="status-badge live">Live</span></td>
+                <td>
+                    <a href="news-detail.html?id=1" class="btn-action btn-view">
+                        <i class="fa-solid fa-eye"></i> Overview
+                    </a>
+
+                    <?php if ($_SESSION['admin_role'] == 'master_admin'): ?>
+                    <a href="edit-news.php?id=1" class="btn-action btn-edit">
+                        <i class="fa-solid fa-pen-to-square"></i> Edit
+                    </a>
+                    <a href="delete-news.php?id=1" class="btn-action btn-delete"
+                        onclick="return confirm('Are you sure?')">
+                        <i class="fa-solid fa-trash"></i> Delete
+                    </a>
+                    <?php endif; ?>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
