@@ -4,45 +4,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#1e3d1a">
-    <title>Login | Muslim Youth Association</title>
+    <title>Admin Login - MCIAA Portal</title>
     <link rel="stylesheet" href="login.css">
-    <link rel="stylesheet" href="../assets/css/common.css">
-    <link rel="stylesheet" href="../INDEX/index.css">
+    <!-- FontAwesome for the lock and user icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body>
-    <div class="registration-container">
-        <div class="form-header">
-            <h2>Welcome Back</h2>
-            <p>Please login to access your dashboard and programs.</p>
-        </div>
 
-        <form id="loginForm" action="#" method="POST">
-            <div class="input-group">
-                <label for="email">Email Address</label>
-                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+    <div class="login-wrapper">
+        <!-- Back to Main Portal Link -->
+        <a href="../INDEX/index.html" class="back-home-link"><i class="fa-solid fa-arrow-left"></i> Back to Portal</a>
+
+        <div class="login-card">
+            <!-- Brand Header -->
+            <div class="login-header">
+                <div class="brand-logo">
+                    <i class="fa-solid fa-user-shield"></i>
+                </div>
+                <h2>Admin Gateway</h2>
+                <p>Sign in to access the news dashboard control panel</p>
             </div>
 
-            <div class="input-group">
-                <label for="password">Password</label>
-                <input type="password" id="password" name="password" placeholder="Enter your password" required>
-            </div>
+            <!-- Login Form -->
+            <form action="" method="POST" class="login-form">
 
-            <button type="submit" class="btn-submit">Login</button>
-        </form>
-        <!-- <div class="admin-note">
-            <p>Admin demo login: <strong>admin@mcaa.org</strong> / <strong>Admin@123</strong></p>
-        </div> -->
+                <!-- Username/Email Field -->
+                <div class="input-group">
+                    <label for="username">Username or Email</label>
+                    <div class="input-field-wrapper">
+                        <i class="fa-solid fa-user input-icon"></i>
+                        <input type="text" id="username" name="username" placeholder="Enter your admin username"
+                            required autocomplete="username">
+                    </div>
+                </div>
 
-        <div class="form-footer">
-            <p>Don't have an account? <a href="../REGISTER/register.html">Register here</a></p>
-            <p><a href="../INDEX/index.html">← Back to Home</a></p>
+                <!-- Password Field -->
+                <div class="input-group">
+                    <div class="password-label-row">
+                        <label for="password">Password</label>
+                        <a href="#" class="forgot-password">Forgot?</a>
+                    </div>
+                    <div class="input-field-wrapper">
+                        <i class="fa-solid fa-lock input-icon"></i>
+                        <input type="password" id="password" name="password" placeholder="Enter security password"
+                            required autocomplete="current-password">
+                    </div>
+                </div>
+
+                <!-- Remember Me Checkbox -->
+                <div class="form-options">
+                    <label class="remember-me">
+                        <input type="checkbox" name="remember">
+                        <span>Keep me logged in</span>
+                    </label>
+                </div>
+
+                <!-- Submit Button (Clean standard shape) -->
+                <button type="submit" class="btn-login">
+                    Secure Sign In <i class="fa-solid fa-right-to-bracket"></i>
+                </button>
+
+            </form>
         </div>
     </div>
-    <script src="../assets/js/common.js"></script>
 
-    <script src="login.js"></script>
 </body>
 
 </html>

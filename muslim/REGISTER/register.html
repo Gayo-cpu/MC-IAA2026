@@ -4,54 +4,91 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#1e3d1a">
-    <title>Register | Muslim Youth Association</title>
+    <title>Member Registration - MCIAA Portal</title>
     <link rel="stylesheet" href="register.css">
-    <link rel="stylesheet" href="../assets/css/common.css">
-    <link rel="stylesheet" href="../INDEX/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body>
-    <div class="registration-container">
-        <div class="form-header">
-            <h2>Join the Association</h2>
-            <p>Create an account to register for Hifz programs and ask questions.</p>
-        </div>
 
-        <form id="registerForm" action="#" method="POST">
-            <div class="input-group">
-                <label for="full_name">Full Name</label>
-                <input type="text" id="full_name" name="full_name" placeholder="Enter your full name" required>
+    <div class="register-wrapper">
+        <a href="../INDEX/index.html" class="back-link"><i class="fa-solid fa-arrow-left"></i> Back to Portal</a>
+
+        <div class="register-card">
+            <div class="register-header">
+                <div class="form-icon">
+                    <i class="fa-solid fa-id-badge"></i>
+                </div>
+                <h2>Member Registration</h2>
+                <p>Please provide your academic and contact details to verify your membership</p>
             </div>
 
-            <div class="input-group">
-                <label for="email">Email Address</label>
-                <input type="email" id="email" name="email" placeholder="example@mail.com" required>
-            </div>
+            <form action="" method="POST" class="register-form">
 
-            <div class="input-group">
-                <label for="password">Password</label>
-                <input type="password" id="password" name="password" placeholder="Create a strong password" required>
-            </div>
+                <div class="input-group">
+                    <label for="fullName">Full Name</label>
+                    <div class="field-container">
+                        <i class="fa-solid fa-user field-icon"></i>
+                        <input type="text" id="fullName" name="full_name" placeholder="Enter your full name" required>
+                    </div>
+                </div>
 
-            <div class="input-group">
-                <label for="confirm_password">Confirm Password</label>
-                <input type="password" id="confirm_password" name="confirm_password" placeholder="Repeat your password"
-                    required>
-            </div>
+                <div class="input-group">
+                    <label for="regNumber">Registration Number</label>
+                    <div class="field-container">
+                        <i class="fa-solid fa-id-card field-icon"></i>
+                        <input type="text" id="regNumber" name="reg_number" placeholder="e.g., BCS-01-0001-2021"
+                            required>
+                    </div>
+                </div>
 
-            <button type="submit" class="btn-submit">Create Account</button>
-        </form>
+                <div class="form-row">
+                    <div class="input-group flex-2">
+                        <label for="courseName">Course Name</label>
+                        <div class="field-container">
+                            <i class="fa-solid fa-graduation-cap field-icon"></i>
+                            <input type="text" id="courseName" name="course_name" placeholder="e.g., Computer Science"
+                                required>
+                        </div>
+                    </div>
 
-        <div class="form-footer">
-            <p>Already have an account? <a href="../LOGIN/login.html">Login here</a></p>
-            <p><a href="index.html">← Back to Home</a></p>
+                    <div class="input-group flex-1">
+                        <label for="studyYear">Year</label>
+                        <div class="field-container">
+                            <i class="fa-solid fa-calendar-days field-icon"></i>
+                            <select id="studyYear" name="study_year" required>
+                                <option value="" disabled selected>Select</option>
+                                <option value="1">Year 1</option>
+                                <option value="2">Year 2</option>
+                                <option value="3">Year 3</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label for="contactNumber">Contact Number</label>
+                    <div class="field-container">
+                        <i class="fa-solid fa-phone field-icon"></i>
+                        <input type="tel" id="contactNumber" name="contact_number" placeholder="e.g., +255..." required>
+                    </div>
+                </div>
+
+                <div class="form-policy">
+                    <label class="checkbox-label">
+                        <input type="checkbox" required>
+                        <span>I confirm that the institutional details provided above are accurate.</span>
+                    </label>
+                </div>
+
+                <button type="submit" class="btn-register">
+                    Submit Registration <i class="fa-solid fa-paper-plane"></i>
+                </button>
+
+            </form>
         </div>
     </div>
-    <script src="../assets/js/common.js"></script>
 
-
-    <script src="register.js"></script>
 </body>
 
 </html>
