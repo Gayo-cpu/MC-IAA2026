@@ -12,8 +12,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <!-- <link rel="stylesheet" href="../assets/css/common.css"> -->
 
-    <!-- <link rel="stylesheet" href="../INDEX/index.css"> -->
-    <link rel="stylesheet" href="about.css">
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/about.css">
     <!-- <link rel="stylesheet" href="../HIFZ/hifz.css"> -->
 </head>
 
@@ -21,21 +21,24 @@
 
     <nav class="global-navbar">
         <div class="global-nav-container">
-            <a href="../INDEX/index.html" class="global-nav-brand">
+            <a href="../views/index.html" class="global-nav-brand">
                 e-MCIAA <span class="global-brand-sub"></span>
             </a>
-            <a href="../INDEX/index.html" class="global-nav-item">Home</a>
-            <a href="about.html" class="global-nav-item">About Us</a>
-            <a href="../HIFZ/hifz.html" class="global-nav-item">Programs</a>
-            <a href="../ASK_IMAM/ask_imam.html" class="global-nav-item">Ask Imam</a>
-            <a href="../NEWS/news.html" class="global-nav-item">News</a>
-            <a href="../DONATE/donate.html" class="global-nav-item">Donate</a>
-            <a href="../LOAN/loan.html" class="global-nav-item">Loan</a>
-            <a href="../CONTACT/contact.html" class="global-nav-item">Contact Us</a>
+            <div class="global-nav-links" id="global-nav-links">
+                <a href="../views/index.html" class="global-nav-item">Home</a>
+                <a href="../views/about.html" class="global-nav-item">About Us</a>
+                <a href="../views/hifz.html" class="global-nav-item">Programs</a>
+                <a href="../views/ask_imam.html" class="global-nav-item">Ask Imam</a>
+                <a href="../views/news.html" class="global-nav-item">News</a>
+                <a href="../views/donate.html" class="global-nav-item">Donate</a>
+                <a href="../views/loan.html" class="global-nav-item">Loan</a>
+                <a href="../views/contact.html" class="global-nav-item">Contact Us</a>
+                <!-- <a href="donate.html" class="global-nav-btn-cta">Donate Now</a> -->
+            </div>
 
             <div class="nav-auth">
-                <a href="../LOGIN/login.html" class="login-link" data-i18n="nav.login">Admin Login</a>
-                <a href="../REGISTER/register.html" class="cta-btn" data-i18n="nav.join">Join Us</a>
+                <a href="../views/login.html" class="login-link" data-i18n="nav.login">Admin Login</a>
+                <a href="../views/register.html" class="cta-btn" data-i18n="nav.join">Join Us</a>
             </div>
         </div>
         </div>
@@ -241,7 +244,7 @@
     <!-- Footer Script Links -->
     <script src="../assets/js/common.js"></script>
 
-    <script src="../HOME/home.js"></script>
+    <script src="../js/about.js"></script>
     <script src="about.js"></script> <!-- Link to your dynamic JS -->
 </body>
 

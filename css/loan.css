@@ -20,7 +20,7 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     
-    background-image: linear-gradient(rgba(33, 37, 41, 0.65), rgba(33, 37, 41, 0.65)), url('loan.jpg');
+    background-image: linear-gradient(rgba(33, 37, 41, 0.65), rgba(33, 37, 41, 0.65)), url('../IMAGES/loann.jpg');
     
     background-size: cover;
     background-position: center center;
