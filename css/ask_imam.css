@@ -1,0 +1,671 @@
+ .global-navbar {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--nav-primary);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    z-index: 9999; /* Ensures navbar always floats on top of sliding components */
+    padding: 15px 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.global-nav-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.global-nav-brand {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.4rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.global-nav-brand .global-brand-sub {
+    color: var(--nav-accent);
+    font-weight: 400;
+}
+
+.global-nav-links {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.global-nav-item {
+    color: rgba(255, 255, 255, 0.85);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: color 0.3s ease;
+}
+
+.global-nav-item:hover {
+    color: var(--nav-accent);
+}
+
+.global-nav-btn-cta {
+    background-color: var(--nav-accent);
+    color: #111;
+    text-decoration: none;
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.3s ease;
+}
+
+.global-nav-btn-cta:hover {
+    background-color: #ffb700;
+    transform: scale(1.05);
+}
+
+.global-nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* ==========================================================================
+   MOBILE MEDIA QUERY BREAKPOINT
+   ========================================================================== */
+@media (max-width: 768px) {
+    .global-nav-toggle {
+        display: block;
+    }
+
+    .global-nav-links {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--nav-primary);
+        flex-direction: column;
+        gap: 0;
+        padding: 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease-in-out;
+        box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+    }
+
+    .global-nav-links.mobile-active {
+        max-height: 400px;
+    }
+
+    .global-nav-item {
+        width: 100%;
+        text-align: center;
+        padding: 15px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .global-nav-btn-cta {
+        width: 80%;
+        text-align: center;
+        margin: 15px 0;
+        border-radius: 5px;
+    }
+}
+:root {
+    --nav-primary: #2d4a33; 
+    --nav-accent: #ffc107;
+    --nav-dark: #212529;
+    --primary-green: #1e3d1a;
+    --dark-green: #11240f;
+    --accent-gold: #d4af37;
+    --clean-white: #ffffff;
+    --text-dark: #2b2b2b;
+    --text-muted: #666666;
+    --bg-light: #f8faf8;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ==========================================================================
+   HERO STYLE MODULE (Edge-to-Edge With Navbar Safety Clearance)
+   ========================================================================== */
+.imam-hero {
+    position: relative !important;
+    min-height: 55vh !important;
+    /* Clean linear-gradient overlay mirroring your design presets */
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4)), 
+                url('../IMAGES/hifz.jpg') no-repeat center center;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Parallax effect */
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100%;
+}
+
+.hero-overlay {
+    width: 100%;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* SAFE NAVBAR clearance buffer wall */
+    padding-top: 140px !important; 
+    padding-bottom: 60px !important;
+    box-sizing: border-box;
+}
+
+.hero-text {
+    text-align: center;
+    color: var(--clean-white);
+    max-width: 850px;
+}
+
+.hero-arabic {
+    color: var(--accent-gold) !important;
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    direction: rtl;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+.hero-text h2 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin: 0 0 15px 0;
+}
+
+.hero-text h2 span {
+    color: var(--accent-gold);
+}
+
+.hero-subtitle {
+    font-size: 1.05rem;
+    color: #e0eee0;
+    font-style: italic;
+    margin: 0;
+}
+
+/* ==========================================================================
+   MAIN FLEX/GRID INTERFACE
+   ========================================================================== */
+.imam-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 45px;
+    margin: 50px auto 80px auto !important; /* Pulls form slightly into the hero banner space */
+    position: relative;
+    z-index: 10;
+}
+
+/* --- Form Box Mechanics --- */
+.form-card {
+    background: var(--clean-white);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 15px 35px rgba(30, 61, 26, 0.06);
+    border: 1px solid rgba(30, 61, 26, 0.05);
+}
+
+.card-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.form-icon {
+    width: 60px;
+    height: 60px;
+    background: var(--primary-green);
+    color: var(--accent-gold);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    margin: 0 auto 15px auto;
+    box-shadow: 0 5px 15px rgba(30, 61, 26, 0.15);
+}
+
+.card-header h3 {
+    font-size: 1.6rem;
+    color: var(--primary-green);
+    margin: 0 0 8px 0;
+}
+
+.card-header p {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin: 0;
+}
+
+.input-group {
+    margin-bottom: 22px;
+}
+
+.input-group label {
+    display: block;
+    font-size: 0.88rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--primary-green);
+}
+
+.input-group label i {
+    margin-right: 5px;
+    color: var(--accent-gold);
+}
+
+.input-group input, 
+.input-group select, 
+.input-group textarea {
+    width: 100%;
+    padding: 13px 16px;
+    border: 1px solid #e2e8e2;
+    border-radius: 10px;
+    font-size: 0.95rem;
+    background-color: #fafdfa;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+
+.input-group input:focus, 
+.input-group select:focus, 
+.input-group textarea:focus {
+    outline: none;
+    border-color: var(--primary-green);
+    box-shadow: 0 0 0 3px rgba(30, 61, 26, 0.08);
+    background-color: var(--clean-white);
+}
+
+/* Premium Gold Action Button with micro-interactions */
+.submit-btn {
+    width: 100%;
+    background: linear-gradient(135deg, #e6c143, var(--accent-gold));
+    color: var(--dark-green);
+    border: none;
+    padding: 15px;
+    font-size: 1rem;
+    font-weight: 700;
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    box-shadow: 0 5px 15px rgba(212, 175, 55, 0.25);
+    transition: all 0.3s ease;
+}
+
+.submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(212, 175, 55, 0.35);
+    filter: brightness(1.05);
+}
+
+/* --- Live Accordion Panel Components --- */
+.faq-panel {
+    margin-top: 0 !important;
+}
+
+.panel-header {
+    margin-bottom: 25px;
+}
+
+.panel-tag {
+    background: rgba(212, 175, 55, 0.12);
+    color: #b08f23;
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    padding: 4px 12px;
+    border-radius: 50px;
+}
+
+.panel-header h3 {
+    font-size: 1.5rem;
+    color: var(--primary-green);
+    margin: 12px 0 6px 0;
+}
+
+.panel-header p {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin: 0;
+}
+
+.accordion-item {
+    background: var(--clean-white);
+    border-radius: 12px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+    border: 1px solid rgba(30, 61, 26, 0.04);
+    overflow: hidden;
+}
+
+.accordion-trigger {
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: none;
+    border: none;
+    text-align: left;
+    cursor: pointer;
+    gap: 15px;
+}
+
+.cat-badge {
+    background-color: var(--primary-green);
+    color: var(--accent-gold);
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 6px;
+    min-width: 60px;
+    text-align: center;
+}
+
+.trigger-text {
+    flex-grow: 1;
+    font-size: 0.98rem;
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.acc-arrow {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    transition: transform 0.3s ease;
+}
+
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    background-color: #fcfdfc;
+}
+
+.accordion-content p {
+    padding: 0 20px 20px 95px; /* Aligns paragraph indentation perfectly away from the badge */
+    margin: 0;
+    font-size: 0.92rem;
+    color: #555555;
+    line-height: 1.6;
+}
+
+/* Active Animation Hooks managed by JS */
+.accordion-item.active .acc-arrow {
+    transform: rotate(180deg);
+    color: var(--accent-gold);
+}
+
+.accordion-item.active .accordion-trigger {
+    background-color: #fcfdfc;
+}
+
+/* --- Feedback Popups --- */
+.response-message {
+    margin-top: 15px;
+    padding: 12px;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+.response-message.success { background: #e6f4ea; color: #137333; }
+.response-message.error { background: #fce8e6; color: #c5221f; }
+.hidden { display: none; }
+
+/* ==========================================================================
+   RESPONSIVE DESIGN BREAKPOINTS
+   ========================================================================== */
+@media (max-width: 900px) {
+    .imam-grid {
+        grid-template-columns: 1fr;
+        margin-top: 20px;
+        gap: 30px;
+    }
+    .hero-text h2 { font-size: 2.1rem; }
+    .hero-arabic { font-size: 1.3rem; }
+    .form-card { padding: 25px; }
+    .accordion-content p { padding-left: 20px; } /* Simplifies padding stack on mobile */
+}
+
+
+
+
+/* ==========================================================================
+   UNIFIED PILL NAVIGATION STYLES (Enforces Perfect Linear Form)
+   ========================================================================== */
+.main-nav {
+    position: fixed !important;       /* Locks the bar to the viewport layer */
+    top: 0 !important;                /* Snaps completely flush to the ceiling screen */
+    left: 0 !important;
+    transform: none !important;
+    width: 100% !important;           /* Spans completely edge-to-edge */
+    max-width: 100% !important;
+    height: 75px !important;
+    background-color: #ffffff !important;
+    border-radius: 0 !important;      /* Drops pill curves to merge cleanly with top ceiling */
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.08) !important;
+    z-index: 9999 !important;
+    box-sizing: border-box !important;
+    transition: all 0.3s ease;
+}
+
+/* Master Inner Layout Container - Blocks Layout Wrapping completely */
+.main-nav .nav-container {
+  width: 100% !important;
+    max-width: 1280px !important;     /* Keeps content bounded cleanly on wide screens */
+    margin: 0 auto !important;        /* Centers structural column grid layout */
+    height: 100% !important;
+    padding: 0 35px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    box-sizing: border-box !important;
+    flex-wrap: nowrap !important;
+}
+
+/* Brand Logo Layout (Green text with an Accent Gold Highlight) */
+.main-nav .logo {
+    text-decoration: none !important;
+    font-weight: 700 !important;
+    font-size: 1.35rem !important;
+    color: #1e3d1a !important; 
+    letter-spacing: -0.5px !important;
+    white-space: nowrap !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    flex-shrink: 0 !important;
+}
+
+.main-nav .logo i {
+    color: #d4af37 !important; /* Gold colored moon brand icon */
+}
+
+.main-nav .logo span {
+    color: #d4af37 !important; /* Secondary brand color separation text */
+}
+
+/* Center Horizontal Routing Links Matrix */
+.nav-menu {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 20px;
+}
+.nav-menu a {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-size: 0.85rem;
+    font-weight: 600;
+    white-space: nowrap; /* Prevent links from wrapping */
+    transition: 0.3s;
+}
+
+.nav-menu li a {
+    text-decoration: none;
+    color: #2b2b2b;
+    font-size: 0.92rem;
+    font-weight: 600;
+    transition: color 0.25s ease;
+}
+
+.nav-menu li a:hover {
+    color: #1e3d1a !important;
+}
+.nav-container {
+    width: 100%;
+    height: 100%;
+    padding: 0 35px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+/* 
+   CRITICAL LINEAR FIX: Right Utilities Area
+   Locks dropdowns, toggle buttons, and auth actions into a rigid single line stream
+*/
+.nav-actions {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+    gap: 20px !important;
+    flex-wrap: nowrap !important;
+    flex-shrink: 0 !important;
+}
+
+/* Internal grouping containing Language Dropdown + Dark Mode Button */
+.nav-control-group {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 12px !important;
+    flex-wrap: nowrap !important;
+    flex-shrink: 0 !important;
+}
+
+/* Language Switch Dropdown Element Box */
+.language-select {
+    padding: 6px 12px !important;
+    border-radius: 20px !important;
+    border: 1px solid #e2e8e2 !important;
+    font-weight: 500 !important;
+    font-size: 0.85rem !important;
+    outline: none !important;
+    cursor: pointer !important;
+    background-color: #ffffff !important;
+    flex-shrink: 0 !important;
+}
+
+/* Theme Toggle Button Structural Alignment Fix */
+.theme-toggle {
+    background: none !important;
+    border: none !important;
+    cursor: pointer !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    width: 32px !important;
+    height: 32px !important;
+    color: #2b2b2b !important;
+    font-size: 1.15rem !important;
+    flex-shrink: 0 !important;
+    transition: color 0.2s ease !important;
+}
+
+.theme-toggle:hover {
+    color: #d4af37 !important;
+}
+
+/* Horizontal Access Portals Layout Grid Divider */
+.nav-auth {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 14px !important;
+    border-left: 1px solid #e2e8e2 !important;
+    padding-left: 20px !important;
+    flex-wrap: nowrap !important;
+    flex-shrink: 0 !important;
+}
+
+.login-link {
+    text-decoration: none !important;
+    color: #0000ff !important; 
+    font-weight: 600 !important;
+    font-size: 0.92rem !important;
+    white-space: nowrap !important;
+}
+
+.cta-btn {
+    text-decoration: none !important;
+    color: #800080 !important; 
+    font-weight: 600 !important;
+    font-size: 0.92rem !important;
+    white-space: nowrap !important;
+}
+
+/* Screen Reader Only Utility (Hides structural label gracefully from layout stream) */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN BREAKPOINTS
+   ========================================================================== */
+@media (max-width: 1150px) {
+    .nav-menu {
+        gap: 12px !important; /* Compresses mid menu spacing for medium viewports */
+    }
+}
+
+@media (max-width: 1024px) {
+    .nav-menu {
+        display: none !important; /* Hides flat core navigation text links to clean mobile views */
+    }
+    .main-nav {
+        width: 95% !important;
+    }
+}
+}
+
