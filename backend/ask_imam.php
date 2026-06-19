@@ -1,16 +1,23 @@
 <?php
-include "../config/db.php";
 
-if (isset($_POST['submit'])) {
+require_once "../config/db.php";
 
-    $name = $_POST['name'];
-    $question = $_POST['question'];
+if($_SERVER["REQUEST_METHOD"]=="POST"){
 
-    $sql = "INSERT INTO ask_imam (name, question)
-            VALUES ('$name', '$question')";
+    $name = mysqli_real_escape_string($conn,$_POST['name']);
+    $email = mysqli_real_escape_string($conn,$_POST['email']);
+    $category = mysqli_real_escape_string($conn,$_POST['category']);
+    $question = mysqli_real_escape_string($conn,$_POST['question']);
 
-    $conn->query($sql);
+    $sql = "INSERT INTO imam_questions
+            (name,email,category,question)
+            VALUES
+            ('$name','$email','$category','$question')";
 
-    echo "Question sent successfully";
+    if(mysqli_query($conn,$sql)){
+        header("Location: ../views/ask_imam.html?success=1");
+    }else{
+        echo mysqli_error($conn);
+    }
 }
 ?>
