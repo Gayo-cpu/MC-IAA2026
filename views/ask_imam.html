@@ -12,6 +12,13 @@
 </head>
 
 <body>
+    <form action="ask_imam/submit.php" method="POST">
+    <input type="text" name="name" placeholder="Your Name" required>
+
+    <textarea name="question" placeholder="Ask your question" required></textarea>
+
+    <button type="submit" name="submit">Send Question</button>
+
 
     <!-- [Paste your existing navigation bar markup component right here] -->
     <nav class="global-navbar">
@@ -153,5 +160,5 @@
     <!-- Injection of programmatic interaction -->
     <script src="ask_imam.js"></script>
 </body>
-
+</form>
 </html>
