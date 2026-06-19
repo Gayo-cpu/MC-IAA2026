@@ -1,0 +1,456 @@
+/* ==========================================================================
+   MCIAA PORTAL - HIFZ & TAJWEED EXCELLENCE STYLESHEET
+   ========================================================================== */
+
+:root {
+   --nav-primary: #2d4a33; 
+    --nav-accent: #ffc107;
+    --nav-dark: #212529;
+    --brand-green: #2d4a33; 
+    --brand-gold: #ffb700;
+    --brand-gold-hover: #e5a400;
+    --text-dark: #212529;
+    --bg-light: #f8f9fa;
+    --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+}
+
+/* --- 1. Hero Content Showcase Block --- */
+.hifz-hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.75)),
+                url('../IMAGES/hifz.jpg');
+    background-color: var(--brand-green);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    min-height: 480px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 100px 20px 80px 20px;
+    color: #ffffff;
+    box-sizing: border-box;
+}
+
+.hero-overlay {
+    width: 100%;
+    max-width: 950px;
+    margin: 0 auto;
+}
+
+/* Spiritual Script Sizing */
+.spiritual-lead {
+    margin-bottom: 30px;
+}
+
+.arabic-small {
+    font-family: 'Amiri', serif;
+    font-size: 2.4rem;
+    line-height: 1.5;
+    direction: rtl;
+    margin-bottom: 10px;
+    font-weight: 400;
+    letter-spacing: 0;
+}
+
+.translation {
+    font-family: 'Poppins', sans-serif;
+    font-style: italic;
+    font-size: 0.95rem;
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.8);
+    display: block;
+    letter-spacing: 0.5px;
+}
+
+/* Header Text Mechanics */
+.hero-text h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin: 0 0 20px 0;
+    line-height: 1.2;
+    letter-spacing: -0.5px;
+}
+
+.hero-text h1 span {
+    color: var(--brand-gold);
+}
+
+.hero-text p {
+    font-size: 1.1rem;
+    font-weight: 300;
+    max-width: 700px;
+    margin: 0 auto;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.65;
+}
+
+/* --- 2. Modular Section Header Trims --- */
+.hifz-levels, 
+.hifz-schedule {
+    padding: 80px 0;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-header h2 {
+    font-size: 2.2rem;
+    font-weight: 600;
+    color: var(--brand-green);
+    margin: 0 0 12px 0;
+}
+
+.section-header p {
+    font-size: 1rem;
+    color: var(--text-muted);
+    margin: 0 0 15px 0;
+}
+
+.underline {
+    width: 60px;
+    height: 4px;
+    background-color: var(--brand-gold);
+    margin: 0 auto;
+    border-radius: 10px;
+}
+
+/* --- 3. Program Interface Flex Grid --- */
+.program-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+}
+
+.hifz-card {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 45px 35px;
+    position: relative;
+    box-shadow: var(--card-shadow);
+    border-top: 4px solid var(--brand-green);
+    transition: var(--transition-bezier);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    box-sizing: border-box;
+}
+
+.hifz-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+}
+
+/* Ribbon Identity Tag */
+.level-badge {
+    position: absolute;
+    top: 25px;
+    right: 30px;
+    background-color: rgba(45, 74, 51, 0.08);
+    color: var(--brand-green);
+    padding: 6px 14px;
+    border-radius: 30px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+/* FontAwesome Structural Accent Anchors */
+.hifz-card i.fas {
+    font-size: 2.2rem;
+    color: var(--brand-gold);
+    margin-bottom: 25px;
+}
+
+.hifz-card h3 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--brand-green);
+    margin: 0 0 15px 0;
+}
+
+.hifz-card p {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin: 0 0 25px 0;
+    flex-grow: 1;
+}
+
+/* Bottom Criteria Validation List */
+.level-details {
+    list-style: none;
+    padding: 20px 0 0 0;
+    margin: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    border-top: 1px solid #edf2f7;
+}
+
+.level-details li {
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: var(--text-dark);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.level-details li i.fas.fa-check {
+    color: var(--brand-green);
+    font-size: 0.85rem;
+    margin-bottom: 0; /* Clears baseline structural defaults */
+}
+
+/* --- 4. Interactive Timetable Component --- */
+.hifz-schedule {
+    padding-top: 20px; /* Aligns smoothly under the levels section grid */
+}
+
+.table-container {
+    overflow-x: auto;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: var(--card-shadow);
+}
+
+.schedule-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    font-size: 1rem;
+}
+
+.schedule-table th {
+    background-color: var(--brand-green);
+    color: #ffffff;
+    padding: 20px 24px;
+    font-weight: 600;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+    border: none;
+}
+
+.schedule-table td {
+    padding: 20px 24px;
+    border-bottom: 1px solid #edf2f7;
+    color: #4a5568;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.schedule-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* Clean Alternate-Row Stripe Engine */
+.schedule-table tbody tr:nth-child(even) {
+    background-color: rgba(45, 74, 51, 0.02);
+}
+
+.schedule-table strong {
+    color: var(--brand-green);
+    font-weight: 600;
+}
+
+/* --- 5. Global Footer Elements --- */
+.main-footer {
+    background-color: #1a1e1b;
+    color: rgba(255, 255, 255, 0.6);
+    text-align: center;
+    padding: 35px 20px;
+    font-size: 0.9rem;
+    border-top: 3px solid var(--brand-gold);
+}
+
+.main-footer p {
+    margin: 0;
+    letter-spacing: 0.3px;
+}
+
+/* ==========================================================================
+   6. RESPONSIVE BREAKPOINTS LAYOUT CORRECTIONS
+   ========================================================================== */
+@media (max-width: 768px) {
+    .hifz-hero {
+        min-height: 420px;
+        padding: 120px 15px 60px 15px;
+    }
+
+    .arabic-small {
+        font-size: 1.9rem;
+    }
+
+    .hero-text h1 {
+        font-size: 2.2rem;
+    }
+
+    .hero-text p {
+        font-size: 1rem;
+    }
+
+    .section-header h2 {
+        font-size: 1.8rem;
+    }
+
+    .hifz-levels, 
+    .hifz-schedule {
+        padding: 50px 0;
+        width: 92%;
+    }
+
+    .hifz-card {
+        padding: 35px 25px;
+    }
+
+    .schedule-table th, 
+    .schedule-table td {
+        padding: 16px 18px;
+        font-size: 0.9rem;
+    }
+}
+
+:root {
+    --nav-primary: #0f5132;
+    --nav-accent: #ffc107;
+    --nav-dark: #212529;
+}
+
+.global-navbar {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--nav-primary);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    z-index: 9999; /* Ensures navbar always floats on top of sliding components */
+    padding: 15px 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.global-nav-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.global-nav-brand {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.4rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.global-nav-brand .global-brand-sub {
+    color: var(--nav-accent);
+    font-weight: 400;
+}
+
+.global-nav-links {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.global-nav-item {
+    color: rgba(255, 255, 255, 0.85);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: color 0.3s ease;
+}
+
+.global-nav-item:hover {
+    color: var(--nav-accent);
+}
+
+.global-nav-btn-cta {
+    background-color: var(--nav-accent);
+    color: #111;
+    text-decoration: none;
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.3s ease;
+}
+
+.global-nav-btn-cta:hover {
+    background-color: #ffb700;
+    transform: scale(1.05);
+}
+
+.global-nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* ==========================================================================
+   MOBILE MEDIA QUERY BREAKPOINT
+   ========================================================================== */
+@media (max-width: 768px) {
+    .global-nav-toggle {
+        display: block;
+    }
+
+    .global-nav-links {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--nav-primary);
+        flex-direction: column;
+        gap: 0;
+        padding: 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease-in-out;
+        box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+    }
+
+    .global-nav-links.mobile-active {
+        max-height: 400px;
+    }
+
+    .global-nav-item {
+        width: 100%;
+        text-align: center;
+        padding: 15px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .global-nav-btn-cta {
+        width: 80%;
+        text-align: center;
+        margin: 15px 0;
+        border-radius: 5px;
+    }
+}
