@@ -1,0 +1,350 @@
+:root {
+    --primary-color: #0f172a;
+    --accent-color: #bcb612;
+    --accent-hover: #0a9d47ca;
+    --bg-color: #f8f9fa;
+    --card-bg: #ffffff;
+    --text-color: #334155;
+    --border-color: #cbd5e1;
+    --nav-primary: #2d4a33;
+    --nav-accent: #ffc107;
+    --nav-dark: #212529;
+    --brand-green: #2d4a33;
+    --brand-gold: #ffb700;
+    --brand-gold-hover: #e5a400;
+    --text-dark: #212529;
+    --bg-light: #f8f9fa;
+    --card-shadow: 0 10px 30px rgba(5, 178, 86, 0.05);
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
+    background-image: linear-gradient(rgba(33, 37, 41, 0.65), rgba(33, 37, 41, 0.65)), url('loan.jpg');
+    
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    
+    margin: 0;
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+/* CONTAINER */
+.loan-container {
+    background-color: var(--card-bg);
+    padding: 35px;
+    border-radius: 12px;
+    box-shadow: var(--card-shadow), 0 15px 35px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 550px;
+    border-top: 5px solid var(--brand-green);
+    animation: fadeIn 0.4s ease-out;
+    box-sizing: border-box;
+}
+
+/* TYPOGRAPHY */
+h2 {
+    margin-top: 0;
+    color: var(--brand-green);
+    font-size: 26px;
+    text-align: center;
+    margin-bottom: 8px;
+    font-weight: 700;
+}
+
+.subtitle {
+    text-align: center;
+    color: var(--text-color);
+    opacity: 0.8;
+    font-size: 14px;
+    margin-bottom: 28px;
+}
+
+/* FORM LAYOUT */
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 6px;
+    font-size: 14px;
+    color: var(--text-dark);
+}
+
+input[type="text"],
+input[type="tel"],
+select {
+    width: 100%;
+    padding: 11px 14px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    font-size: 15px;
+    box-sizing: border-box;
+    transition: all 0.2s ease-in-out;
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+}
+
+input:focus, select:focus {
+    outline: none;
+    border-color: var(--brand-green);
+    background-color: #ffffff;
+    box-shadow: 0 0 0 3px rgba(45, 74, 51, 0.15);
+}
+
+.optional-badge {
+    font-weight: normal;
+    font-size: 12px;
+    color: #94a3b8;
+    margin-left: 4px;
+}
+
+/* TERMS / INFO BOX */
+.info-box {
+    background-color: #f0fdf4; 
+    border-left: 4px solid var(--brand-green);
+    padding: 14px;
+    border-radius: 4px;
+    font-size: 13.5px;
+    color: var(--brand-green);
+    margin-bottom: 26px;
+    line-height: 1.6;
+}
+
+/* ACTION BUTTON */
+.btn-submit {
+    background-color: var(--brand-gold);
+    color: var(--text-dark);
+    border: none;
+    padding: 14px 20px;
+    font-size: 16px;
+    font-weight: 700;
+    border-radius: 6px;
+    width: 100%;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-submit:hover {
+    background-color: var(--brand-gold-hover);
+    transform: translateY(-1px);
+}
+
+/* TRANSITION ENTRY */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.navbar {
+    width: 100%;
+    background-color: var(--brand-green);
+    padding: 15px 0;
+    position: fixed; /* Keeps it locked to the top on scroll */
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+.nav-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-logo {
+    color: #ffffff;
+    font-size: 24px;
+    font-weight: 700;
+    text-decoration: none;
+    letter-spacing: 0.5px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 24px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links a {
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+    color: var(--brand-gold);
+}
+
+/* AUTHENTICATION ACTION LINK STYLING */
+.nav-auth {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.btn-admin {
+    color: #a855f7; /* Matching the purple indicator tint */
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: opacity 0.2s;
+}
+
+.btn-admin:hover {
+    opacity: 0.8;
+}
+
+.btn-join {
+    color: #a855f7;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: opacity 0.2s;
+}
+
+.btn-join:hover {
+    opacity: 0.8;
+}
+
+/* ------------------------------------------------------------- */
+/* MAIN CONTENT LOAN CONTAINER                                   */
+/* ------------------------------------------------------------- */
+.loan-container {
+    background-color: var(--card-bg);
+    padding: 35px;
+    border-radius: 12px;
+    box-shadow: var(--card-shadow), 0 15px 35px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 550px;
+    border-top: 5px solid var(--brand-green);
+    margin-top: 110px; /* Generates space below fixed top navbar navigation block */
+    margin-bottom: 40px;
+    animation: fadeIn 0.4s ease-out;
+    box-sizing: border-box;
+}
+
+/* TYPOGRAPHY */
+h2 {
+    margin-top: 0;
+    color: var(--brand-green);
+    font-size: 26px;
+    text-align: center;
+    margin-bottom: 8px;
+    font-weight: 700;
+}
+
+.subtitle {
+    text-align: center;
+    color: var(--text-color);
+    opacity: 0.8;
+    font-size: 14px;
+    margin-bottom: 28px;
+}
+
+/* FORM LAYOUT */
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 6px;
+    font-size: 14px;
+    color: var(--text-dark);
+}
+
+input[type="text"],
+input[type="tel"],
+select {
+    width: 100%;
+    padding: 11px 14px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    font-size: 15px;
+    box-sizing: border-box;
+    transition: all 0.2s ease-in-out;
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+}
+
+input:focus, select:focus {
+    outline: none;
+    border-color: var(--brand-green);
+    background-color: #ffffff;
+    box-shadow: 0 0 0 3px rgba(45, 74, 51, 0.15);
+}
+
+.optional-badge {
+    font-weight: normal;
+    font-size: 12px;
+    color: #94a3b8;
+    margin-left: 4px;
+}
+
+/* TERMS / INFO BOX */
+.info-box {
+    background-color: #f0fdf4; 
+    border-left: 4px solid var(--brand-green);
+    padding: 14px;
+    border-radius: 4px;
+    font-size: 13.5px;
+    color: var(--brand-green);
+    margin-bottom: 26px;
+    line-height: 1.6;
+}
+
+/* ACTION BUTTON */
+.btn-submit {
+    background-color: var(--brand-gold);
+    color: var(--text-dark);
+    border: none;
+    padding: 14px 20px;
+    font-size: 16px;
+    font-weight: 700;
+    border-radius: 6px;
+    width: 100%;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-submit:hover {
+    background-color: var(--brand-gold-hover);
+    transform: translateY(-1px);
+}
+
+/* TRANSITION ENTRY */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
