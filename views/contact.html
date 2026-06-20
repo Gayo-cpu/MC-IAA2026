@@ -13,126 +13,130 @@
 </head>
 
 <body>
-    <nav class="global-navbar">
-        <div class="global-nav-container">
-            <a href="../views/index.html" class="global-nav-brand">
-                e-MCIAA <span class="global-brand-sub"></span>
-            </a>
-            <div class="global-nav-links" id="global-nav-links">
-                <a href="../views/index.html" class="global-nav-item">Home</a>
-                <a href="../views/about.html" class="global-nav-item">About Us</a>
-                <a href="../views/hifz.html" class="global-nav-item">Programs</a>
-                <a href="../views/ask_imam.html" class="global-nav-item">Ask Imam</a>
-                <a href="../views/news.html" class="global-nav-item">News</a>
-                <a href="../views/donate.html" class="global-nav-item">Donate</a>
-                <a href="../views/loan.html" class="global-nav-item">Loan</a>
-                <a href="contact.html" class="global-nav-item">Contact Us</a>
-                <!-- <a href="../DONATE/donate.html" class="global-nav-btn-cta">Donate Now</a> -->
+    <form action="contact/submit.php" method="POST">
+        <!-- Global Static Navbar -->
+        <nav class="global-navbar">
+            <div class="global-nav-container">
+                <a href="../views/index.html" class="global-nav-brand">
+                    e-MCIAA <span class="global-brand-sub"></span>
+                </a>
+                <div class="global-nav-links" id="global-nav-links">
+                    <a href="../views/index.html" class="global-nav-item">Home</a>
+                    <a href="../views/about.html" class="global-nav-item">About Us</a>
+                    <a href="../views/hifz.html" class="global-nav-item">Programs</a>
+                    <a href="../views/ask_imam.html" class="global-nav-item">Ask Imam</a>
+                    <a href="../views/news.html" class="global-nav-item">News</a>
+                    <a href="../views/donate.html" class="global-nav-item">Donate</a>
+                    <a href="../views/loan.html" class="global-nav-item">Loan</a>
+                    <a href="contact.html" class="global-nav-item">Contact Us</a>
+                    <!-- <a href="../DONATE/donate.html" class="global-nav-btn-cta">Donate Now</a> -->
+                </div>
+
+                <div class="nav-auth">
+                    <a href="../views/login.html" class="login-link" data-i18n="nav.login">Admin Login</a>
+                    <a href="../views/register.html" class="cta-btn" data-i18n="nav.join">Join Us</a>
+                </div>
             </div>
-
-            <div class="nav-auth">
-                <a href="../views/login.html" class="login-link" data-i18n="nav.login">Admin Login</a>
-                <a href="../views/register.html" class="cta-btn" data-i18n="nav.join">Join Us</a>
             </div>
-        </div>
-        </div>
-    </nav>
-    <!-- Header Banner -->
-    <section class="contact-hero">
-        <div class="hero-content">
-            <h1>Get In Touch</h1>
-            <p>Have questions about events, announcements, or community programs? Drop us a message below.</p>
-        </div>
-    </section>
+        </nav>
+        <!-- Header Banner -->
+        <section class="contact-hero">
+            <div class="hero-content">
+                <h1>Get In Touch</h1>
+                <p>Have questions about events, announcements, or community programs? Drop us a message below.</p>
+            </div>
+        </section>
 
-    <!-- Main Content Layout Section -->
-    <main class="contact-wrapper">
-        <div class="contact-grid">
+        <!-- Main Content Layout Section -->
+        <main class="contact-wrapper">
+            <div class="contact-grid">
 
-            <!-- Left Side: Directory Information Card -->
-            <div class="info-card">
-                <h2>Community Hub</h2>
-                <p class="info-intro">Reach out to the MCIAA management team or visit our office platform directly on
-                    campus.</p>
+                <!-- Left Side: Directory Information Card -->
+                <div class="info-card">
+                    <h2>Community Hub</h2>
+                    <p class="info-intro">Reach out to the MCIAA management team or visit our office platform directly
+                        on
+                        campus.</p>
 
-                <div class="info-links-stack">
-                    <div class="info-item">
-                        <div class="icon-bubble"><i class="fa-solid fa-location-dot"></i></div>
-                        <div class="info-text">
-                            <h3>Our Location</h3>
-                            <p>Institute of Accountancy Arusha (IAA)</p>
-                            <p>Arusha, Tanzania</p>
+                    <div class="info-links-stack">
+                        <div class="info-item">
+                            <div class="icon-bubble"><i class="fa-solid fa-location-dot"></i></div>
+                            <div class="info-text">
+                                <h3>Our Location</h3>
+                                <p>Institute of Accountancy Arusha (IAA)</p>
+                                <p>Arusha, Tanzania</p>
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="info-item">
-                        <div class="icon-bubble"><i class="fa-solid fa-envelope"></i></div>
-                        <div class="info-text">
-                            <h3>Email Address</h3>
-                            <p>info@mciaa-portal.org</p>
+                        <div class="info-item">
+                            <div class="icon-bubble"><i class="fa-solid fa-envelope"></i></div>
+                            <div class="info-text">
+                                <h3>Email Address</h3>
+                                <p>info@mciaa-portal.org</p>
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="info-item">
-                        <div class="icon-bubble"><i class="fa-solid fa-phone"></i></div>
-                        <div class="info-text">
-                            <h3>Phone Contact</h3>
-                            <p>+255 (0) 700 000 000</p>
+                        <div class="info-item">
+                            <div class="icon-bubble"><i class="fa-solid fa-phone"></i></div>
+                            <div class="info-text">
+                                <h3>Phone Contact</h3>
+                                <p>+255 (0) 700 000 000</p>
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="info-item">
-                        <div class="icon-bubble"><i class="fa-solid fa-clock"></i></div>
-                        <div class="info-text">
-                            <h3>Office Hours</h3>
-                            <p>Monday - Friday: 8:00 AM - 4:00 PM</p>
+                        <div class="info-item">
+                            <div class="icon-bubble"><i class="fa-solid fa-clock"></i></div>
+                            <div class="info-text">
+                                <h3>Office Hours</h3>
+                                <p>Monday - Friday: 8:00 AM - 4:00 PM</p>
+                            </div>
                         </div>
                     </div>
                 </div>
+
+                <!-- Right Side: Contact Intake Form Wrapper -->
+                <div class="form-card">
+                    <h2>Send Us a Message</h2>
+                    <form id="contactForm" action="process-contact.php" method="POST" class="contact-form">
+
+                        <div class="form-group">
+                            <label for="full_name">Full Name</label>
+                            <input type="text" id="full_name" name="full_name" required
+                                placeholder="Enter your full name">
+                            <span class="error-msg" id="nameError"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email_address">Email Address</label>
+                            <input type="email" id="email_address" name="email_address" required
+                                placeholder="name@example.com">
+                            <span class="error-msg" id="emailError"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="msg_subject">Subject</label>
+                            <input type="text" id="msg_subject" name="msg_subject" required
+                                placeholder="What is this regarding?">
+                            <span class="error-msg" id="subjectError"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="user_message">Your Message</label>
+                            <textarea id="user_message" name="user_message" rows="6" required
+                                placeholder="Type your message details here..."></textarea>
+                            <span class="error-msg" id="messageError"></span>
+                        </div>
+
+                        <button type="submit" class="btn-gold-action">Send Message</button>
+                    </form>
+                </div>
+
             </div>
+        </main>
 
-            <!-- Right Side: Contact Intake Form Wrapper -->
-            <div class="form-card">
-                <h2>Send Us a Message</h2>
-                <form id="contactForm" action="process-contact.php" method="POST" class="contact-form">
-
-                    <div class="form-group">
-                        <label for="full_name">Full Name</label>
-                        <input type="text" id="full_name" name="full_name" required placeholder="Enter your full name">
-                        <span class="error-msg" id="nameError"></span>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="email_address">Email Address</label>
-                        <input type="email" id="email_address" name="email_address" required
-                            placeholder="name@example.com">
-                        <span class="error-msg" id="emailError"></span>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="msg_subject">Subject</label>
-                        <input type="text" id="msg_subject" name="msg_subject" required
-                            placeholder="What is this regarding?">
-                        <span class="error-msg" id="subjectError"></span>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="user_message">Your Message</label>
-                        <textarea id="user_message" name="user_message" rows="6" required
-                            placeholder="Type your message details here..."></textarea>
-                        <span class="error-msg" id="messageError"></span>
-                    </div>
-
-                    <button type="submit" class="btn-gold-action">Send Message</button>
-                </form>
-            </div>
-
-        </div>
-    </main>
-
-    <!-- Layout Scripts linked sequentially at the baseline -->
-    <script src="navbar.js"></script>
-    <script src="../js/contact.js"></script>
+        <!-- Layout Scripts linked sequentially at the baseline -->
+        <script src="navbar.js"></script>
+        <script src="../js/contact.js"></script>
 </body>
 
 </html>

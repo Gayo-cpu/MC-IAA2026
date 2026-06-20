@@ -9,6 +9,15 @@
 </head>
 
 <body>
+    <form action="news/create.php" method="POST" enctype="multipart/form-data">
+    <input type="text" name="title" placeholder="News Title" required>
+
+    <textarea name="content" placeholder="News Content" required></textarea>
+
+    <input type="file" name="image" required>
+
+    <button type="submit" name="submit">Publish News</button>
+
 
     <main class="news-container">
         <article class="news-post">
@@ -57,5 +66,5 @@
     </main>
     <script src="../js/news.js"></script>
 </body>
-
+</form>
 </html>
