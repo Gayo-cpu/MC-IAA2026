@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Posts Management</title>
+
+    <link rel="stylesheet" href="posts.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+   <link rel="shortcut icon" href="images/image.png" />
+  </head>
+  <body>
+    <aside class="sidebar">
+      <div class="logo-icon">
+        <img
+          src="images/image.png"
+          alt="mciaalogo"
+          height="70px"
+          width="70px"
+          style="border-radius: 2rem"
+        />
+      </div>
+
+        <h2 style="color: white;">Islamic CMS</h2>
+
+        <span style="color: white;">Super Admin</span>
+      </div>
+
+      <ul>
+        <li>
+          <a href="index.html">
+            <i class="fa-solid fa-house"></i>
+            Dashboard
+          </a>
+        </li>
+
+        <li>
+          <a href="members.html">
+            <i class="fa-solid fa-users"></i>
+            Members
+          </a>
+        </li>
+
+        <li>
+          <a href="loans.html">
+            <i class="fa-solid fa-hand-holding-dollar"></i>
+            Loans
+          </a>
+        </li>
+
+        <li>
+          <a href="donations.html">
+            <i class="fa-solid fa-heart"></i>
+            Donations
+          </a>
+        </li>
+
+        <li>
+          <a href="posts.html">
+            <i class="fa-solid fa-newspaper"></i>
+            Posts
+          </a>
+        </li>
+
+        <li>
+          <a href="logs.html">
+            <i class="fa-solid fa-clock-rotate-left"></i>
+            Logs
+          </a>
+        </li>
+
+        <li>
+          <a href="messages.html">
+            <i class="fa-solid fa-envelope"></i>
+            Messages
+          </a>
+        </li>
+      </ul>
+      <li class="logout-item">
+    <a href="#" id="logoutBtn">
+        <i class="fa-solid fa-right-from-bracket"></i>
+        Logout
+    </a>
+</li>
+    </aside>
+
+    <main class="main-content">
+      <div class="container">
+        <!-- HEADER -->
+
+        <div class="page-header">
+          <div>
+            <h1>Posts & Announcements</h1>
+            <p>Posts created by Amir Habari</p>
+          </div>
+
+          <div class="total-posts">
+            <i class="fa-solid fa-newspaper"></i>
+            <span>85 Posts</span>
+          </div>
+        </div>
+
+        <!-- SEARCH -->
+
+        <div class="search-box">
+          <i class="fa-solid fa-magnifying-glass"></i>
+
+          <input type="text" id="searchPost" placeholder="Search post..." />
+        </div>
+
+        <!-- POSTS AREA -->
+
+        <div class="posts-wrapper" id="postsWrapper">
+          <!-- POST 1 -->
+
+          <div class="post-card">
+            <div class="post-header">
+              <div class="author">
+                <div class="avatar">AH</div>
+
+                <div>
+                  <h4>Amir Habari</h4>
+                  <span>16 June 2026 • 08:30 AM</span>
+                </div>
+              </div>
+
+              <div class="category">Announcement</div>
+            </div>
+
+            <div class="post-body">
+              <h3>Eid Preparation Meeting</h3>
+
+              <p>
+                All members are invited to attend the Eid preparation meeting
+                after Maghrib.
+              </p>
+
+              <img
+                src="https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa"
+                alt=""
+              />
+            </div>
+          </div>
+
+          <!-- POST 2 -->
+
+          <div class="post-card">
+            <div class="post-header">
+              <div class="author">
+                <div class="avatar">AH</div>
+
+                <div>
+                  <h4>Amir Habari</h4>
+                  <span>15 June 2026 • 06:00 PM</span>
+                </div>
+              </div>
+
+              <div class="category">Event</div>
+            </div>
+
+            <div class="post-body">
+              <h3>Youth Da'wah Program</h3>
+
+              <p>
+                Islamic youth seminar this Saturday. All youth members are
+                encouraged to attend.
+              </p>
+
+              <img
+                src="https://images.unsplash.com/photo-1517048676732-d65bc937f952"
+                alt=""
+              />
+            </div>
+          </div>
+
+          <!-- POST 3 -->
+
+          <div class="post-card">
+            <div class="post-header">
+              <div class="author">
+                <div class="avatar">AH</div>
+
+                <div>
+                  <h4>Amir Habari</h4>
+                  <span>13 June 2026 • 10:15 AM</span>
+                </div>
+              </div>
+
+              <div class="category">Reminder</div>
+            </div>
+
+            <div class="post-body">
+              <h3>Friday Reminder</h3>
+
+              <p>
+                Remember to attend Jumu'ah prayer and arrive early at the
+                mosque.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <div class="logout-modal" id="logoutModal">
+
+    <div class="modal-content">
+
+        <div class="modal-icon">
+            <i class="fa-solid fa-right-from-bracket"></i>
+        </div>
+
+        <h3>Logout</h3>
+
+        <p>
+            Are you sure you want to logout from the Welfare Dashboard?
+        </p>
+
+        <div class="modal-buttons">
+
+            <button id="cancelLogout" class="cancel-btn">
+                Cancel
+            </button>
+
+            <button id="confirmLogout" class="logout-btn">
+                Logout
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+    <script src="posts.js"></script>
+  </body>
+</html>
