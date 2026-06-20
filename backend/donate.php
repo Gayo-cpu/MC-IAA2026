@@ -1,10 +1,12 @@
 <?php
+session_start();
 require_once "../config/db.php";
 
 function security($defence){
     $defence = htmlspecialchars($defence);
     $defence = trim($defence);
     $defence = stripslashes($defence);
+    return $defence;
 }
 
 function isLoggedIn(): bool {
@@ -19,6 +21,7 @@ function getDonorInfo(mysqli $conn): array {
             'donor_name' => NULL,
             'donor_email' => NULL,
             'donor_phone' => NULL,
+            'is_guest' => 0,
         ];
     }
     // for registered donors
@@ -37,7 +40,7 @@ function getDonorInfo(mysqli $conn): array {
             'donor_name'=> null,
             'donor_email' => NULL,
             'donor_phone' => NULL,
-            'is_guest' =>false,
+            'is_guest' =>0,
         ];
     }
     // for guest donors
@@ -45,18 +48,20 @@ function getDonorInfo(mysqli $conn): array {
         'user_id' => NULL,
         'donor_name' => security($_POST['full_name'] ?? 'guest'),
         'donor_email' => $email,
-        'donor_phone' => security($_POST['phone'] ?? '')
+        'donor_phone' => security($_POST['phone'] ?? ''),
+        'is_guest' => 1,
     ];
 }
 
-function saveDonation(mysqli $conn, array $donor, float $amount, string $donateType, string $paymentMethod, string $transcation_id, string $message, string $category ): {
-    $query = "INSERT INTO donation(user_id, donor_name, donor_email, donor_phone, amount, donate_type, payment_method, transaction_reference, messages, donation_title)
-    VALUES(?,?,?,?,?,?,?,?,?,?)";
+function saveDonation(mysqli $conn, array $donor, float $amount, string $donateType, string $paymentMethod, string $transcation_id, string $message, string $category ): int {
+    $query = "INSERT INTO donation(user_id, is_guest, donor_name, donor_email, donor_phone, amount, donor_type, payment_method, transaction_reference, messages, donation_title)
+    VALUES(?,?,?,?,?,?,?,?,?,?,?)";
 
     $stmt = $conn->prepare($query);
     $stmt->bind_param(
-        "isssdsssss"
-        $donor['userid'],
+        "iisssdsssss",
+        $donor['user_id'],
+        $donor['is_guest'],
         $donor['donor_name'],
         $donor['donor_email'],
         $donor['donor_phone'],
@@ -67,13 +72,13 @@ function saveDonation(mysqli $conn, array $donor, float $amount, string $donateT
         $message,
         $category
     );
-    $stmt->excute();
+    $stmt->execute();
     $insertId = (int) $conn->insert_id;
-    $stmt->exit();
-    return $insertedId;
+    $stmt->close();
+    return $insertId;
 }
 
-if ($_SEVER['REQUEST_METHOD'] !== 'POST'){
+if ($_SERVER['REQUEST_METHOD'] !== 'POST'){
     header("Location: donate.html");
     exit;
 }
@@ -87,7 +92,7 @@ $paymentMethod = security($_POST['payment_method']);
 $transcation_id = 'TXN-' . strtoupper(bin2hex(random_bytes(8)));
 $message = security($_POST['message']);
 
-$donation = saveDonation($conn, $donor, $amount, $donateType, $paymentMethod, $transcation_id, $message);
+$donation = saveDonation($conn, $donor, $amount, $donateType, $paymentMethod, $transcation_id, $message, $category);
 
 
 ?>
