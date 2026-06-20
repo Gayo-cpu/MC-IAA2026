@@ -94,5 +94,10 @@ $message = security($_POST['message']);
 
 $donation = saveDonation($conn, $donor, $amount, $donateType, $paymentMethod, $transcation_id, $message, $category);
 
+if(isset($donation)){
+    header("Location: ../views/donate.html");
+    exit;
+}
+
 
 ?>
