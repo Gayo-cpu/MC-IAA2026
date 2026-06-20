@@ -28,23 +28,23 @@ document.addEventListener('DOMContentLoaded', () => {
     // 2. DYNAMIC NAVIGATION MORPHING
     // Shrinks the floating nav and increases blur when scrolling.
     window.addEventListener('scroll', () => {
-    const navContainer = document.querySelector('.nav-container');
-    const mainNav = document.querySelector('.main-nav');
+        const navContainer = document.querySelector('.nav-container');
+        const mainNav = document.querySelector('.main-nav');
 
-    if (window.scrollY > 80) {
-        // When scrolling down
-        navContainer.style.padding = "0.4rem 1.5rem";
-        navContainer.style.width = "90%";
-        navContainer.style.background = "rgba(255, 255, 255, 0.98)";
-        mainNav.style.padding = "1rem 5%";
-    } else {
-        // When at the very top
-        navContainer.style.padding = "0.6rem 2rem";
-        navContainer.style.width = "95%";
-        navContainer.style.background = "rgba(255, 255, 255, 0.9)";
-        mainNav.style.padding = "2rem 5%";
-    }
-});
+        if (window.scrollY > 80) {
+            // When scrolling down
+            navContainer.style.padding = "0.4rem 1.5rem";
+            navContainer.style.width = "90%";
+            navContainer.style.background = "rgba(255, 255, 255, 0.98)";
+            mainNav.style.padding = "1rem 5%";
+        } else {
+            // When at the very top
+            navContainer.style.padding = "0.6rem 2rem";
+            navContainer.style.width = "95%";
+            navContainer.style.background = "rgba(255, 255, 255, 0.9)";
+            mainNav.style.padding = "2rem 5%";
+        }
+    });
 
 
     // 3. INTERACTIVE SEARCH/FILTER PREVIEW (For News or Hifz)
@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
         searchInput.addEventListener('keyup', (e) => {
             const term = e.target.value.toLowerCase();
             const cards = document.querySelectorAll('.program-card');
-            
+
             cards.forEach(card => {
                 const title = card.querySelector('h3').innerText.toLowerCase();
                 if (title.includes(term)) {
@@ -113,7 +113,7 @@ const startCounters = () => {
 // Start counters when section is visible
 const statsSection = document.querySelector('.stats-bar');
 const observer = new IntersectionObserver((entries) => {
-    if(entries[0].isIntersecting) startCounters();
+    if (entries[0].isIntersecting) startCounters();
 }, { threshold: 0.5 });
 
 observer.observe(statsSection);
@@ -130,7 +130,7 @@ const observer = new IntersectionObserver((entries) => {
             setTimeout(() => {
                 entry.target.style.opacity = "1";
                 entry.target.style.transform = "translateY(0)";
-            }, index * 150); 
+            }, index * 150);
         }
     });
 }, observerOptions);
@@ -151,7 +151,7 @@ const valueObserver = new IntersectionObserver((entries) => {
             // This creates the "one-by-one" pop-up effect
             setTimeout(() => {
                 entry.target.classList.add('visible');
-            }, index * 100); 
+            }, index * 100);
         }
     });
 }, { threshold: 0.5 });
