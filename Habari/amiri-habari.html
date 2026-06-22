@@ -1,6 +1,6 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -15,9 +15,10 @@
     <!-- Favicon -->
     <link rel="shortcut icon" href="" />
 </head>
+
 <body>
 
-  
+
     <aside class="sidebar">
         <div class="logo-area">
             <img src="MC-IAA.jpeg" alt="" class="logo-img" />
@@ -44,7 +45,7 @@
    -->
     <main class="main-content">
 
-      
+
         <div class="topbar">
             <div>
                 <h1 id="pageTitle">Content Overview</h1>
@@ -133,32 +134,37 @@
                     <label>Content</label>
                     <textarea id="postContent" rows="4" placeholder="Write the full post content here..."></textarea>
                 </div>
-                <div class="form-row">
-                    <div class="form-group">
-                        <label>Image URL</label>
-                        <input type="text" id="postImage" placeholder="https://example.com/image.jpg" />
-                    </div>
-                    <div class="form-group">
-                        <label>Category</label>
-                        <select id="postCategory">
-                            <option value="Announcement">Announcement</option>
-                            <option value="Event">Event</option>
-                            <option value="Reminder">Reminder</option>
-                            <option value="News">News</option>
-                            <option value="Update">Update</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label>Status</label>
-                        <select id="postStatus">
-                            <option value="1">Published</option>
-                            <option value="0">Draft</option>
-                        </select>
-                    </div>
+                <div class="form-group">
+                    <label>Upload Image</label>
+
+                    <input type="file" id="postImage" accept="image/*">
+
+                    <img id="imagePreview" src="" alt="Preview" style="display:none;
+                width:200px;
+                margin-top:10px;
+                border-radius:8px;">
                 </div>
-                <button onclick="addPost()" class="btn-primary">
-                    <i class="fa-solid fa-paper-plane"></i> Publish Post
-                </button>
+                <div class="form-group">
+                    <label>Category</label>
+                    <select id="postCategory">
+                        <option value="Announcement">Announcement</option>
+                        <option value="Event">Event</option>
+                        <option value="Reminder">Reminder</option>
+                        <option value="News">News</option>
+                        <option value="Update">Update</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Status</label>
+                    <select id="postStatus">
+                        <option value="1">Published</option>
+                        <option value="0">Draft</option>
+                    </select>
+                </div>
+            </div>
+            <button onclick="addPost()" class="btn-primary">
+                <i class="fa-solid fa-paper-plane"></i> Publish Post
+            </button>
             </div>
 
             <!-- Search -->
@@ -215,7 +221,8 @@
             <div class="history-card">
                 <div class="history-header">
                     <h3><i class="fa-solid fa-clock-rotate-left"></i> Message History</h3>
-                    <div class="search-box" style="margin: 0; box-shadow: none; border: 1px solid #ddd; padding: 5px 12px;">
+                    <div class="search-box"
+                        style="margin: 0; box-shadow: none; border: 1px solid #ddd; padding: 5px 12px;">
                         <i class="fa-solid fa-magnifying-glass"></i>
                         <input type="text" id="messageSearch" placeholder="Search messages..." />
                     </div>
@@ -282,6 +289,7 @@
         </div>
     </div>
 
-    <script src="Amiri-Habari.js"></script>
+    <script src="habari.js"></script>
 </body>
+
 </html>
