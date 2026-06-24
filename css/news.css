@@ -1,150 +1,209 @@
-/* ==========================================================================
-   NEWS ARTICLE LAYOUT STYLE GUIDE
-   ========================================================================== */
 
-:root {
-    --brand-green: #2d4a33;
-    --brand-gold: #ffb700;
-    --text-dark: #222222;
-    --text-muted: #666666;
-    --bg-light: #f9f9f9;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Arial, sans-serif;
 }
 
 body {
-    font-family: 'Poppins', 'Segoe UI', sans-serif;
-    background-color: var(--bg-light);
-    color: var(--text-dark);
-    margin: 0;
-    padding: 0;
-    line-height: 1.6;
+    background: #ffffff;
+    color: #2d4a33;
 }
 
-.news-container {
-    max-width: 800px; /* Keeps reading line-length perfectly comfortable */
-    margin: 60px auto;
-    padding: 0 20px;
-    box-sizing: border-box;
+
+/* Main Wrapper */
+.portal-wrapper {
+    width: 90%;
+    max-width: 1200px;
+    margin: 40px auto;
 }
 
-.news-post {
-    background-color: #ffffff;
-    padding: 40px;
-    border-radius: 8px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+
+/* Header Section */
+header {
+    background: #2d4a33;
+    padding: 25px 30px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
 }
 
-/* --- 1. Header Typography --- */
-.back-to-news {
-    display: inline-block;
-    color: var(--brand-green);
+
+/* Navigation Links */
+.nav-links {
+    color: white;
     text-decoration: none;
-    font-size: 0.9rem;
+    font-size: 15px;
     font-weight: 600;
-    margin-bottom: 20px;
-    transition: color 0.2s ease;
+    transition: 0.3s ease;
 }
 
-.back-to-news:hover {
-    color: var(--brand-gold);
+
+.nav-links:hover {
+    color: #d4af37;
 }
 
-.news-tag {
-    display: inline-block;
-    background-color: rgba(45, 74, 51, 0.1);
-    color: var(--brand-green);
-    font-size: 0.75rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    padding: 4px 12px;
-    border-radius: 4px;
-    letter-spacing: 0.5px;
-    margin-bottom: 12px;
+
+/* Category Badge */
+.badge-tag {
+    background: #d4af37;
+    color: #2d4a33;
+    padding: 8px 18px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 14px;
 }
 
-.news-headline {
-    font-size: 2.3rem;
-    color: var(--brand-green);
-    line-height: 1.25;
-    margin: 0 0 15px 0;
-    font-weight: 700;
+
+/* News Container */
+.news-container {
+    margin-top: 35px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
+    gap: 25px;
 }
 
-.news-meta {
-    font-size: 0.9rem;
-    color: var(--text-muted);
-    border-bottom: 1px solid #eeeeee;
-    padding-bottom: 20px;
-    margin-bottom: 30px;
+
+/* News Card */
+.news-card {
+
+    background: white;
+    border-radius: 15px;
+    padding: 25px;
+
+    border-top: 5px solid #d4af37;
+
+    box-shadow: 
+    0 8px 20px rgba(0,0,0,0.12);
+
+    transition: 0.3s ease;
 }
 
-.meta-item:not(:last-child)::after {
-    content: "•";
-    margin: 0 10px;
-    color: #ccc;
+
+.news-card:hover {
+
+    transform: translateY(-8px);
+
+    box-shadow:
+    0 12px 25px rgba(45,74,51,0.25);
+
 }
 
-/* --- 2. Picture Presentation Area --- */
-.news-image-wrapper {
-    margin-bottom: 35px;
+
+
+/* News Title */
+.news-card h3 {
+
+    color: #2d4a33;
+    font-size: 24px;
+    line-height: 1.4;
+    margin-bottom: 15px;
+
 }
 
-.news-featured-img {
-    width: 100%;
-    height: auto;
-    max-height: 450px;
-    object-fit: cover; /* Crops cleanly if image dimensions vary */
-    border-radius: 6px;
+
+
+/* News Image (for JS generated images) */
+.news-card img {
+
+    width:100%;
+    height:250px;
+    object-fit:cover;
+
+    border-radius:12px;
+    margin-bottom:20px;
+
 }
 
-.image-caption {
-    font-size: 0.85rem;
-    color: var(--text-muted);
-    margin-top: 8px;
-    font-style: italic;
-    text-align: center;
+
+
+/* News Content */
+.news-card p {
+
+    color:#555;
+    font-size:16px;
+    line-height:1.7;
+
 }
 
-/* --- 3. Body Content & Quotes Formatting --- */
-.news-content p {
-    font-size: 1.05rem;
-    color: #333333;
-    margin-bottom: 22px;
+
+
+/* Date Style */
+.news-date {
+
+    display:block;
+    margin-top:15px;
+
+    color:#d4af37;
+
+    font-weight:bold;
+    font-size:14px;
+
 }
 
-.news-content .lead-paragraph {
-    font-size: 1.25rem;
-    font-weight: 500;
-    color: var(--brand-green);
-    line-height: 1.5;
+
+
+/* Read More Button */
+.read-more {
+
+    display:inline-block;
+
+    margin-top:20px;
+
+    background:#2d4a33;
+
+    color:white;
+
+    padding:10px 20px;
+
+    border-radius:25px;
+
+    text-decoration:none;
+
+    font-weight:bold;
+
+    transition:0.3s;
+
 }
 
-/* The Quote Element Box */
-.news-quote {
-    margin: 35px 0;
-    padding: 20px 30px;
-    background-color: #f4f7f5;
-    border-left: 5px solid var(--brand-green);
-    border-radius: 0 8px 8px 0;
+
+.read-more:hover {
+
+    background:#d4af37;
+
+    color:#2d4a33;
+
 }
 
-.news-quote p {
-    font-size: 1.2rem;
-    font-style: italic;
-    color: var(--brand-green);
-    font-weight: 500;
-    margin-bottom: 5px;
-}
 
-.news-quote cite {
-    font-size: 0.85rem;
-    color: var(--text-muted);
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
 
-/* Responsive adjustment for clean mobile screens */
-@media (max-width: 600px) {
-    .news-post { padding: 20px; }
-    .news-headline { font-size: 1.75rem; }
+/* Mobile Responsive */
+@media(max-width:600px){
+
+    .portal-wrapper{
+
+        width:95%;
+        margin:20px auto;
+
+    }
+
+
+    header{
+
+        flex-direction:column;
+        align-items:flex-start;
+
+    }
+
+
+    .news-card h3{
+
+        font-size:20px;
+
+    }
+
 }
