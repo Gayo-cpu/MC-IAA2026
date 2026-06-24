@@ -64,23 +64,51 @@
                             </select>
                         </div>
                     </div>
+                
                 </div>
 
                 <div class="input-group">
+    <label for="gender">Gender</label>
+    <div class="field-container">
+        <i class="fa-solid fa-user"></i>
+        <select id="gender" name="gender" required>
+            <option value="">Select Gender</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+        </select>
+    </div>
+</div>
+
+                <div class="input-group">
                     <label for="contactNumber">Contact Number</label>
+
+                    
                     <div class="field-container">
                         <i class="fa-solid fa-phone field-icon"></i>
                         <input type="tel" id="contactNumber" name="contact_number" placeholder="e.g., +255..." required>
                     </div>
                 </div>
 
-                <div class="form-policy">
-                    <label class="checkbox-label">
-                        <input type="checkbox" required>
-                        <span>I confirm that the institutional details provided above are accurate.</span>
-                    </label>
-                </div>
+                <div class="input-group">
+    <label>Email</label>
+    <div class="field-container">
+        <input type="email" name="email" required>
+    </div>
+</div>
 
+<div class="input-group">
+    <label>Password</label>
+    <div class="field-container">
+        <input type="password" name="password" required>
+    </div>
+</div>
+
+<div class="form-policy">
+    <label class="checkbox-label">
+        <input type="checkbox" required>
+        <span>I confirm that the institutional details provided above are accurate.</span>
+    </label>
+</div>
                 <button type="submit" class="btn-register">
                     Submit Registration <i class="fa-solid fa-paper-plane"></i>
                 </button>
