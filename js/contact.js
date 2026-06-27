@@ -1,61 +1,84 @@
 /**
- * ==========================================================================
- * CONTACT FORM CLIENT-SIDE INTERACTION & VALIDATION ENGINE
- * ==========================================================================
+ * CONTACT FORM - inatuma data kwa backend na kuonyesha ujumbe wa mafanikio/hitilafu
  */
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     const contactForm = document.getElementById('contactForm');
-    
-    if (contactForm) {
-        contactForm.addEventListener('submit', function(event) {
-            let isValid = true;
+    const formResponse = document.getElementById('formResponse');
+    const submitBtn = document.getElementById('submitBtn');
 
-            // Target elements and error fields
-            const fullName = document.getElementById('full_name');
-            const emailAddress = document.getElementById('email_address');
-            const msgSubject = document.getElementById('msg_subject');
+    if (contactForm) {
+        contactForm.addEventListener('submit', async function (event) {
+            event.preventDefault();
+
+            // Reset errors
+            ['nameError','emailError','subjectError','messageError'].forEach(id => {
+                document.getElementById(id).textContent = '';
+            });
+            formResponse.style.display = 'none';
+
+            const fullName    = document.getElementById('full_name');
+            const emailAddr   = document.getElementById('email_address');
+            const msgSubject  = document.getElementById('msg_subject');
             const userMessage = document.getElementById('user_message');
 
-            const nameError = document.getElementById('nameError');
-            const emailError = document.getElementById('emailError');
-            const subjectError = document.getElementById('subjectError');
-            const messageError = document.getElementById('messageError');
+            let isValid = true;
 
-            // Reset error layouts
-            nameError.textContent = "";
-            emailError.textContent = "";
-            subjectError.textContent = "";
-            messageError.textContent = "";
-
-            // 1. Full Name Validation
             if (fullName.value.trim().length < 3) {
-                nameError.textContent = "Please enter your full name (minimum 3 characters).";
+                document.getElementById('nameError').textContent = 'Tafadhali ingiza jina lako (angalau herufi 3).';
                 isValid = false;
             }
-
-            // 2. Email Address Structural Regex Checklist
             const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!emailPattern.test(emailAddress.value.trim())) {
-                emailError.textContent = "Please enter a valid active email address structural pattern.";
+            if (!emailPattern.test(emailAddr.value.trim())) {
+                document.getElementById('emailError').textContent = 'Tafadhali ingiza barua pepe sahihi.';
                 isValid = false;
             }
-
-            // 3. Subject Line Checklist
             if (msgSubject.value.trim().length < 4) {
-                subjectError.textContent = "Please clarify your topic details briefly (minimum 4 characters).";
+                document.getElementById('subjectError').textContent = 'Mada lazima iwe na herufi angalau 4.';
                 isValid = false;
             }
-
-            // 4. Message Block Length Boundary Checklist
             if (userMessage.value.trim().length < 15) {
-                messageError.textContent = "Please flesh out your message text explicitly (minimum 15 characters).";
+                document.getElementById('messageError').textContent = 'Ujumbe lazima uwe na herufi angalau 15.';
                 isValid = false;
             }
 
-            // Halt the request thread if any rule fails
-            if (!isValid) {
-                event.preventDefault();
+            if (!isValid) return;
+
+            // Send to backend
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Inatuma...';
+
+            const formData = new FormData(contactForm);
+
+            try {
+                const response = await fetch('../backend/contact_submit.php', {
+                    method: 'POST',
+                    body: formData
+                });
+                const result = await response.json();
+
+                formResponse.style.display = 'block';
+                if (result.success) {
+                    formResponse.style.background = '#d4edda';
+                    formResponse.style.color = '#155724';
+                    formResponse.style.border = '1px solid #c3e6cb';
+                    formResponse.textContent = '✅ ' + result.message;
+                    contactForm.reset();
+                } else {
+                    formResponse.style.background = '#f8d7da';
+                    formResponse.style.color = '#721c24';
+                    formResponse.style.border = '1px solid #f5c6cb';
+                    formResponse.textContent = '❌ ' + result.message;
+                }
+            } catch (err) {
+                formResponse.style.display = 'block';
+                formResponse.style.background = '#f8d7da';
+                formResponse.style.color = '#721c24';
+                formResponse.style.border = '1px solid #f5c6cb';
+                formResponse.textContent = '❌ Hitilafu ya mtandao. Tafadhali jaribu tena.';
             }
+
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Send Message';
         });
     }
 });
