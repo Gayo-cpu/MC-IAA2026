@@ -1,132 +1,55 @@
-// Get news from admin dashboard
-let news = JSON.parse(localStorage.getItem("news")) || [];
+/**
+ * NEWS PAGE - Inachukua makala kutoka database kupitia API
+ */
+const newsContainer = document.getElementById("newsContainer");
 
+async function loadNews() {
+    newsContainer.innerHTML = '<p style="text-align:center;padding:20px;">Inapakia habari...</p>';
 
-const newsContainer =
-    document.getElementById("newsContainer");
+    try {
+        const response = await fetch('../backend/get_posts.php');
+        const result = await response.json();
 
+        if (!result.success || result.data.length === 0) {
+            newsContainer.innerHTML = `
+                <div class="empty-news">
+                    <h2>Hakuna Habari Zilizopo</h2>
+                    <p>Kwa sasa hakuna matangazo yaliyochapishwa.</p>
+                </div>`;
+            return;
+        }
 
-// Display published news only
-function displayNews() {
+        newsContainer.innerHTML = result.data.map(post => `
+            <article class="news-card">
+                ${post.image_url
+                    ? `<img src="${post.image_url}" class="news-image" alt="${post.title}">`
+                    : ''}
+                <div class="news-info">
+                    <span class="badge-tag">Tangazo</span>
+                    <h3>${post.title}</h3>
+                    <span class="news-date">
+                        <i class="fa-regular fa-calendar"></i>
+                        ${new Date(post.created_at).toLocaleDateString('sw-TZ')}
+                    </span>
+                    <p>${post.summary}</p>
+                    <button class="read-more" onclick="openNews(${post.post_id})">
+                        Soma Zaidi
+                    </button>
+                </div>
+            </article>
+        `).join('');
 
-
-    const publishedNews =
-        news.filter(post => post.is_published === 1);
-
-
-
-    if (publishedNews.length === 0) {
-
+    } catch (err) {
         newsContainer.innerHTML = `
-
-        <div class="empty-news">
-
-            <h2>No News Available</h2>
-
-            <p>
-            There are currently no published announcements.
-            </p>
-
-        </div>
-
-        `;
-
-        return;
+            <div class="empty-news">
+                <h2>Hitilafu ya Mtandao</h2>
+                <p>Imeshindwa kupakia habari. Tafadhali jaribu tena.</p>
+            </div>`;
     }
-
-
-
-    newsContainer.innerHTML =
-        publishedNews.map(post => {
-
-
-            return `
-
-
-        <article class="news-card">
-
-
-            ${post.image_url ?
-
-                    `
-            <img 
-            src="${post.image_url}" 
-            class="news-image"
-            alt="${post.title}">
-            `
-
-                    :
-
-                    ""
-
-                }
-
-
-
-            <div class="news-info">
-
-
-                <span class="badge-tag">
-                ${post.category}
-                </span>
-
-
-                <h3>
-                ${post.title}
-                </h3>
-
-
-
-                <span class="news-date">
-
-                <i class="fa-regular fa-calendar"></i>
-
-                ${new Date(post.created_at)
-                    .toLocaleDateString()}
-
-                </span>
-
-
-
-                <p>
-                ${post.summary}
-                </p>
-
-
-
-                <button 
-                class="read-more"
-                onclick="openNews(${post.id})">
-
-                Read More
-
-                </button>
-
-
-            </div>
-
-
-        </article>
-
-
-        `;
-
-
-        }).join("");
-
 }
 
-
-
-
-// Open full article
 function openNews(id) {
-
-    window.location.href =
-        `single-news.html?id=${id}`;
-
+    window.location.href = `single-news.html?id=${id}`;
 }
 
-
-
-displayNews();
+loadNews();
