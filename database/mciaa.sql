@@ -307,3 +307,21 @@ CREATE TABLE IF NOT EXISTS `contact_messages` (
   `submitted_at` timestamp NOT NULL DEFAULT current_timestamp(),
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+-- UPDATES (Run these if upgrading existing database)
+-- --------------------------------------------------------
+
+-- Add category column to post table if not exists
+ALTER TABLE `post` ADD COLUMN IF NOT EXISTS `category` varchar(50) DEFAULT 'Announcement';
+
+-- Ensure contact_messages table exists
+CREATE TABLE IF NOT EXISTS `contact_messages` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `full_name` varchar(200) NOT NULL,
+  `email_address` varchar(200) NOT NULL,
+  `msg_subject` varchar(300) NOT NULL,
+  `user_message` text NOT NULL,
+  `submitted_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
