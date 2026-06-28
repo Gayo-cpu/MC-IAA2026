@@ -22,7 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (password_verify($password, $user['password'])) {
             $passwordMatch = true;
         } elseif ($password === $user['password']) {
-            // Legacy plain-text fallback (hash it now for security)
+            // Legacy plain-text fallback — hash it now
             $newHash = password_hash($password, PASSWORD_DEFAULT);
             mysqli_query($conn, "UPDATE users SET password='$newHash' WHERE userid=" . $user['userid']);
             $passwordMatch = true;
@@ -30,11 +30,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         if ($passwordMatch) {
 
-            $_SESSION['userid'] = $user['userid'];
+            $_SESSION['userid']   = $user['userid'];
             $_SESSION['fullname'] = $user['fullname'];
-            $_SESSION['role'] = $user['role'];
+            $_SESSION['role']     = $user['role'];
+            $_SESSION['role_description'] = $user['role_description'];
 
-            header("Location: ../walfare/index.html");
+            // Redirect based on role_description
+            $role_desc = $user['role_description'] ?? '';
+
+            if ($role_desc === 'habari') {
+                header("Location: ../Habari/amiri-habari.html");
+            } elseif ($role_desc === 'fedha') {
+                header("Location: ../Fedha/amiri-fedha.html");
+            } else {
+                // super admin, dean, secretary, etc.
+                header("Location: ../walfare/index.html");
+            }
             exit();
 
         } else {
