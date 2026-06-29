@@ -137,12 +137,7 @@
                 <div class="form-group">
                     <label>Upload Image</label>
 
-                    <input type="file" id="postImage" accept="image/*">
-
-                    <img id="imagePreview" src="" alt="Preview" style="display:none;
-                width:200px;
-                margin-top:10px;
-                border-radius:8px;">
+                    <input type="text" id="postImage" placeholder="https://example.com/image.jpg (URL ya picha)" />
                 </div>
                 <div class="form-group">
                     <label>Category</label>
@@ -289,7 +284,38 @@
         </div>
     </div>
 
-    <script src="habari.js"></script>
+    <!-- Edit Post Modal -->
+    <div id="editModal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:9999;align-items:center;justify-content:center;">
+        <div style="background:#fff;border-radius:12px;padding:32px;width:90%;max-width:560px;box-shadow:0 8px 32px rgba(0,0,0,0.2);">
+            <h3 style="margin:0 0 20px;color:#1a3a2a;"><i class="fa-solid fa-edit"></i> Hariri Makala</h3>
+            <input type="hidden" id="editPostId">
+            <div style="margin-bottom:14px;">
+                <label style="display:block;font-weight:600;margin-bottom:4px;color:#333;">Kichwa</label>
+                <input type="text" id="editTitle" style="width:100%;padding:10px;border:1px solid #ccc;border-radius:8px;box-sizing:border-box;">
+            </div>
+            <div style="margin-bottom:14px;">
+                <label style="display:block;font-weight:600;margin-bottom:4px;color:#333;">Maudhui</label>
+                <textarea id="editContent" rows="5" style="width:100%;padding:10px;border:1px solid #ccc;border-radius:8px;box-sizing:border-box;resize:vertical;"></textarea>
+            </div>
+            <div style="margin-bottom:14px;">
+                <label style="display:block;font-weight:600;margin-bottom:4px;color:#333;">URL ya Picha</label>
+                <input type="text" id="editImage" style="width:100%;padding:10px;border:1px solid #ccc;border-radius:8px;box-sizing:border-box;" placeholder="https://...">
+            </div>
+            <div style="margin-bottom:20px;">
+                <label style="display:block;font-weight:600;margin-bottom:4px;color:#333;">Hali</label>
+                <select id="editStatus" style="width:100%;padding:10px;border:1px solid #ccc;border-radius:8px;">
+                    <option value="1">Imechapishwa</option>
+                    <option value="0">Rasimu</option>
+                </select>
+            </div>
+            <div style="display:flex;gap:12px;justify-content:flex-end;">
+                <button onclick="closeEditModal()" style="padding:10px 20px;border:1px solid #ccc;border-radius:8px;background:#fff;cursor:pointer;">Ghairi</button>
+                <button onclick="saveEdit()" style="padding:10px 20px;border:none;border-radius:8px;background:#1a3a2a;color:#fff;cursor:pointer;font-weight:600;">Hifadhi</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="Amiri-Habari.js"></script>
 </body>
 
 </html>
