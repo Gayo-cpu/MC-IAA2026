@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>System Logs</title>
+
+    <link rel="stylesheet" href="logs.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <link rel="shortcut icon" href="images/image.png" />
+  </head>
+
+  <body>
+    <aside class="sidebar">
+      <div class="logo">
+        <div class="logo-icon">
+          <img
+            src="images/image.png"
+            alt="mciaalogo"
+            height="70px"
+            width="70px"
+            style="border-radius: 2rem"
+          />
+        </div>
+
+        <h2>MCIAA Association</h2>
+
+        <span>Amir</span>
+      </div>
+
+      <ul>
+        <li>
+          <a href="index.html">
+            <i class="fa-solid fa-house"></i>
+            Dashboard
+          </a>
+        </li>
+
+        <li>
+          <a href="members.html">
+            <i class="fa-solid fa-users"></i>
+            Members
+          </a>
+        </li>
+
+        <li>
+          <a href="loans.html">
+            <i class="fa-solid fa-hand-holding-dollar"></i>
+            Loans
+          </a>
+        </li>
+
+        <li>
+          <a href="donations.html">
+            <i class="fa-solid fa-heart"></i>
+            Donations
+          </a>
+        </li>
+
+        <li>
+          <a href="posts.html">
+            <i class="fa-solid fa-newspaper"></i>
+            Posts
+          </a>
+        </li>
+
+        <li>
+          <a href="logs.html">
+            <i class="fa-solid fa-clock-rotate-left"></i>
+            Logs
+          </a>
+        </li>
+
+        <li>
+          <a href="messages.html">
+            <i class="fa-solid fa-envelope"></i>
+            Messages
+          </a>
+        </li>
+      </ul>
+    </aside>
+
+    <main class="main-content">
+      <div class="container">
+        <!-- HEADER -->
+
+        <div class="page-header">
+          <div>
+            <h1>System Audit Logs</h1>
+            <p>Track all activities within the system</p>
+          </div>
+
+          <div class="log-counter">
+            <i class="fa-solid fa-shield-halved"></i>
+
+            <span>4,580 Logs</span>
+          </div>
+        </div>
+
+        <!-- SUMMARY CARDS -->
+
+        <div class="cards">
+          <div class="card">
+            <i class="fa-solid fa-right-to-bracket"></i>
+
+            <h2>1,200</h2>
+
+            <p>Logins</p>
+          </div>
+
+          <div class="card">
+            <i class="fa-solid fa-user-plus"></i>
+
+            <h2>320</h2>
+
+            <p>Registrations</p>
+          </div>
+
+          <div class="card">
+            <i class="fa-solid fa-newspaper"></i>
+
+            <h2>85</h2>
+
+            <p>Posts Created</p>
+          </div>
+
+          <div class="card">
+            <i class="fa-solid fa-triangle-exclamation"></i>
+
+            <h2>15</h2>
+
+            <p>Failed Logins</p>
+          </div>
+        </div>
+
+        <!-- SEARCH -->
+
+        <div class="search-box">
+          <i class="fa-solid fa-magnifying-glass"></i>
+
+          <input type="text" id="searchLogs" placeholder="Search activity..." />
+        </div>
+
+        <!-- LOG TABLE -->
+
+        <div class="table-container">
+          <table id="logsTable">
+            <thead>
+              <tr>
+                <th>User</th>
+                <th>Role</th>
+                <th>Activity</th>
+                <th>Status</th>
+                <th>Date & Time</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td>Ahmed Ali</td>
+
+                <td>Member</td>
+
+                <td>Logged Into System</td>
+
+                <td>
+                  <span class="success"> Success </span>
+                </td>
+
+                <td>18 Jun 2026 08:30 AM</td>
+              </tr>
+
+              <tr>
+                <td>Amir Habari</td>
+
+                <td>Leader</td>
+
+                <td>Created New Post</td>
+
+                <td>
+                  <span class="success"> Success </span>
+                </td>
+
+                <td>18 Jun 2026 09:15 AM</td>
+              </tr>
+
+              <tr>
+                <td>Fatma Hassan</td>
+
+                <td>Member</td>
+
+                <td>Donation Submitted</td>
+
+                <td>
+                  <span class="success"> Success </span>
+                </td>
+
+                <td>18 Jun 2026 10:05 AM</td>
+              </tr>
+
+              <tr>
+                <td>Unknown User</td>
+
+                <td>Guest</td>
+
+                <td>Failed Login Attempt</td>
+
+                <td>
+                  <span class="danger"> Failed </span>
+                </td>
+
+                <td>18 Jun 2026 10:30 AM</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </main>
+    <script src="logs.js"></script>
+  </body>
+</html>
+`
