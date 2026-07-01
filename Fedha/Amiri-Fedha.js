@@ -188,6 +188,7 @@ function addLoan() {
     const amount = parseInt(amountInput.value);
     const duration = durationSelect.value;
 
+    // js validates
     if (!member) {
         alert('Please enter the member name.');
         memberInput.focus();
@@ -200,27 +201,43 @@ function addLoan() {
         return;
     }
 
-    loans.push({
-        id: loanIdCounter++,
-        member: member,
-        amount: amount,
-        duration: duration,
-        status: 'pending',
-        date: new Date().toLocaleDateString('en-US', {
-            day: '2-digit',
-            month: 'short',
-            year: 'numeric'
-        })
-    });
+    const formData = new FormData();
+    formData.append('member_name', member);   // PHP reads: $_POST['member_name']
+    formData.append('amount',      amount);   // PHP reads: $_POST['amount']
+    formData.append('duration',    duration);
 
-    memberInput.value = '';
-    amountInput.value = '';
-    durationSelect.value = '6 Months';
+    // fetch() sends the bag to add_loan.php and waits for reply
+    fetch('add_loan.php', { method: 'POST', body: formData })
 
-    updateAllUI();
-    alert(`✅ Loan of TSh ${formatNumber(amount)} for ${member} added successfully!`);
+    .then(res => res.json())
+    .then(data => {
+        if (data.success) {
+            loans.push({
+                id: loanIdCounter++,
+                member: member,
+                amount: amount,
+                duration: duration,
+                status: 'pending',
+                date: new Date().toLocaleDateString('en-US', {
+                    day: '2-digit',
+                    month: 'short',
+                    year: 'numeric'
+                })
+            });
+        
+            memberInput.value = '';
+            amountInput.value = '';
+            durationSelect.value = '6 Months';
+        
+            updateAllUI();
+            alert(`✅ Loan of TSh ${formatNumber(amount)} for ${member} added successfully!`);
+        }else {
+            // error report
+            alert(`❌ Error: ${data.message}`);
+        }
+    })
+    .catch(() => alert('Network error occurred. Please try again.'));
 }
-
 function approveLoan(id) {
     const loan = loans.find(l => l.id === id);
     if (loan && loan.status === 'pending') {
@@ -273,6 +290,15 @@ function sendMessage() {
         return;
     }
 
+    const formData = new FormData();
+    formData.append('recipient', recipient);
+    formData.append('subject', subject);
+    formData.append('content', content);
+
+    fetch('send_message.php', { method: 'POST', body: formData })
+    .then(res => res.json())
+    .then(data => {
+        if (data.success) {
     messages.push({
         id: messageIdCounter++,
         recipient: recipient,
@@ -292,6 +318,11 @@ function sendMessage() {
 
     updateAllUI();
     alert(`📨 Message sent to ${recipient} successfully!`);
+} else{
+    alert(`❌ Error: ${data.message}`);
+}
+    })
+    .catch(() => alert('Network error occurred. Please try again.'));
 }
 
 function deleteMessage(id) {
