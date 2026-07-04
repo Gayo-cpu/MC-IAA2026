@@ -312,3 +312,52 @@ tr:hover {
     height: 60px;
   }
 }
+/* Shared dashboard logo styles */
+.logo-area {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 35px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  text-align: left;
+}
+
+.logo-img {
+  flex: 0 0 55px;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #f4b400;
+  background: #fff;
+}
+
+.logo-area h2 {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0;
+  text-align: left;
+}
+
+.logo-area h2 span {
+  color: #f4b400;
+  display: inline;
+  font-size: inherit;
+}
+
+.logo-area .subtitle {
+  color: rgba(255, 255, 255, 0.7);
+  display: block;
+  font-size: 12px;
+  margin-top: 2px;
+  text-align: left;
+}
+
+@media (max-width: 768px) {
+  .logo-area {
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+}

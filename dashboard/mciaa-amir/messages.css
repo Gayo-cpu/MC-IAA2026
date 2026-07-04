@@ -575,3 +575,133 @@ tr:hover {
     height: 60px;
   }
 }
+/* Shared dashboard logo styles */
+.logo-area {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 35px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  text-align: left;
+}
+
+.logo-img {
+  flex: 0 0 55px;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #f4b400;
+  background: #fff;
+}
+
+.logo-area h2 {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0;
+  text-align: left;
+}
+
+.logo-area h2 span {
+  color: #f4b400;
+  display: inline;
+  font-size: inherit;
+}
+
+.logo-area .subtitle {
+  color: rgba(255, 255, 255, 0.7);
+  display: block;
+  font-size: 12px;
+  margin-top: 2px;
+  text-align: left;
+}
+
+@media (max-width: 768px) {
+  .logo-area {
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+}
+
+/* Incoming message table */
+.incoming-card {
+  margin-bottom: 25px;
+}
+
+.table-note {
+  color: #777;
+  font-size: 14px;
+}
+
+.table-container {
+  overflow-x: auto;
+}
+
+.priority {
+  border-radius: 20px;
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 6px 12px;
+  white-space: nowrap;
+}
+
+.priority.high {
+  background: #ffe5e5;
+  color: #d32f2f;
+}
+
+.priority.medium {
+  background: #fff4cc;
+  color: #9a6b00;
+}
+
+.priority.normal {
+  background: #d4edda;
+  color: #0b8f4d;
+}
+
+.message-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.message-actions button {
+  align-items: center;
+  border-radius: 8px;
+  display: inline-flex;
+  font-size: 13px;
+  font-weight: 600;
+  gap: 6px;
+  justify-content: center;
+  padding: 8px 12px;
+  width: auto;
+}
+
+.reply-btn {
+  background: #0b8f4d;
+}
+
+.reply-btn:hover {
+  background: #08703d;
+}
+
+.delete-btn {
+  background: #dc3545;
+}
+
+.delete-btn:hover {
+  background: #b92c3a;
+}
+
+@media (max-width: 768px) {
+  .message-actions {
+    flex-direction: column;
+  }
+
+  .message-actions button {
+    width: 100%;
+  }
+}

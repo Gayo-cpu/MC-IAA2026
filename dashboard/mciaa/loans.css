@@ -147,6 +147,41 @@ tr:hover {
   overflow-y: auto;
 }
 
+.logo-area {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 35px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.logo-img {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #f4b400;
+}
+
+.logo-area h2 {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.logo-area h2 span {
+  color: #f4b400;
+}
+
+.subtitle {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 12px;
+  display: block;
+  margin-top: 2px;
+}
+
 .logo {
   text-align: center;
   margin-bottom: 40px;
@@ -342,5 +377,54 @@ tr:hover {
   .sidebar a {
     font-size: 13px;
     padding: 8px 12px;
+  }
+}
+/* Shared dashboard logo styles */
+.logo-area {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 35px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  text-align: left;
+}
+
+.logo-img {
+  flex: 0 0 55px;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #f4b400;
+  background: #fff;
+}
+
+.logo-area h2 {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0;
+  text-align: left;
+}
+
+.logo-area h2 span {
+  color: #f4b400;
+  display: inline;
+  font-size: inherit;
+}
+
+.logo-area .subtitle {
+  color: rgba(255, 255, 255, 0.7);
+  display: block;
+  font-size: 12px;
+  margin-top: 2px;
+  text-align: left;
+}
+
+@media (max-width: 768px) {
+  .logo-area {
+    justify-content: center;
+    margin-bottom: 20px;
   }
 }
