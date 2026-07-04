@@ -25,3 +25,26 @@ form.addEventListener("submit", function (e) {
 
   form.reset();
 });
+
+// INCOMING MESSAGE ACTIONS
+
+document.querySelectorAll(".reply-btn").forEach((button) => {
+  button.addEventListener("click", () => {
+    const row = button.closest("tr");
+    const sender = row.children[0].textContent.trim();
+    const subject = row.children[1].textContent.trim();
+    const recipient = form.querySelector("select");
+    const subjectInput = form.querySelector('input[type="text"]');
+    const messageInput = form.querySelector("textarea");
+
+    recipient.value = sender;
+    subjectInput.value = `Re: ${subject}`;
+    messageInput.focus();
+  });
+});
+
+document.querySelectorAll(".delete-btn").forEach((button) => {
+  button.addEventListener("click", () => {
+    button.closest("tr").remove();
+  });
+});

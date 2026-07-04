@@ -19,20 +19,16 @@
     <!-- SIDEBAR -->
 
     <aside class="sidebar">
-      <div class="logo">
-        <div class="logo-icon">
-          <img
-            src="images/image.png"
-            alt="mciaalogo"
-            height="70px"
-            width="70px"
-            style="border-radius: 2rem"
-          />
+      <div class="logo-area">
+        <img
+          src="../../Habari/MC-IAA.jpeg"
+          alt="MCIAA logo"
+          class="logo-img"
+        />
+        <div>
+          <h2>MCIAA <span>Association</span></h2>
+          <span class="subtitle">Amir</span>
         </div>
-
-        <h2>MCIAA Association</h2>
-
-        <span>Amir</span>
       </div>
 
       <ul>
@@ -70,6 +66,12 @@
           <a href="messages.html">
             <i class="fa-solid fa-envelope"></i>
             Messages
+          </a>
+        </li>
+        <li>
+          <a href="../../views/login.html">
+            <i class="fa-solid fa-right-from-bracket"></i>
+            Logout
           </a>
         </li>
       </ul>
@@ -167,6 +169,89 @@
               Send Message
             </button>
           </form>
+        </div>
+
+        <!-- UPCOMING MESSAGES -->
+
+        <div class="history-card incoming-card">
+          <div class="history-header">
+            <h3>Upcoming Messages</h3>
+
+            <span class="table-note">Messages from leadership</span>
+          </div>
+
+          <div class="table-container">
+            <table id="incomingMessageTable">
+              <thead>
+                <tr>
+                  <th>From</th>
+                  <th>Subject</th>
+                  <th>Date</th>
+                  <th>Priority</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                <tr>
+                  <td>Amir Mkuu</td>
+                  <td>Friday Program Updates</td>
+                  <td>22 Jun 2026</td>
+                  <td><span class="priority high">High</span></td>
+                  <td>
+                    <div class="message-actions">
+                      <button type="button" class="reply-btn">
+                        <i class="fa-solid fa-reply"></i>
+                        Reply
+                      </button>
+                      <button type="button" class="delete-btn">
+                        <i class="fa-solid fa-trash"></i>
+                        Delete
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>Katibu</td>
+                  <td>Committee Meeting Agenda</td>
+                  <td>21 Jun 2026</td>
+                  <td><span class="priority medium">Medium</span></td>
+                  <td>
+                    <div class="message-actions">
+                      <button type="button" class="reply-btn">
+                        <i class="fa-solid fa-reply"></i>
+                        Reply
+                      </button>
+                      <button type="button" class="delete-btn">
+                        <i class="fa-solid fa-trash"></i>
+                        Delete
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>Amirati</td>
+                  <td>Women Section Report</td>
+                  <td>20 Jun 2026</td>
+                  <td><span class="priority normal">Normal</span></td>
+                  <td>
+                    <div class="message-actions">
+                      <button type="button" class="reply-btn">
+                        <i class="fa-solid fa-reply"></i>
+                        Reply
+                      </button>
+                      <button type="button" class="delete-btn">
+                        <i class="fa-solid fa-trash"></i>
+                        Delete
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
 
         <!-- MESSAGE HISTORY -->
