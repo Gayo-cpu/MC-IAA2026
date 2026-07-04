@@ -1,4 +1,5 @@
 <?php
+session_start();
 // Handles saving a new message from the form
 header("Content-Type: application/json");
 require_once "../config/db.php";
@@ -21,7 +22,7 @@ if (empty($recipient_role) || empty($subject) || empty($content)) {
     exit;
 }
 
-$stmt = $conn->prepare("SELECT id FROM users WHERE role = ? LIMIT 1");
+$stmt = $conn->prepare("SELECT userid FROM users WHERE role_description = ? LIMIT 1");
 $stmt->bind_param("s", $recipient_role);
 $stmt->execute();
 $result = $stmt->get_result();
@@ -32,13 +33,14 @@ if ($result->num_rows === 0) {
     ]);
     exit;
 }
-$recipient = $result->fetch_assc();
+$recipient = $result->fetch_assoc();
 $stmt->close();
 
-$recipient_id = $recipient['id'];
+$recipient_id = $recipient['userid'];
+$stmt->close();
 
 
-$stmt =$conn->prepare("INSERT INTO messages (sender_id, replied_by, message_text, subjct )
+$stmt =$conn->prepare("INSERT INTO messages (sender_id, replied_by, message_text, subjct)
         VALUES (?, ?, ?, ?)");
 
 $stmt->bind_param("iiss", $sender_id, $recipient_id, $content, $subject);
@@ -58,4 +60,5 @@ if ($stmt->execute()) {
 }
 
 $stmt->close();
+$conn->close();
 ?>

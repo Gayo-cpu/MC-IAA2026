@@ -4,21 +4,21 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Loans Management</title>
+    <title>Donations Management</title>
 
-    <link rel="stylesheet" href="loans.css" />
+    <link rel="stylesheet" href="../css/donations.css" />
 
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     />
-  <link rel="shortcut icon" href="images/image.png" />
+   <link rel="shortcut icon" href="../IMAGES/image.png" />
   </head>
   <body>
     <aside class="sidebar">
       <div class="logo-icon">
         <img
-          src="images/image.png"
+          src="../IMAGES/image.png"
           alt="mciaalogo"
           height="70px"
           width="70px"
@@ -90,105 +90,106 @@
     </aside>
     <main class="main-content">
       <div class="container">
-        <!-- Header -->
+        <!-- PAGE HEADER -->
 
         <div class="page-header">
           <div>
-            <h1>Loans Overview</h1>
-            <p>View all loan records</p>
+            <h1>Donations Overview</h1>
+            <p>View all donation activities</p>
           </div>
         </div>
 
-        <!-- Statistics -->
+        <!-- STATISTICS -->
 
         <div class="stats-grid">
           <div class="stat-card">
-            <i class="fa-solid fa-money-bill-wave"></i>
-            <h2>320</h2>
-            <p>Total Loans</p>
+            <i class="fa-solid fa-hand-holding-heart"></i>
+            <h2>TZS 45M</h2>
+            <p>Total Donations</p>
           </div>
 
           <div class="stat-card">
-            <i class="fa-solid fa-circle-check"></i>
-            <h2>250</h2>
-            <p>Approved</p>
+            <i class="fa-solid fa-calendar-days"></i>
+            <h2>TZS 6.8M</h2>
+            <p>This Month</p>
           </div>
 
           <div class="stat-card">
-            <i class="fa-solid fa-clock"></i>
-            <h2>45</h2>
-            <p>Pending</p>
+            <i class="fa-solid fa-mosque"></i>
+            <h2>TZS 18M</h2>
+            <p>Zaka Collection</p>
           </div>
 
           <div class="stat-card">
-            <i class="fa-solid fa-circle-xmark"></i>
-            <h2>25</h2>
-            <p>Rejected</p>
+            <i class="fa-solid fa-heart"></i>
+            <h2>TZS 27M</h2>
+            <p>Sadaka Collection</p>
           </div>
         </div>
 
-        <!-- Search -->
+        <!-- SEARCH -->
 
         <div class="search-box">
           <i class="fa-solid fa-magnifying-glass"></i>
 
-          <input type="text" id="loanSearch" placeholder="Search loan..." />
+          <input
+            type="text"
+            id="donationSearch"
+            placeholder="Search donation..."
+          />
         </div>
 
-        <!-- Table -->
+        <!-- DONATIONS TABLE -->
 
         <div class="table-container">
-          <table id="loanTable">
+          <table id="donationTable">
             <thead>
               <tr>
-                <th>Loan ID</th>
-                <th>Member</th>
+                <th>Receipt No</th>
+                <th>Donor Name</th>
+                <th>Category</th>
                 <th>Amount</th>
-                <th>Duration</th>
-                <th>Status</th>
                 <th>Date</th>
               </tr>
             </thead>
 
             <tbody>
               <tr>
-                <td>L001</td>
+                <td>DN001</td>
                 <td>Ahmed Ali</td>
+                <td>Zaka</td>
                 <td>TZS 500,000</td>
-                <td>6 Months</td>
-                <td>
-                  <span class="approved"> Approved </span>
-                </td>
                 <td>12 Jun 2026</td>
               </tr>
 
               <tr>
-                <td>L002</td>
+                <td>DN002</td>
                 <td>Fatma Hassan</td>
-                <td>TZS 300,000</td>
-                <td>4 Months</td>
-                <td>
-                  <span class="pending"> Pending </span>
-                </td>
+                <td>Sadaka</td>
+                <td>TZS 200,000</td>
                 <td>15 Jun 2026</td>
               </tr>
 
               <tr>
-                <td>L003</td>
+                <td>DN003</td>
                 <td>Omar Yusuf</td>
-                <td>TZS 800,000</td>
-                <td>12 Months</td>
-                <td>
-                  <span class="rejected"> Rejected </span>
-                </td>
-                <td>08 Jun 2026</td>
+                <td>Waqf</td>
+                <td>TZS 1,000,000</td>
+                <td>16 Jun 2026</td>
+              </tr>
+
+              <tr>
+                <td>DN004</td>
+                <td>Aisha Abdallah</td>
+                <td>Project Fund</td>
+                <td>TZS 350,000</td>
+                <td>17 Jun 2026</td>
               </tr>
             </tbody>
           </table>
         </div>
       </div>
-    </main>
-    <div class="logout-modal" id="logoutModal">
+    </main><div class="logout-modal" id="logoutModal">
 
     <div class="modal-content">
 
@@ -217,6 +218,6 @@
     </div>
 
 </div>
-    <script src="loans.js"></script>
+    <script src="../js/donations.js"></script>
   </body>
 </html>

@@ -6,19 +6,19 @@
 
     <title>Posts Management</title>
 
-    <link rel="stylesheet" href="posts.css" />
+    <link rel="stylesheet" href="../css/posts.css" />
 
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     />
-   <link rel="shortcut icon" href="images/image.png" />
+   <link rel="shortcut icon" href="../IMAGES/image.png" />
   </head>
   <body>
     <aside class="sidebar">
       <div class="logo-icon">
         <img
-          src="images/image.png"
+          src="../IMAGES/image.png"
           alt="mciaalogo"
           height="70px"
           width="70px"
@@ -235,6 +235,6 @@
     </div>
 
 </div>
-    <script src="posts.js"></script>
+    <script src="../js/posts.js"></script>
   </body>
 </html>

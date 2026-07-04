@@ -4,21 +4,21 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Registered Members</title>
+    <title>Loans Management</title>
 
-    <link rel="stylesheet" href="members.css" />
+    <link rel="stylesheet" href="../css/loans.css" />
 
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     />
-   <link rel="shortcut icon" href="images/image.png" />
+  <link rel="shortcut icon" href="../IMAGES/image.png" />
   </head>
   <body>
     <aside class="sidebar">
       <div class="logo-icon">
         <img
-          src="images/image.png"
+          src="../IMAGES/image.png"
           alt="mciaalogo"
           height="70px"
           width="70px"
@@ -26,9 +26,9 @@
         />
       </div>
 
-        <h2 style="color: white;">Islamic CMS</h2>
+        <h2>Islamic CMS</h2>
 
-        <span style="color: white;" Walfare</span>
+        <span style="color: white;">Walfare</span>
       </div>
 
       <ul>
@@ -88,82 +88,100 @@
 </li>
       </ul>
     </aside>
-
     <main class="main-content">
       <div class="container">
+        <!-- Header -->
+
         <div class="page-header">
           <div>
-            <h1>Registered Members</h1>
-            <p>View all registered members</p>
-          </div>
-
-          <div class="member-count">
-            <i class="fa-solid fa-users"></i>
-            <span>1,250 Members</span>
+            <h1>Loans Overview</h1>
+            <p>View all loan records</p>
           </div>
         </div>
 
-        <!-- Search Area -->
+        <!-- Statistics -->
+
+        <div class="stats-grid">
+          <div class="stat-card">
+            <i class="fa-solid fa-money-bill-wave"></i>
+            <h2>320</h2>
+            <p>Total Loans</p>
+          </div>
+
+          <div class="stat-card">
+            <i class="fa-solid fa-circle-check"></i>
+            <h2>250</h2>
+            <p>Approved</p>
+          </div>
+
+          <div class="stat-card">
+            <i class="fa-solid fa-clock"></i>
+            <h2>45</h2>
+            <p>Pending</p>
+          </div>
+
+          <div class="stat-card">
+            <i class="fa-solid fa-circle-xmark"></i>
+            <h2>25</h2>
+            <p>Rejected</p>
+          </div>
+        </div>
+
+        <!-- Search -->
 
         <div class="search-box">
           <i class="fa-solid fa-magnifying-glass"></i>
 
-          <input type="text" id="searchInput" placeholder="Search member..." />
+          <input type="text" id="loanSearch" placeholder="Search loan..." />
         </div>
 
-        <!-- Members Table -->
+        <!-- Table -->
 
         <div class="table-container">
-          <table id="membersTable">
+          <table id="loanTable">
             <thead>
               <tr>
-                <th>ID</th>
-                <th>Full Name</th>
-                <th>Phone</th>
-                <th>Gender</th>
+                <th>Loan ID</th>
+                <th>Member</th>
+                <th>Amount</th>
+                <th>Duration</th>
                 <th>Status</th>
+                <th>Date</th>
               </tr>
             </thead>
 
             <tbody>
               <tr>
-                <td>M001</td>
+                <td>L001</td>
                 <td>Ahmed Ali</td>
-                <td>0712345678</td>
-                <td>Male</td>
+                <td>TZS 500,000</td>
+                <td>6 Months</td>
                 <td>
-                  <span class="active"> Active </span>
+                  <span class="approved"> Approved </span>
                 </td>
+                <td>12 Jun 2026</td>
               </tr>
 
               <tr>
-                <td>M002</td>
+                <td>L002</td>
                 <td>Fatma Hassan</td>
-                <td>0755555555</td>
-                <td>Female</td>
+                <td>TZS 300,000</td>
+                <td>4 Months</td>
                 <td>
-                  <span class="active"> Active </span>
+                  <span class="pending"> Pending </span>
                 </td>
+                <td>15 Jun 2026</td>
               </tr>
 
               <tr>
-                <td>M003</td>
+                <td>L003</td>
                 <td>Omar Yusuf</td>
-                <td>0766666666</td>
-                <td>Male</td>
+                <td>TZS 800,000</td>
+                <td>12 Months</td>
                 <td>
-                  <span class="inactive"> Inactive </span>
+                  <span class="rejected"> Rejected </span>
                 </td>
-              </tr>
-
-              <tr>
-                <td>M004</td>
-                <td>Aisha Abdallah</td>
-                <td>0744444444</td>
-                <td>Female</td>
-                <td>
-                  <span class="active"> Active </span>
-                </td>
+                <td>08 Jun 2026</td>
               </tr>
             </tbody>
           </table>
@@ -199,6 +217,6 @@
     </div>
 
 </div>
-    <script src="members.js"></script>
+    <script src="../js/loans.js"></script>
   </body>
 </html>

@@ -1,34 +1,34 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Amiri Fedha · Dashboard</title>
+    <title>Deen of Student · Dashboard</title>
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="amiri-fedha.css" />
+    <link rel="stylesheet" href="../css/deen.css" />
 
     <!-- Favicon -->
     <link rel="shortcut icon" href="" />
 </head>
+
 <body>
 
     <aside class="sidebar">
         <div class="logo-area">
-            <img src="MC-IAA.jpeg" alt="" class="logo-img" />
+            <img src="../IMAGES/MC-IAA.jpeg" alt="" class="logo-img" />
             <div>
-                <h2>Amiri <span>Fedha</span></h2>
+                <h2>Deen of Student</h2>
                 <span class="subtitle"> Dashboard</span>
             </div>
         </div>
 
         <ul class="nav-links">
             <li><a href="#" class="active" data-page="overview"><i class="fa-solid fa-chart-pie"></i> Overview</a></li>
-            <li><a href="#" data-page="donations"><i class="fa-solid fa-hand-holding-heart"></i> Donations</a></li>
             <li><a href="#" data-page="loans"><i class="fa-solid fa-hand-holding-dollar"></i> Loans</a></li>
             <li><a href="#" data-page="messages"><i class="fa-solid fa-envelope"></i> Messages</a></li>
             <li><a href="#" data-page="settings"><i class="fa-solid fa-cog"></i> Settings</a></li>
@@ -52,156 +52,18 @@
                     <span id="notificationCount">0</span>
                 </div>
                 <img src="" alt="Admin" />
-                <span class="admin-name">Amiri Fedha</span>
+                <span class="admin-name">Deen of Student</span>
             </div>
         </div>
 
-        <!-- 
-        PAGE: OVERVIEW
-        -->
-        <section id="page-overview" class="page-section active">
-            <!-- Stats Cards -->
-            <div class="stats-grid">
-                <div class="stat-card">
-                    <i class="fa-solid fa-hand-holding-heart"></i>
-                    <h2 id="totalDonations">TSh 0</h2>
-                    <p>Total Donations</p>
-                    <span class="stat-sub" id="donationCount">0 donations</span>
-                </div>
-                <div class="stat-card">
-                    <i class="fa-solid fa-hand-holding-dollar"></i>
-                    <h2 id="totalLoans">TSh 0</h2>
-                    <p>Total Loans</p>
-                    <span class="stat-sub" id="loanCount">0 loans</span>
-                </div>
-                <div class="stat-card">
-                    <i class="fa-solid fa-circle-check"></i>
-                    <h2 id="confirmedCount">0</h2>
-                    <p>Confirmed</p>
-                    <span class="stat-sub" id="confirmedDetail">0 donations · 0 loans</span>
-                </div>
-                <div class="stat-card">
-                    <i class="fa-solid fa-clock"></i>
-                    <h2 id="pendingCount">0</h2>
-                    <p>Pending</p>
-                    <span class="stat-sub" id="pendingDetail">0 donations · 0 loans</span>
-                </div>
-            </div>
 
-            <!-- Quick Actions -->
-            <div class="quick-actions">
-                <a href="#" class="quick-btn" data-page="donations">
-                    <i class="fa-solid fa-hand-holding-heart"></i> View Donations
-                </a>
-                <a href="#" class="quick-btn" data-page="messages">
-                    <i class="fa-solid fa-envelope"></i> Open Messages
-                </a>
-                <a href="#" class="quick-btn" data-page="loans">
-                    <i class="fa-solid fa-hand-holding-dollar"></i> View Loans
-                </a>
-            </div>
-        </section>
 
-        <!-- 
-        PAGE: DONATIONS
-       -->
-        <section id="page-donations" class="page-section">
-            <div class="section-header">
-                <h2><i class="fa-solid fa-hand-holding-heart"></i> Donations Management</h2>
-                <p>Confirm pending donations</p>
-            </div>
+        <!-- PAGE: LOANS -->
 
-            <!-- Add Donation Form -->
-            <div class="add-form">
-                <h3><i class="fa-solid fa-plus-circle"></i> Add New Donation</h3>
-                <div class="form-row">
-                    <div class="form-group">
-                        <label>Donor Name</label>
-                        <input type="text" id="donorName" placeholder="Enter donor name" />
-                    </div>
-                    <div class="form-group">
-                        <label>Amount (TSh)</label>
-                        <input type="number" id="donationAmount" placeholder="Enter amount" />
-                    </div>
-                    <div class="form-group">
-                        <label>Category</label>
-                        <select id="donationCategory">
-                            <option value="Zaka">Zaka</option>
-                            <option value="Sadaka">Sadaka</option>
-                            <option value="Waqf">Waqf</option>
-                            <option value="Project Fund">Project Fund</option>
-                        </select>
-                    </div>
-                    <div class="form-group" style="align-self: flex-end;">
-                        <button onclick="addDonation()" class="btn-primary">
-                            <i class="fa-solid fa-plus"></i> Add Donation
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Search -->
-            <div class="search-box">
-                <i class="fa-solid fa-magnifying-glass"></i>
-                <input type="text" id="donationSearch" placeholder="Search donations..." />
-            </div>
-
-            <!-- Table -->
-            <div class="table-container">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Receipt No</th>
-                            <th>Donor</th>
-                            <th>Category</th>
-                            <th>Amount</th>
-                            <th>Status</th>
-                            <th>Action</th>
-                        </tr>
-                    </thead>
-                    <tbody id="donationTableBody">
-                        <!-- Dynamic content -->
-                    </tbody>
-                </table>
-            </div>
-        </section>
-
-        <!-- 
-        PAGE: LOANS
-       -->
         <section id="page-loans" class="page-section">
             <div class="section-header">
                 <h2><i class="fa-solid fa-hand-holding-dollar"></i> Loans Overview</h2>
                 <p>View all loan records</p>
-            </div>
-
-            <!-- Add Loan Form -->
-            <div class="add-form" style="background: #f8faf8;">
-                <h3><i class="fa-solid fa-plus-circle"></i> Add New Loan</h3>
-                <div class="form-row">
-                    <div class="form-group">
-                        <label>Member Name</label>
-                        <input type="text" id="loanName" placeholder="Enter member name" />
-                    </div>
-                    <div class="form-group">
-                        <label>Amount (TSh)</label>
-                        <input type="number" id="loanAmount" placeholder="Enter amount" />
-                    </div>
-                    <div class="form-group">
-                        <label>Duration</label>
-                        <select id="loanDuration">
-                            <option value="3 Months">3 Months</option>
-                            <option value="6 Months">6 Months</option>
-                            <option value="12 Months">12 Months</option>
-                            <option value="24 Months">24 Months</option>
-                        </select>
-                    </div>
-                    <div class="form-group" style="align-self: flex-end;">
-                        <button onclick="addLoan()" class="btn-primary" style="background: #c8a34b;">
-                            <i class="fa-solid fa-plus"></i> Add Loan
-                        </button>
-                    </div>
-                </div>
             </div>
 
             <!-- Search -->
@@ -215,16 +77,20 @@
                 <table>
                     <thead>
                         <tr>
-                            <th>Loan ID</th>
-                            <th>Member</th>
-                            <th>Amount</th>
-                            <th>Duration</th>
+                            <th>ID</th>
+                            <th>Student Name</th>
+                            <th>Registration No</th>
+                            <th>Course</th>
+                            <th>Year</th>
+                            <th>Phone</th>
+                            <th>NIDA</th>
                             <th>Status</th>
                             <th>Date</th>
                         </tr>
                     </thead>
+
                     <tbody id="loanTableBody">
-                        <!-- Dynamic content -->
+
                     </tbody>
                 </table>
             </div>
@@ -272,7 +138,8 @@
             <div class="history-card">
                 <div class="history-header">
                     <h3><i class="fa-solid fa-clock-rotate-left"></i> Message History</h3>
-                    <div class="search-box" style="margin: 0; box-shadow: none; border: 1px solid #ddd; padding: 5px 12px;">
+                    <div class="search-box"
+                        style="margin: 0; box-shadow: none; border: 1px solid #ddd; padding: 5px 12px;">
                         <i class="fa-solid fa-magnifying-glass"></i>
                         <input type="text" id="messageSearch" placeholder="Search messages..." />
                     </div>
@@ -307,12 +174,12 @@
                 <div class="settings-profile">
                     <img src="" alt="Profile" class="settings-avatar" />
                     <div>
-                        <h3>Amiri Fedha</h3>
+                        <h3>Deen of Student</h3>
                         <p> Accountant</p>
                     </div>
                 </div>
                 <div class="settings-details">
-                    <div><i class="fa-solid fa-envelope"></i> amiri.fedha</div>
+                    <div><i class="fa-solid fa-envelope"></i> Deen of Student</div>
                     <div><i class="fa-solid fa-phone"></i> </div>
                     <div><i class="fa-solid fa-globe"></i> Language: English</div>
                     <div><i class="fa-solid fa-bell"></i> Notifications: On</div>
@@ -340,6 +207,7 @@
         </div>
     </div>
 
-    <script src="Amiri-Fedha.js"></script>
+    <script src="../js/deen.js"></script>
 </body>
+
 </html>

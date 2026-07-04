@@ -6,19 +6,19 @@
 
     <title>Messages Center</title>
 
-    <link rel="stylesheet" href="messages.css" />
+    <link rel="stylesheet" href="../css/messages.css" />
 
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     />
-  <link rel="shortcut icon" href="images/image.png" />
+  <link rel="shortcut icon" href="../IMAGES/image.png" />
   </head>
   <body>
     <aside class="sidebar">
       <div class="logo-icon">
         <img
-          src="images/image.png"
+          src="../IMAGES/image.png"
           alt="mciaalogo"
           height="70px"
           width="70px"
@@ -96,7 +96,7 @@
               <span>3</span>
             </div>
 
-            <img src="images/image.png" alt="admin" />
+            <img src="../IMAGES/image.png" alt="admin" />
           </div>
         </div>
 
@@ -280,6 +280,6 @@
     </div>
 
 </div>
-    <script src="messages.js"></script>
+    <script src="../js/members.js"></script>
   </body>
 </html>

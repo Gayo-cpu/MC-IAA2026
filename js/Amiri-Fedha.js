@@ -295,7 +295,7 @@ function sendMessage() {
     formData.append('subject', subject);
     formData.append('content', content);
 
-    fetch('send_message.php', { method: 'POST', body: formData })
+    fetch('../backend/send_message.php', { method: 'POST', body: formData })
     .then(res => res.json())
     .then(data => {
         if (data.success) {

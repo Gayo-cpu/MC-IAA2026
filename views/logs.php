@@ -6,13 +6,13 @@
 
     <title>System Logs</title>
 
-    <link rel="stylesheet" href="logs.css" />
+    <link rel="stylesheet" href="../css/logs.css" />
 
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     />
-   <link rel="shortcut icon" href="images/image.png" />
+   <link rel="shortcut icon" href="../IMAGES/image.png" />
   </head>
   <body>
     <aside class="sidebar">
@@ -253,7 +253,7 @@
     </div>
 
 </div>
-    <script src="logs.js"></script>
+    <script src="../js/logs.js"></script>
   </body>
 </html>
 `

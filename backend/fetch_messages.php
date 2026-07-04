@@ -1,55 +1,75 @@
 <?php
 // fetch_messages.php
 // Returns all messages as JSON for the message history table
-
+session_start();
 header("Content-Type: application/json");
 require "../config/db.php";
+
+$user_id = $SESSION['userid'];
 // ─── OPTIONAL SEARCH FILTER ────────────────────────────────
 // Pass ?search=keyword to filter results
 $search = trim($_GET["search"] ?? "");
 
 if (!empty($search)) {
-    $search = mysqli_real_escape_string($conn, $search);
-    $sql = "SELECT id, recipient, subject, sent_at, status
-            FROM messages
-            WHERE recipient LIKE '%$search%'
-               OR subject   LIKE '%$search%'
-               OR content   LIKE '%$search%'
-            ORDER BY sent_at DESC";
+    $like = "%". $search . "%";
+    $stmt = $conn->prepare(
+        "SELECT
+        m.message_id,
+        m.subject,
+        m.message_text,
+        m.created_at,
+        m.is_answered,
+        s.role_description AS sender_role,
+        r.role_description AS recipient_role
+        FROM message m
+        JOIN users s ON s.userid = m.sender_id
+        JOIN users r ON r.userid = m.replied_by
+        WHERE m.sender_id = ? OR m.replied_by = ?
+        AND (m.subject LIKE ? OR m.message_text LIKE ?)
+        ORDER BY m.created_at DESC"
+    );
+    $stmt->bind_param("iiss", $user_id, $user_id, $like, $like);
 } else {
-    $sql = "SELECT id, recipient, subject, sent_at, status
-            FROM messages
-            ORDER BY sent_at DESC";
+    $stmt = $conn->prepare(
+
+        "SELECT
+        m.message_id,
+        m.subject,
+        m.message_text,
+        m.created_at,
+        m.is_answered,
+        s.role_description AS sender_role,
+        r.role_description AS recipient_role
+        FROM messages m
+        JOIN users s ON s.userid = m.sender_id
+        JOIN user r ON r.userid = m.replied_by
+        WHERE m.sender_id = ? OR m.replied_by = ?
+        ORDER BY m.created_at DESC"
+    );
+    $stmt->bind_param("ii", $user_id, $user_id);
+    
 }
+$stmt->execute();
+$result = $stmt->get_result();
 
-$result = mysqli_query($conn, $sql);
-
-if (!$result) {
-    echo json_encode([
-        "success" => false,
-        "message" => "Query failed: " . mysqli_error($conn)
-    ]);
-    exit;
-}
-
-// ─── BUILD ROWS ARRAY ──────────────────────────────────────
 $messages = [];
-
-while ($row = mysqli_fetch_assoc($result)) {
-    $messages[] = [
-        "id"        => $row["id"],
-        "recipient" => $row["recipient"],
-        "subject"   => $row["subject"],
-        "date"      => date("d M Y, H:i", strtotime($row["sent_at"])),
-        "status"    => $row["status"]
+while ($row = $result->fetch_assoc()){
+    $message[] = [
+        "id" => $row["message_id"],
+        "subject" => $row["subject"],
+        "recipient_role" => $row["sender_role"],
+        "date" => date("d M Y, H:i",srtotime($row['created_at'])),
+        "status" => $row["is_answered"] ? "Answered" : "Pending"
     ];
 }
 
 echo json_encode([
-    "success"  => true,
-    "count"    => count($messages),
+    "success" => true,
+    "count" => count($message),
     "messages" => $messages
 ]);
 
-mysqli_close($conn);
+$stmt->close();
+$conn->close();
+
 ?>

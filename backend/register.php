@@ -32,7 +32,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     )";
 
     if(mysqli_query($conn, $sql)){
-        echo "Registration Successful";
+        header ("location: ../views/login.php");
     } else {
         echo mysqli_error($conn);
     }

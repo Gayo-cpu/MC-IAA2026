@@ -4,21 +4,21 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Donations Management</title>
+    <title>Registered Members</title>
 
-    <link rel="stylesheet" href="donations.css" />
+    <link rel="stylesheet" href="../css/members.css" />
 
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     />
-   <link rel="shortcut icon" href="images/image.png" />
+   <link rel="shortcut icon" href="../IMAGES/image.png" />
   </head>
   <body>
     <aside class="sidebar">
       <div class="logo-icon">
         <img
-          src="images/image.png"
+          src="../IMAGES/image.png"
           alt="mciaalogo"
           height="70px"
           width="70px"
@@ -26,9 +26,9 @@
         />
       </div>
 
-        <h2>Islamic CMS</h2>
+        <h2 style="color: white;">Islamic CMS</h2>
 
-        <span style="color: white;">Walfare</span>
+        <span style="color: white;" Walfare</span>
       </div>
 
       <ul>
@@ -88,108 +88,89 @@
 </li>
       </ul>
     </aside>
+
     <main class="main-content">
       <div class="container">
-        <!-- PAGE HEADER -->
-
         <div class="page-header">
           <div>
-            <h1>Donations Overview</h1>
-            <p>View all donation activities</p>
+            <h1>Registered Members</h1>
+            <p>View all registered members</p>
+          </div>
+
+          <div class="member-count">
+            <i class="fa-solid fa-users"></i>
+            <span>1,250 Members</span>
           </div>
         </div>
 
-        <!-- STATISTICS -->
-
-        <div class="stats-grid">
-          <div class="stat-card">
-            <i class="fa-solid fa-hand-holding-heart"></i>
-            <h2>TZS 45M</h2>
-            <p>Total Donations</p>
-          </div>
-
-          <div class="stat-card">
-            <i class="fa-solid fa-calendar-days"></i>
-            <h2>TZS 6.8M</h2>
-            <p>This Month</p>
-          </div>
-
-          <div class="stat-card">
-            <i class="fa-solid fa-mosque"></i>
-            <h2>TZS 18M</h2>
-            <p>Zaka Collection</p>
-          </div>
-
-          <div class="stat-card">
-            <i class="fa-solid fa-heart"></i>
-            <h2>TZS 27M</h2>
-            <p>Sadaka Collection</p>
-          </div>
-        </div>
-
-        <!-- SEARCH -->
+        <!-- Search Area -->
 
         <div class="search-box">
           <i class="fa-solid fa-magnifying-glass"></i>
 
-          <input
-            type="text"
-            id="donationSearch"
-            placeholder="Search donation..."
-          />
+          <input type="text" id="searchInput" placeholder="Search member..." />
         </div>
 
-        <!-- DONATIONS TABLE -->
+        <!-- Members Table -->
 
         <div class="table-container">
-          <table id="donationTable">
+          <table id="membersTable">
             <thead>
               <tr>
-                <th>Receipt No</th>
-                <th>Donor Name</th>
-                <th>Category</th>
-                <th>Amount</th>
-                <th>Date</th>
+                <th>ID</th>
+                <th>Full Name</th>
+                <th>Phone</th>
+                <th>Gender</th>
+                <th>Status</th>
               </tr>
             </thead>
 
             <tbody>
               <tr>
-                <td>DN001</td>
+                <td>M001</td>
                 <td>Ahmed Ali</td>
-                <td>Zaka</td>
-                <td>TZS 500,000</td>
-                <td>12 Jun 2026</td>
+                <td>0712345678</td>
+                <td>Male</td>
+                <td>
+                  <span class="active"> Active </span>
+                </td>
               </tr>
 
               <tr>
-                <td>DN002</td>
+                <td>M002</td>
                 <td>Fatma Hassan</td>
-                <td>Sadaka</td>
-                <td>TZS 200,000</td>
-                <td>15 Jun 2026</td>
+                <td>0755555555</td>
+                <td>Female</td>
+                <td>
+                  <span class="active"> Active </span>
+                </td>
               </tr>
 
               <tr>
-                <td>DN003</td>
+                <td>M003</td>
                 <td>Omar Yusuf</td>
-                <td>Waqf</td>
-                <td>TZS 1,000,000</td>
-                <td>16 Jun 2026</td>
+                <td>0766666666</td>
+                <td>Male</td>
+                <td>
+                  <span class="inactive"> Inactive </span>
+                </td>
               </tr>
 
               <tr>
-                <td>DN004</td>
+                <td>M004</td>
                 <td>Aisha Abdallah</td>
-                <td>Project Fund</td>
-                <td>TZS 350,000</td>
-                <td>17 Jun 2026</td>
+                <td>0744444444</td>
+                <td>Female</td>
+                <td>
+                  <span class="active"> Active </span>
+                </td>
               </tr>
             </tbody>
           </table>
         </div>
       </div>
-    </main><div class="logout-modal" id="logoutModal">
+    </main>
+    <div class="logout-modal" id="logoutModal">
 
     <div class="modal-content">
 
@@ -218,6 +199,6 @@
     </div>
 
 </div>
-    <script src="donations.js"></script>
+    <script src="../js/members.js"></script>
   </body>
 </html>
