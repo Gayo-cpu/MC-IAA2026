@@ -6,19 +6,19 @@
 
     <title>Messages Center</title>
 
-    <link rel="stylesheet" href="messages.css" />
+    <link rel="stylesheet" href="../css/messages.css" />
 
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     />
-  <link rel="shortcut icon" href="images/image.png" />
+  <link rel="shortcut icon" href="../IMAGES/image.png" />
   </head>
   <body>
     <aside class="sidebar">
       <div class="logo-icon">
         <img
-          src="images/image.png"
+          src="../IMAGES/image.png"
           alt="mciaalogo"
           height="70px"
           width="70px"
@@ -33,37 +33,37 @@
 
       <ul>
         <li>
-          <a href="index.html"><i class="fa-solid fa-house"></i> Dashboard</a>
+          <a href="index.php"><i class="fa-solid fa-house"></i> Dashboard</a>
         </li>
 
         <li>
-          <a href="members.html"><i class="fa-solid fa-users"></i> Members</a>
+          <a href="members.php"><i class="fa-solid fa-users"></i> Members</a>
         </li>
 
         <li>
-          <a href="loans.html"
+          <a href="loans.php"
             ><i class="fa-solid fa-hand-holding-dollar"></i> Loans</a
           >
         </li>
 
         <li>
-          <a href="donations.html"
+          <a href="donations.php"
             ><i class="fa-solid fa-heart"></i> Donations</a
           >
         </li>
 
         <li>
-          <a href="posts.html"><i class="fa-solid fa-newspaper"></i> Posts</a>
+          <a href="posts.php"><i class="fa-solid fa-newspaper"></i> Posts</a>
         </li>
 
         <li>
-          <a href="logs.html"
+          <a href="logs.php"
             ><i class="fa-solid fa-clock-rotate-left"></i> Logs</a
           >
         </li>
 
         <li class="active">
-          <a href="messages.html">
+          <a href="messages.php">
             <i class="fa-solid fa-envelope"></i>
             Messages
           </a>
@@ -96,7 +96,7 @@
               <span>3</span>
             </div>
 
-            <img src="images/image.png" alt="admin" />
+            <img src="../IMAGES/image.png" alt="admin" />
           </div>
         </div>
 
@@ -280,6 +280,6 @@
     </div>
 
 </div>
-    <script src="messages.js"></script>
+    <script src="../js/members.js"></script>
   </body>
 </html>

@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="amiri-habari.css" />
+    <link rel="stylesheet" href="../css/amiri-habari.css" />
 
     <!-- Favicon -->
     <link rel="shortcut icon" href="" />
@@ -21,7 +21,7 @@
 
     <aside class="sidebar">
         <div class="logo-area">
-            <img src="MC-IAA.jpeg" alt="" class="logo-img" />
+            <img src="../IMAGES/MC-IAA.jpeg" alt="" class="logo-img" />
             <div>
                 <h2>Amiri <span>Habari</span></h2>
                 <span class="subtitle">Dashboard</span>
@@ -250,7 +250,7 @@
             </div>
             <div class="settings-card">
                 <div class="settings-profile">
-                    <img src="images/image.png" alt="Profile" class="settings-avatar" />
+                    <img src="../IMAGES/image.png" alt="Profile" class="settings-avatar" />
                     <div>
                         <h3>Amiri Habari</h3>
                         <p>Information Leader</p>
@@ -315,7 +315,7 @@
         </div>
     </div>
 
-    <script src="Amiri-Habari.js"></script>
+    <script src="../js/Amiri-Habari.js"></script>
 </body>
 
 </html>

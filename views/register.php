@@ -12,7 +12,7 @@
 <body>
 
     <div class="register-wrapper">
-        <a href="../views/index.html" class="back-link"><i class="fa-solid fa-arrow-left"></i> Back to Portal</a>
+        <a href="../views/index.php" class="back-link"><i class="fa-solid fa-arrow-left"></i> Back to Portal</a>
 
         <div class="register-card">
             <div class="register-header">

@@ -6,19 +6,19 @@
 
     <title>Posts Management</title>
 
-    <link rel="stylesheet" href="posts.css" />
+    <link rel="stylesheet" href="../css/posts.css" />
 
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     />
-   <link rel="shortcut icon" href="images/image.png" />
+   <link rel="shortcut icon" href="../IMAGES/image.png" />
   </head>
   <body>
     <aside class="sidebar">
       <div class="logo-icon">
         <img
-          src="images/image.png"
+          src="../IMAGES/image.png"
           alt="mciaalogo"
           height="70px"
           width="70px"
@@ -33,49 +33,49 @@
 
       <ul>
         <li>
-          <a href="index.html">
+          <a href="index.php">
             <i class="fa-solid fa-house"></i>
             Dashboard
           </a>
         </li>
 
         <li>
-          <a href="members.html">
+          <a href="members.php">
             <i class="fa-solid fa-users"></i>
             Members
           </a>
         </li>
 
         <li>
-          <a href="loans.html">
+          <a href="loans.php">
             <i class="fa-solid fa-hand-holding-dollar"></i>
             Loans
           </a>
         </li>
 
         <li>
-          <a href="donations.html">
+          <a href="donations.php">
             <i class="fa-solid fa-heart"></i>
             Donations
           </a>
         </li>
 
         <li>
-          <a href="posts.html">
+          <a href="posts.php">
             <i class="fa-solid fa-newspaper"></i>
             Posts
           </a>
         </li>
 
         <li>
-          <a href="logs.html">
+          <a href="logs.php">
             <i class="fa-solid fa-clock-rotate-left"></i>
             Logs
           </a>
         </li>
 
         <li>
-          <a href="messages.html">
+          <a href="messages.php">
             <i class="fa-solid fa-envelope"></i>
             Messages
           </a>
@@ -235,6 +235,6 @@
     </div>
 
 </div>
-    <script src="posts.js"></script>
+    <script src="../js/posts.js"></script>
   </body>
 </html>

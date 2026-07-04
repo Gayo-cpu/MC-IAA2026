@@ -5,20 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Super Admin Dashboard</title>
 
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="../css/style.css" />
 
     <!-- Font Awesome -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     />
-   <link rel="shortcut icon" href="images/image.png" />
+   <link rel="shortcut icon" href="../IMAGES/image.png" />
   </head>
   <body>
     <aside class="sidebar">
       <div class="logo-icon">
         <img
-          src="images/image.png"
+          src="../IMAGES/image.png"
           alt="mciaalogo"
           height="70px"
           width="70px"
@@ -106,7 +106,7 @@
             <span>4</span>
           </div>
 
-          <img src="images/image.png" alt="" />
+          <img src="../IMAGES/image.png" alt="" />
         </div>
       </div>
 
@@ -205,6 +205,6 @@
 
 </div>
 
-<script src="index.js"></script>
+<script src="../js/index.js"></script>
   </body>
 </html>

@@ -14,22 +14,22 @@
     <!-- Global Static Navbar -->
     <nav class="global-navbar">
         <div class="global-nav-container">
-            <a href="../views/index.html" class="global-nav-brand">
+            <a href="../views/index.php" class="global-nav-brand">
                 e-MCIAA <span class="global-brand-sub"></span>
             </a>
             <div class="global-nav-links" id="global-nav-links">
-                <a href="../views/index.html" class="global-nav-item">Home</a>
-                <a href="../views/about.html" class="global-nav-item">About Us</a>
-                <a href="../views/hifz.html" class="global-nav-item">Programs</a>
-                <a href="../views/ask_imam.html" class="global-nav-item">Ask Imam</a>
-                <a href="../views/news.html" class="global-nav-item">News</a>
-                <a href="../views/donate.html" class="global-nav-item">Donate</a>
-                <a href="../views/loan.html" class="global-nav-item">Loan</a>
-                <a href="contact.html" class="global-nav-item">Contact Us</a>
+                <a href="../views/index.php" class="global-nav-item">Home</a>
+                <a href="../views/about.php" class="global-nav-item">About Us</a>
+                <a href="../views/hifz.php" class="global-nav-item">Programs</a>
+                <a href="../views/ask_imam.php" class="global-nav-item">Ask Imam</a>
+                <a href="../views/news.php" class="global-nav-item">News</a>
+                <a href="../views/donate.php" class="global-nav-item">Donate</a>
+                <a href="../views/loan.php" class="global-nav-item">Loan</a>
+                <a href="contact.php" class="global-nav-item">Contact Us</a>
             </div>
             <div class="nav-auth">
-                <a href="../views/login.html" class="login-link">Admin Login</a>
-                <a href="../views/register.html" class="cta-btn">Join Us</a>
+                <a href="../views/login.php" class="login-link">Admin Login</a>
+                <a href="../views/register.php" class="cta-btn">Join Us</a>
             </div>
         </div>
     </nav>
