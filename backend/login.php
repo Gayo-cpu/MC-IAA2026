@@ -39,26 +39,26 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $role_desc = $user['role_description'] ?? '';
 
             if ($role_desc === 'habari') {
-                header("Location: ../Habari/amiri-habari.html");
+                header("Location: ../views/amiri-habari.php");
             } elseif ($role_desc === 'fedha') {
-                header("Location: ../Fedha/amiri-fedha.html");
+                header("Location: ../views/amiri-fedha.php");
             } else {
                 // super admin, dean, secretary, etc.
-                header("Location: ../walfare/index.html");
+                header("Location: ../views/dashboard.php");
             }
             exit();
 
         } else {
             echo "<script>
                     alert('Nywila si sahihi!');
-                    window.location='../views/login.html';
+                    window.location='../views/login.php';
                   </script>";
         }
 
     } else {
         echo "<script>
                 alert('Mtumiaji hajapatikana!');
-                window.location='../views/login.html';
+                window.location='../views/login.php';
               </script>";
     }
 }

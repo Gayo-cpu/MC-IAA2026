@@ -13,8 +13,8 @@
     <div class="portal-wrapper">
 
         <header>
-            <a href="../views/news.html" class="nav-links">&larr; Back to All News</a>
-            <a href="../views/index.html" class="nav-links">&larr; Back to home</a>
+            <a href="../views/news.php" class="nav-links">&larr; Back to All News</a>
+            <a href="../views/index.php" class="nav-links">&larr; Back to home</a>
             <span class="badge-tag">Announcement</span>
         </header>
 

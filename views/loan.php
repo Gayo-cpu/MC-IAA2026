@@ -13,20 +13,20 @@
 <body>
     <nav class="navbar">
         <div class="nav-container">
-            <a href="../INDEX/index.html" class="nav-logo">e-MCIAA</a>
+            <a href="../views/index.php" class="nav-logo">e-MCIAA</a>
             <ul class="nav-links">
-                <a href="index.html" class="global-nav-item">Home</a>
-                <a href="../views/about.html" class="global-nav-item">About Us</a>
-                <a href="../views/hifz.html" class="global-nav-item">Programs</a>
-                <a href="../views/ask_imam.html" class="global-nav-item">Ask Imam</a>
-                <a href="../views/news.html" class="global-nav-item">News</a>
-                <a href="../views/donate.html" class="global-nav-item">Donate</a>
-                <a href="loan.html" class="global-nav-item">Loan</a>
-                <a href="../views/contact.html" class="global-nav-item">Contact Us</a>
+                <a href="index.php" class="global-nav-item">Home</a>
+                <a href="../views/about.php" class="global-nav-item">About Us</a>
+                <a href="../views/hifz.php" class="global-nav-item">Programs</a>
+                <a href="../views/ask_imam.php" class="global-nav-item">Ask Imam</a>
+                <a href="../views/news.php" class="global-nav-item">News</a>
+                <a href="../views/donate.php" class="global-nav-item">Donate</a>
+                <a href="loan.php" class="global-nav-item">Loan</a>
+                <a href="../views/contact.php" class="global-nav-item">Contact Us</a>
             </ul>
             <div class="nav-auth">
-                <a href="../views/login.html" class="btn-admin">Admin Login</a>
-                <a href="../views/register.html" class="btn-join">Join Us</a>
+                <a href="../views/login.php" class="btn-admin">Admin Login</a>
+                <a href="../views/register.php" class="btn-join">Join Us</a>
             </div>
         </div>
     </nav>
