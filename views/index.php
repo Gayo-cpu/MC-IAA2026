@@ -1,210 +1,269 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Super Admin Dashboard</title>
 
-    <link rel="stylesheet" href="../css/style.css" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#1e3d1a">
+    <title>Programs | MCIAA Association</title>
 
-    <!-- Font Awesome -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-    />
-   <link rel="shortcut icon" href="../IMAGES/image.png" />
-  </head>
-  <body>
-    <aside class="sidebar">
-      <div class="logo-icon">
-        <img
-          src="../IMAGES/image.png"
-          alt="mciaalogo"
-          height="70px"
-          width="70px"
-          style="border-radius: 2rem"
-        />
-      </div>
+    <!-- Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Amiri&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
-        <h2 style="color: white;">Islamic CMS</h2>
+    <!-- <link rel="stylesheet" href="../assets/css/common.css"> -->
+    <!-- 1. Link the Main Styles (This has your grid and nav rules) -->
+    <link rel="stylesheet" href="../css/index.css">
 
-        <span style="color: white;">Walfare</span>
-      </div>
+    <!-- 2. Link the Hifz Specific Styles (This has your badges and hero logic) -->
+    <!-- <link rel="stylesheet" href="../HIFZ/hifz.css"> -->
+</head>
 
-      <ul>
-        <li>
-          <a href="index.html">
-            <i class="fa-solid fa-house"></i>
-            Dashboard
-          </a>
-        </li>
+<body>
 
-        <li>
-          <a href="members.html">
-            <i class="fa-solid fa-users"></i>
-            Members
-          </a>
-        </li>
+    <nav class="global-navbar">
+        <div class="global-nav-container">
+            <a href="index.html" class="global-nav-brand">
+                e-MCIAA <span class="global-brand-sub"></span>
+            </a>
+            <div class="global-nav-links" id="global-nav-links">
+                <a href="index.html" class="global-nav-item">Home</a>
+                <a href="../views/about.html" class="global-nav-item">About Us</a>
+                <a href="../views/hifz.html" class="global-nav-item">Programs</a>
+                <a href="../views/ask_imam.html" class="global-nav-item">Ask Imam</a>
+                <a href="../views/news.html" class="global-nav-item">News</a>
+                <a href="../views/donate.html" class="global-nav-item">Donate</a>
+                <a href="../views/loan.html" class="global-nav-item">Loan</a>
+                <a href="../views/contact.html" class="global-nav-item">Contact Us</a>
+                <!-- <a href="donate.html" class="global-nav-btn-cta">Donate Now</a> -->
+            </div>
 
-        <li>
-          <a href="loans.html">
-            <i class="fa-solid fa-hand-holding-dollar"></i>
-            Loans
-          </a>
-        </li>
+            <div class="nav-auth">
+                <a href="../views/login.html" class="login-link" data-i18n="nav.login">Admin Login</a>
+                <a href="../views/register.html" class="cta-btn" data-i18n="nav.join">Join Us</a>
+            </div>
+        </div>
+        </div>
+    </nav>
 
-        <li>
-          <a href="donations.html">
-            <i class="fa-solid fa-heart"></i>
-            Donations
-          </a>
-        </li>
+    <section class="hero-header">
+        <div class="hero-overlay">
+            <div class="hero-text">
+                <span class="badge">Welcome to<strong> MUSLIM COMMUNITY INSTITUTE OF ACCOUNTANCY ARUSHA
+                    </strong>(MCIAA)</span>
+                <h1>Building a Brighter <br><span>Future Together</span></h1>
+                <p class="hero-description">
+                    Rooted in the timeless values of <strong>Ihsan</strong> and <strong>Ukhuwah</strong>,
+                    the MCIAA Association is a sanctuary for growth. We are a vibrant community dedicated
+                    to nurturing the holistic development of Muslim youth by bridging the gap between
+                    spiritual enlightenment, rigorous academic achievement, and a lifelong commitment
+                    to selfless community service—empowering the leaders of tomorrow to excel in both
+                    <strong>Deen and Dunya</strong>.
+                </p>
+                <div class="hero-actions">
+                    <a href="../views/register.html" class="btn-solid">Get Started</a>
+                    <a href="../views/hifz.html" class="btn-outline">Explore Programs</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Wisdom Section -->
+    <section class="wisdom-banner">
+        <div class="wisdom-content">
+            <i class="fas fa-heart-pulse"></i>
+            <div class="quran-verse">
+                <p class="arabic">"وَتَعَاوَنُوا عَلَى الْبِرِّ وَالتَّقْوَىٰ"</p>
+                <h3>"And cooperate in righteousness and piety"</h3>
+                <span>— Surah Al-Ma'idah 5:2</span>
+            </div>
+            <div class="wisdom-divider"></div>
+            <div class="hadith-quote">
+                <p>"The best of people are those that bring most benefit to the rest of mankind."</p>
+                <span>— Prophet Muhammad (PBUH)</span>
+            </div>
+        </div>
+    </section>
 
-        <li>
-          <a href="posts.html">
-            <i class="fa-solid fa-newspaper"></i>
-            Posts
-          </a>
-        </li>
 
-        <li>
-          <a href="logs.html">
-            <i class="fa-solid fa-clock-rotate-left"></i>
-            Logs
-          </a>
-        </li>
-
-        <li>
-          <a href="messages.html">
-            <i class="fa-solid fa-envelope"></i>
-            Messages
-          </a>
-        </li>
-        <li class="logout-item">
-    <a href="#" id="logoutBtn">
-        <i class="fa-solid fa-right-from-bracket"></i>
-        Logout
-    </a>
-</li>
-      </ul>
-    </aside>
-
-    <!-- Main Content -->
-
-    <main class="main-content">
-      <!-- Topbar -->
-
-      <div class="topbar">
-        <div>
-          <h1>Dashboard</h1>
-          <p>Welcome Super Administrator</p>
+    <section id="programs" class="programs-section">
+        <div class="section-header">
+            <h2 style="color: #ffffff;">Our Community Hub</h2>
+            <div class="underline"></div>
         </div>
 
-        <div class="profile">
-          <div class="notification">
-            <i class="fa-solid fa-bell"></i>
-            <span>4</span>
-          </div>
+        <div class="program-grid">
+            <!-- 1. Hifz Program -->
+            <div class="program-card">
+                <i class="fas fa-book-quran"></i>
+                <h3 style="color: #1e3d1a;">Hifz Program</h3>
+                <p style="color: #444;">Structured levels for Quran memorization and Tajweed excellence.</p>
+                <a href="../views/hifz.html">Learn More</a>
+            </div>
 
-          <img src="../IMAGES/image.png" alt="" />
+            <!-- 2. Ask Imam -->
+            <div class="program-card">
+                <i class="fas fa-comment-dots"></i>
+                <h3 style="color: #1e3d1a;">Ask Imam</h3>
+                <p style="color: #444;">A safe space to get answers to your questions from our scholars.</p>
+                <a href="../views/ask_imam.html">Ask a Question</a>
+            </div>
+
+            <!-- 3. Give Back -->
+            <div class="program-card">
+                <i class="fas fa-hand-holding-heart"></i>
+                <h3 style="color: #1e3d1a;">Give Back</h3>
+                <p style="color: #444;">Support our community initiatives through secure donations.</p>
+                <a href="../views/donate.html">Donate Now</a>
+            </div>
+
+            <!-- 4. Latest News (NEW) -->
+            <div class="program-card">
+                <i class="fas fa-newspaper"></i>
+                <h3 style="color: #1e3d1a;">Latest News</h3>
+                <p style="color: #444;">Stay updated with our latest workshops and community events in Arusha.</p>
+                <a href="../views/news.html">View News</a>
+            </div>
+
+            <!-- 5. About Us (NEW) -->
+            <div class="program-card">
+                <i class="fas fa-users"></i>
+                <h3 style="color: #1e3d1a;">About Us</h3>
+                <p style="color: #444;">Learn about our mission to empower the Muslim youth through education.</p>
+                <a href="../views/about.html">Our Story</a>
+            </div>
+
+            <!-- 6. Contact Us (NEW) -->
+            <div class="program-card">
+                <i class="fas fa-envelope-open-text"></i>
+                <h3 style="color: #1e3d1a;">Contact Us</h3>
+                <p style="color: #444;">Have a question or need support? Our team is here to help you.</p>
+                <a href="../views/contact.html">Get in Touch</a>
+            </div>
         </div>
-      </div>
-
-      <!-- Stats -->
-
-      <section class="stats">
-        <div class="card">
-          <i class="fa-solid fa-users"></i>
-          <h2>1,250</h2>
-          <p>Total Members</p>
+    </section>
+    <!-- Prayer Timetable Section (Utility & Beauty) -->
+    <section class="prayer-times">
+        <div class="container">
+            <div class="prayer-card">
+                <h3><i class="far fa-clock"></i> Prayer Times - Arusha</h3>
+                <div class="times-grid">
+                    <div class="time-item"><span>Fajr</span> <strong>05:30</strong></div>
+                    <div class="time-item"><span>Dhuhr</span> <strong>13:00</strong></div>
+                    <div class="time-item"><span>Asr</span> <strong>16:00</strong></div>
+                    <div class="time-item"><span>Maghrib</span> <strong>18:45</strong></div>
+                    <div class="time-item"><span>Isha</span> <strong>20:02</strong></div>
+                </div>
+            </div>
         </div>
+    </section>
 
-        <div class="card">
-          <i class="fa-solid fa-hand-holding-dollar"></i>
-          <h2>320</h2>
-          <p>Total Loans</p>
+    <!-- Stats Section (Social Proof) -->
+    <section class="stats-bar">
+        <div class="stat-item">
+            <h2 class="counter" data-target="500">0</h2>
+            <p>Active Students</p>
         </div>
-
-        <div class="card">
-          <i class="fa-solid fa-heart"></i>
-          <h2>TZS 15M</h2>
-          <p>Donations</p>
+        <div class="stat-item">
+            <h2 class="counter" data-target="12">0</h2>
+            <p>Hifz Levels</p>
         </div>
-
-        <div class="card">
-          <i class="fa-solid fa-newspaper"></i>
-          <h2>80</h2>
-          <p>Posts</p>
+        <div class="stat-item">
+            <h2 class="counter" data-target="1500">0</h2>
+            <p>Questions Answered</p>
         </div>
-      </section>
+    </section>
 
-      <!-- Recent Activity -->
-
-      <section class="recent-section">
-        <div class="recent-posts">
-          <h3>Recent Posts</h3>
-
-          <div class="post">
-            <h4>Eid Announcement</h4>
-            <p>Posted by Amir Habari</p>
-          </div>
-
-          <div class="post">
-            <h4>Youth Da'wah Program</h4>
-            <p>Posted by Amir Habari</p>
-          </div>
-        </div>
-
-        <div class="quick-info">
-          <h3>Quick Summary</h3>
-
-          <div class="summary-box">
-            <span>Active Members</span>
-            <strong>1,180</strong>
-          </div>
-
-          <div class="summary-box">
-            <span>Pending Loans</span>
-            <strong>24</strong>
-          </div>
-
-          <div class="summary-box">
-            <span>Today's Donations</span>
-            <strong>TZS 450K</strong>
-          </div>
-        </div>
-      </section>
-    </main>
-    <div class="logout-modal" id="logoutModal">
-
-    <div class="modal-content">
-
-        <div class="modal-icon">
-            <i class="fa-solid fa-right-from-bracket"></i>
-        </div>
-
-        <h3>Logout</h3>
-
-        <p>
-            Are you sure you want to logout from the Welfare Dashboard?
-        </p>
-
-        <div class="modal-buttons">
-
-            <button id="cancelLogout" class="cancel-btn">
-                Cancel
-            </button>
-
-            <button id="confirmLogout" class="logout-btn">
-                Logout
-            </button>
-
+    <!-- Interactive Testimonial Section -->
+    <section class="testimonials">
+        <div class="section-header">
+            <h2 style="color: #1e3d1a;">Community Voices</h2>
+            <div class="underline"></div>
         </div>
 
-    </div>
+        <div class="program-grid">
+            <!-- Card 1 -->
+            <div class="testimonial-card-v2">
+                <div class="quote-mark">“</div>
+                <p>The Ask Imam feature helped me navigate difficult questions about my faith with total privacy and
+                    respect.</p>
+                <div class="user-info">
+                    <div class="user-avatar">AS</div>
+                    <h4>Ahmed S.</h4>
+                </div>
+            </div>
 
-</div>
+            <!-- Card 2 -->
+            <div class="testimonial-card-v2">
+                <div class="quote-mark">“</div>
+                <p>Joining the Hifz program changed my life. The teachers are supportive and the structure is perfect
+                    for students.</p>
+                <div class="user-info">
+                    <div class="user-avatar">MK</div>
+                    <h4>Mariam K.</h4>
+                </div>
+            </div>
 
-<script src="../js/index.js"></script>
-  </body>
+            <!-- Card 3 -->
+            <div class="testimonial-card-v2">
+                <div class="quote-mark">“</div>
+                <p>I love how easy it is to stay updated with news. The association has truly built a digital home for
+                    us.</p>
+                <div class="user-info">
+                    <div class="user-avatar">JM</div>
+                    <h4>Juma M.</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Dynamic Values Bar -->
+    <section class="values-bar-section">
+        <div class="values-container">
+            <!-- Value 1 -->
+            <div class="value-item-card">
+                <div class="icon-wrapper">
+                    <i class="fas fa-leaf"></i>
+                </div>
+                <span>Ikhlas</span>
+                <small>Sincerity</small>
+            </div>
+
+            <!-- Value 2 -->
+            <div class="value-item-card">
+                <div class="icon-wrapper">
+                    <i class="fas fa-scale-balanced"></i>
+                </div>
+                <span>'Adl</span>
+                <small>Justice</small>
+            </div>
+
+            <!-- Value 3 -->
+            <div class="value-item-card">
+                <div class="icon-wrapper">
+                    <i class="fas fa-handshake-angle"></i>
+                </div>
+                <span>Ihsan</span>
+                <small>Excellence</small>
+            </div>
+
+            <!-- Value 4 -->
+            <div class="value-item-card">
+                <div class="icon-wrapper">
+                    <i class="fas fa-shield-heart"></i>
+                </div>
+                <span>Amanah</span>
+                <small>Trust</small>
+            </div>
+        </div>
+    </section>
+
+    <script src="../assets/js/common.js"></script>
+
+    <script src="../js/index.js"></script>
+    <!-- Footer -->
+    <footer class="main-footer">
+        <p>&copy; 2026 Muslim Community Institute of accountancy Arusha. All Rights Reserved.</p>
+    </footer>
+</body>
+
 </html>
