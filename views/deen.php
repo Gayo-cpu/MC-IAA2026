@@ -1,3 +1,11 @@
+<?php
+session_start();
+
+if (!isset($_SESSION['user_id'])){
+    header("Location: ../views/login.php");
+    exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -207,7 +215,7 @@
         </div>
     </div>
 
-    <script src="../js/deen.js"></script>
+    <script src="../js/deen.js" defer></script>
 </body>
 
 </html>

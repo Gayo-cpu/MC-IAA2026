@@ -1,3 +1,11 @@
+<?php
+session_start();
+
+if (!isset($_SESSION['user_id'])){
+    header("Location: ../views/login.php");
+    exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -315,7 +323,7 @@
         </div>
     </div>
 
-    <script src="../js/Amiri-Habari.js"></script>
+    <script src="../js/Amiri-Habari.js" defer></script>
 </body>
 
 </html>

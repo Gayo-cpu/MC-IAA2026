@@ -152,7 +152,7 @@
     </footer>
     <script src="../assets/js/common.js"></script>
 
-    <script src="../js/hifz.js"></script>
+    <script src="../js/hifz.js" defer></script>
 </body>
 
 </html>

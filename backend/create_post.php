@@ -1,7 +1,6 @@
 <?php
-header('Content-Type: application/json');
-header('Access-Control-Allow-Origin: *');
 session_start();
+header('Content-Type: application/json');
 include '../config/db.php';
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {

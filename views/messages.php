@@ -12,28 +12,28 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     />
-  <link rel="shortcut icon" href="../images/image.png" />
+    <link rel="shortcut icon" href="../IMAGES/image.png" />
   </head>
+
   <body>
+    <!-- SIDEBAR -->
+
     <aside class="sidebar">
-      <div class="logo-icon">
+      <div class="logo-area">
         <img
-          src="../images/image.png"
-          alt="mciaalogo"
-          height="70px"
-          width="70px"
-          style="border-radius: 2rem"
+          src="../IMAGES/image.png"
+          alt="MCIAA logo"
+          class="logo-img"
         />
-      </div>
-
-        <h2 style="color: white;">Islamic CMS</h2>
-
-        <span style="color: white;">Super Admin</span>
+        <div>
+          <h2>MCIAA <span>Association</span></h2>
+          <span class="subtitle">Amir</span>
+        </div>
       </div>
 
       <ul>
         <li>
-          <a href="index.php"><i class="fa-solid fa-house"></i> Dashboard</a>
+          <a href="dashboard.php"><i class="fa-solid fa-house"></i> Dashboard</a>
         </li>
 
         <li>
@@ -68,18 +68,18 @@
             Messages
           </a>
         </li>
-        <li class="logout-item">
-    <a href="#" id="logoutBtn">
-        <i class="fa-solid fa-right-from-bracket"></i>
-        Logout
-    </a>
-</li>
+        <li>
+          <a href="../views/login.php">
+            <i class="fa-solid fa-right-from-bracket"></i>
+            Logout
+          </a>
+        </li>
       </ul>
     </aside>
 
     <!-- MAIN CONTENT -->
     <main class="main-content">
-      <div class="main-content">
+     
         <!-- TOPBAR -->
 
         <div class="topbar">
@@ -96,7 +96,7 @@
               <span>3</span>
             </div>
 
-            <img src="../images/image.png" alt="admin" />
+            <img src="../IMAGES/image.png" alt="admin" />
           </div>
         </div>
 
@@ -126,20 +126,6 @@
 
             <p>Female Leader</p>
           </div>
-          <div class="leader-card">
-            <div class="avatar">AH</div>
-
-            <h3>Amiri Habari</h3>
-
-            <p>Info Leader</p>
-          </div>
-          <div class="leader-card">
-            <div class="avatar">AF</div>
-
-            <h3>Amiri Fedha</h3>
-
-            <p>Accountant Leader</p>
-          </div>
         </div>
 
         <!-- MESSAGE FORM -->
@@ -159,8 +145,6 @@
                 <option>Katibu</option>
 
                 <option>Amirati</option>
-                <option>Amiri Fedha</option>
-                <option>Amiri Habari</option>
               </select>
             </div>
 
@@ -185,6 +169,101 @@
               Send Message
             </button>
           </form>
+        </div>
+
+        <!-- UPCOMING MESSAGES -->
+
+        <div class="history-card incoming-card">
+          <div class="history-header">
+            <h3>Upcoming Messages</h3>
+
+            <span class="table-note">Messages from leadership</span>
+          </div>
+
+          <div class="table-container">
+            <table id="incomingMessageTable">
+              <thead>
+                <tr>
+                  <th>From</th>
+                  <th>Subject</th>
+                  <th>Date</th>
+                  <th>Priority</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                <tr>
+                  <td>Amir Mkuu</td>
+                  <td>Friday Program Updates</td>
+                  <td>22 Jun 2026</td>
+                  <td><span class="priority high">High</span></td>
+                  <td>
+                    <div class="message-actions">
+                      <button
+                        type="button"
+                        class="view-btn"
+                        data-message="Please review the Friday program updates and confirm the arrangements for the upcoming session."
+                      >
+                        <i class="fa-solid fa-eye"></i>
+                        View
+                      </button>
+                      <button type="button" class="delete-btn">
+                        <i class="fa-solid fa-trash"></i>
+                        Delete
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>Katibu</td>
+                  <td>Committee Meeting Agenda</td>
+                  <td>21 Jun 2026</td>
+                  <td><span class="priority medium">Medium</span></td>
+                  <td>
+                    <div class="message-actions">
+                      <button
+                        type="button"
+                        class="view-btn"
+                        data-message="Kindly check the committee meeting agenda before the next leadership meeting."
+                      >
+                        <i class="fa-solid fa-eye"></i>
+                        View
+                      </button>
+                      <button type="button" class="delete-btn">
+                        <i class="fa-solid fa-trash"></i>
+                        Delete
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>Amirati</td>
+                  <td>Women Section Report</td>
+                  <td>20 Jun 2026</td>
+                  <td><span class="priority normal">Normal</span></td>
+                  <td>
+                    <div class="message-actions">
+                      <button
+                        type="button"
+                        class="view-btn"
+                        data-message="The women section report is ready for review. Please read it and share your response."
+                      >
+                        <i class="fa-solid fa-eye"></i>
+                        View
+                      </button>
+                      <button type="button" class="delete-btn">
+                        <i class="fa-solid fa-trash"></i>
+                        Delete
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
 
         <!-- MESSAGE HISTORY -->
@@ -251,35 +330,48 @@
         </div>
       </div>
     </main>
-    <div class="logout-modal" id="logoutModal">
 
-    <div class="modal-content">
-
-        <div class="modal-icon">
-            <i class="fa-solid fa-right-from-bracket"></i>
+    <div class="message-modal" id="messageModal" aria-hidden="true">
+      <div class="message-modal-box" role="dialog" aria-modal="true" aria-labelledby="modalSubject">
+        <div class="message-modal-header">
+          <div>
+            <span id="modalSender"></span>
+            <h3 id="modalSubject"></h3>
+          </div>
+          <button type="button" class="modal-icon-btn" id="modalXClose" aria-label="Close message popup">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
         </div>
 
-        <h3>Logout</h3>
-
-        <p>
-            Are you sure you want to logout from the Welfare Dashboard?
-        </p>
-
-        <div class="modal-buttons">
-
-            <button id="cancelLogout" class="cancel-btn">
-                Cancel
-            </button>
-
-            <button id="confirmLogout" class="logout-btn">
-                Logout
-            </button>
-
+        <div class="message-modal-meta">
+          <span id="modalDate"></span>
+          <span id="modalPriority"></span>
         </div>
 
+        <p id="modalMessage"></p>
+
+        <form class="modal-reply-form" id="modalReplyForm">
+          <label for="modalReplyText">Reply message</label>
+          <textarea id="modalReplyText" rows="4" placeholder="Write your reply here..."></textarea>
+          <button type="submit">
+            <i class="fa-solid fa-paper-plane"></i>
+            Send Reply
+          </button>
+        </form>
+
+        <div class="message-modal-actions">
+          <button type="button" class="reply-btn" id="openReplyBtn">
+            <i class="fa-solid fa-reply"></i>
+            Reply
+          </button>
+          <button type="button" class="close-btn" id="closeModalBtn">
+            <i class="fa-solid fa-xmark"></i>
+            Close
+          </button>
+        </div>
+      </div>
     </div>
-
-</div>
-    <script src="../js/members.js"></script>
+    <script src="../js/messages.js" defer></script>
+    <script src="../js/logout-confirm.js" defer></script>
   </body>
 </html>

@@ -302,7 +302,7 @@
     </footer>
 
     <!-- Link to Separate JS File -->
-    <script src="../js/donate.js"></script>
+    <script src="../js/donate.js" defer></script>
 </body>
 
 </html>

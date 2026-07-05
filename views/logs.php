@@ -12,27 +12,22 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     />
-   <link rel="shortcut icon" href="../images/image.png" />
+    <link rel="shortcut icon" href="../IMAGES/image.png" />
   </head>
+
   <body>
     <aside class="sidebar">
-      <div class="logo-icon">
-        <img
-          src="../images/image.png"
-          alt="mciaalogo"
-          height="70px"
-          width="70px"
-          style="border-radius: 2rem"
-        />
-      </div>
-        <h2 style="color: white;">Islamic CMS</h2>
-
-        <span style="color: white;">Walfare</span>
+      <div class="logo-area">
+        <img src="../IMAGES/image.png" alt="MCIAA logo" class="logo-img" />
+        <div>
+          <h2>MCIAA <span>Association</span></h2>
+          <span class="subtitle">Amir</span>
+        </div>
       </div>
 
       <ul>
         <li>
-          <a href="index.php">
+          <a href="dashboard.php">
             <i class="fa-solid fa-house"></i>
             Dashboard
           </a>
@@ -79,12 +74,12 @@
             Messages
           </a>
         </li>
-        <li class="logout-item">
-    <a href="#" id="logoutBtn">
-        <i class="fa-solid fa-right-from-bracket"></i>
-        Logout
-    </a>
-</li>
+        <li>
+          <a href="../views/login.php">
+            <i class="fa-solid fa-right-from-bracket"></i>
+            Logout
+          </a>
+        </li>
       </ul>
     </aside>
 
@@ -224,36 +219,8 @@
         </div>
       </div>
     </main>
-    <div class="logout-modal" id="logoutModal">
-
-    <div class="modal-content">
-
-        <div class="modal-icon">
-            <i class="fa-solid fa-right-from-bracket"></i>
-        </div>
-
-        <h3>Logout</h3>
-
-        <p>
-            Are you sure you want to logout from the Welfare Dashboard?
-        </p>
-
-        <div class="modal-buttons">
-
-            <button id="cancelLogout" class="cancel-btn">
-                Cancel
-            </button>
-
-            <button id="confirmLogout" class="logout-btn">
-                Logout
-            </button>
-
-        </div>
-
-    </div>
-
-</div>
-    <script src="../js/logs.js"></script>
+    <script src="../js/logs.js" defer></script>
+    <script src="../js/logout-confirm.js" defer></script>
   </body>
 </html>
 `

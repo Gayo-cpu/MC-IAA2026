@@ -27,7 +27,7 @@
         </section>
     </div>
 
-    <script src="../js/news.js"></script>
+    <script src="../js/news.js" defer></script>
 </body>
 
 </html>

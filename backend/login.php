@@ -4,38 +4,43 @@ include("../config/db.php");
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-    $username = mysqli_real_escape_string($conn, $_POST['username']);
-    $password = $_POST['password'];
+    $username = trim($_POST['username']);
+    $password = trim($_POST['password']);
 
-    $sql = "SELECT * FROM users
-            WHERE email='$username'
-            OR fullname='$username'";
+    //kucheck email na user name kama ipo 
+    $stmt = $conn->prepare("SELECT * FROM users WHERE email = ? OR fullname = ? LIMIT 1");
+    $stmt->bind_param("ss", $username, $username);
+    $stmt->execute();
+    $result = $stmt->get_result();
 
-    $result = mysqli_query($conn, $sql);
+    if ($result->num_rows == 1) {
 
-    if (mysqli_num_rows($result) == 1) {
+        $user = $result->fetch_assoc();
+        $stmt->close();
 
-        $user = mysqli_fetch_assoc($result);
-
-        // Support both plain text (legacy) and hashed passwords
         $passwordMatch = false;
+            //kuverify password  
         if (password_verify($password, $user['password'])) {
             $passwordMatch = true;
         } elseif ($password === $user['password']) {
-            // Legacy plain-text fallback — hash it now
+            // kama password ikiwa haijakuwa encrypted
             $newHash = password_hash($password, PASSWORD_DEFAULT);
-            mysqli_query($conn, "UPDATE users SET password='$newHash' WHERE userid=" . $user['userid']);
+            $stmtUp = $conn->prepare("UPDATE users SET password = ? WHERE userid = ?");
+            $stmtUp->bind_param("si", $newHash, $user['userid']);
+            $stmtUp->execute();
+            $stmtUp->close();
             $passwordMatch = true;
         }
 
         if ($passwordMatch) {
 
-            $_SESSION['userid']   = $user['userid'];
-            $_SESSION['fullname'] = $user['fullname'];
-            $_SESSION['role']     = $user['role'];
+            // kutengeneza session kwa kuzipa variables
+            $_SESSION['user_id']          = $user['userid'];
+            $_SESSION['fullname']         = $user['fullname'];
+            $_SESSION['role']             = $user['role'];
             $_SESSION['role_description'] = $user['role_description'];
 
-            // Redirect based on role_description
+            //kuelekeza user kwa kudepend na role yake
             $role_desc = $user['role_description'] ?? '';
 
             if ($role_desc === 'habari') {
@@ -43,7 +48,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             } elseif ($role_desc === 'fedha') {
                 header("Location: ../views/amiri-fedha.php");
             } else {
-                // super admin, dean, secretary, etc.
                 header("Location: ../views/dashboard.php");
             }
             exit();
@@ -56,6 +60,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
 
     } else {
+        $stmt->close();
         echo "<script>
                 alert('Mtumiaji hajapatikana!');
                 window.location='../views/login.php';

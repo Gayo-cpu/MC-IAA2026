@@ -95,7 +95,7 @@
     </div>
 
     <!-- Linking External JavaScript -->
-    <script src="../js/loan.js"></script>
+    <script src="../js/loan.js" defer></script>
 </body>
 
 </html>

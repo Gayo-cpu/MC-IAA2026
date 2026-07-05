@@ -1,4 +1,11 @@
+<?php
+session_start();
 
+if (!isset($_SESSION['user_id'])){
+    header("Location: ../views/login.php");
+    exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -340,6 +347,6 @@
         </div>
     </div>
 
-    <script src="../js/Amiri-Fedha.js"></script>
+    <script src="../js/Amiri-Fedha.js" defer></script>
 </body>
 </html>

@@ -244,8 +244,8 @@
     <!-- Footer Script Links -->
     <script src="../assets/js/common.js"></script>
 
-    <script src="../js/about.js"></script>
-    <script src="about.js"></script> <!-- Link to your dynamic JS -->
+    <script src="../js/about.js" defer></script>
+    <script src="about.js" defer></script> <!-- Link to your dynamic JS -->
 </body>
 
 </html>
