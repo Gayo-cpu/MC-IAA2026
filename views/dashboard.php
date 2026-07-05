@@ -28,7 +28,7 @@
 
       <ul>
         <li>
-          <a href="index.php">
+          <a href="dashboard.php">
             <i class="fa-solid fa-house"></i>
             Dashboard
           </a>
