@@ -26,30 +26,84 @@ form.addEventListener("submit", function (e) {
   form.reset();
 });
 
-const logoutBtn = document.getElementById("logoutBtn");
+// INCOMING MESSAGE ACTIONS
 
-const logoutModal = document.getElementById("logoutModal");
+const modal = document.getElementById("messageModal");
+const modalSender = document.getElementById("modalSender");
+const modalSubject = document.getElementById("modalSubject");
+const modalDate = document.getElementById("modalDate");
+const modalPriority = document.getElementById("modalPriority");
+const modalMessage = document.getElementById("modalMessage");
+const modalReplyForm = document.getElementById("modalReplyForm");
+const modalReplyText = document.getElementById("modalReplyText");
+const openReplyBtn = document.getElementById("openReplyBtn");
+const closeModalBtn = document.getElementById("closeModalBtn");
+const modalXClose = document.getElementById("modalXClose");
 
-const cancelLogout = document.getElementById("cancelLogout");
+let activeMessage = null;
 
-const confirmLogout = document.getElementById("confirmLogout");
-
-if (logoutBtn) {
-  logoutBtn.addEventListener("click", function (e) {
-    e.preventDefault();
-
-    logoutModal.style.display = "flex";
-  });
+function closeMessageModal() {
+  modal.classList.remove("active");
+  modal.setAttribute("aria-hidden", "true");
+  modalReplyForm.classList.remove("active");
+  modalReplyText.value = "";
+  activeMessage = null;
 }
 
-if (cancelLogout) {
-  cancelLogout.addEventListener("click", function () {
-    logoutModal.style.display = "none";
-  });
-}
+document.querySelectorAll(".view-btn").forEach((button) => {
+  button.addEventListener("click", () => {
+    const row = button.closest("tr");
+    const sender = row.children[0].textContent.trim();
+    const subject = row.children[1].textContent.trim();
+    const date = row.children[2].textContent.trim();
+    const priority = row.children[3].textContent.trim();
 
-if (confirmLogout) {
-  confirmLogout.addEventListener("click", function () {
-    window.location.href = "login.html";
+    activeMessage = { sender, subject };
+    modalSender.textContent = sender;
+    modalSubject.textContent = subject;
+    modalDate.textContent = date;
+    modalPriority.textContent = priority;
+    modalMessage.textContent = button.dataset.message || subject;
+
+    modal.classList.add("active");
+    modal.setAttribute("aria-hidden", "false");
   });
-}
+});
+
+openReplyBtn.addEventListener("click", () => {
+  modalReplyForm.classList.add("active");
+  modalReplyText.focus();
+});
+
+modalReplyForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  if (!modalReplyText.value.trim()) {
+    alert("Please write your reply message.");
+    return;
+  }
+
+  alert(`Reply sent to ${activeMessage.sender}!`);
+  closeMessageModal();
+});
+
+closeModalBtn.addEventListener("click", closeMessageModal);
+modalXClose.addEventListener("click", closeMessageModal);
+
+modal.addEventListener("click", (e) => {
+  if (e.target === modal) {
+    closeMessageModal();
+  }
+});
+
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape" && modal.classList.contains("active")) {
+    closeMessageModal();
+  }
+});
+
+document.querySelectorAll(".delete-btn").forEach((button) => {
+  button.addEventListener("click", () => {
+    button.closest("tr").remove();
+  });
+});

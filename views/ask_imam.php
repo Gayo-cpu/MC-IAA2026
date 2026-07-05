@@ -159,7 +159,7 @@
     </main>
 
     <!-- Injection of programmatic interaction -->
-    <script src="../js/ask_imam.js"></script>
+    <script src="../js/ask_imam.js" defer></script>
 </body>
 </form>
 </html>

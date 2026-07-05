@@ -323,7 +323,7 @@ if (!isset($_SESSION['user_id'])){
         </div>
     </div>
 
-    <script src="../js/Amiri-Habari.js"></script>
+    <script src="../js/Amiri-Habari.js" defer></script>
 </body>
 
 </html>

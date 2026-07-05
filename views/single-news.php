@@ -37,7 +37,7 @@
 
 
 
-    <script src="../js/single-news.js"></script>
+    <script src="../js/single-news.js" defer></script>
 
 
 </body>

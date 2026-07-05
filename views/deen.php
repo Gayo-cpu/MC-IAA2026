@@ -215,7 +215,7 @@ if (!isset($_SESSION['user_id'])){
         </div>
     </div>
 
-    <script src="../js/deen.js"></script>
+    <script src="../js/deen.js" defer></script>
 </body>
 
 </html>
