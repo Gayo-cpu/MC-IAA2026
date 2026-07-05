@@ -1,11 +1,3 @@
-<?php
-session_start();
-
-if (!isset($_SESSION['user_id'])){
-    header("Location: ../views/login.php");
-    exit();
-}
-?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -13,87 +5,80 @@ if (!isset($_SESSION['user_id'])){
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Super Admin Dashboard</title>
 
-    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/mciaa/style.css" />
 
     <!-- Font Awesome -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     />
-   <link rel="shortcut icon" href="../images/image.png" />
+    <link rel="shortcut icon" href="../images/mciaa/image.png" />
   </head>
   <body>
     <aside class="sidebar">
-      <div class="logo-icon">
-        <img
-          src="../images/image.png"
-          alt="mciaalogo"
-          height="70px"
-          width="70px"
-          style="border-radius: 2rem"
-        />
-      </div>
-
-        <h2 style="color: white;">Islamic CMS</h2>
-
-        <span style="color: white;">Walfare</span>
+      <div class="logo-area">
+        <img src="../images/mciaa/image.png" alt="MCIAA logo" class="logo-img" />
+        <div>
+          <h2>MCIAA <span>Association</span></h2>
+          <span class="subtitle">Super Admin</span>
+        </div>
       </div>
 
       <ul>
         <li>
-          <a href="index.html">
+          <a href="index.php">
             <i class="fa-solid fa-house"></i>
             Dashboard
           </a>
         </li>
 
         <li>
-          <a href="members.html">
+          <a href="members.php">
             <i class="fa-solid fa-users"></i>
             Members
           </a>
         </li>
 
         <li>
-          <a href="loans.html">
+          <a href="loans.php">
             <i class="fa-solid fa-hand-holding-dollar"></i>
             Loans
           </a>
         </li>
 
         <li>
-          <a href="donations.html">
+          <a href="donations.php">
             <i class="fa-solid fa-heart"></i>
             Donations
           </a>
         </li>
 
         <li>
-          <a href="posts.html">
+          <a href="posts.php">
             <i class="fa-solid fa-newspaper"></i>
             Posts
           </a>
         </li>
 
         <li>
-          <a href="logs.html">
+          <a href="logs.php">
             <i class="fa-solid fa-clock-rotate-left"></i>
             Logs
           </a>
         </li>
 
         <li>
-          <a href="messages.html">
+          <a href="messages.php">
             <i class="fa-solid fa-envelope"></i>
             Messages
           </a>
         </li>
-        <li class="logout-item">
-    <a href="#" id="logoutBtn">
-        <i class="fa-solid fa-right-from-bracket"></i>
-        Logout
-    </a>
-</li>
+        <li>
+          <a href="../views/login.php">
+            <i class="fa-solid fa-right-from-bracket"></i>
+            Logout
+          </a>
+        </li>
       </ul>
     </aside>
 
@@ -114,7 +99,7 @@ if (!isset($_SESSION['user_id'])){
             <span>4</span>
           </div>
 
-          <img src="../images/image.png" alt="" />
+          <img src="../images/mciaa/image.png" alt="" />
         </div>
       </div>
 
@@ -183,36 +168,6 @@ if (!isset($_SESSION['user_id'])){
         </div>
       </section>
     </main>
-    <div class="logout-modal" id="logoutModal">
-
-    <div class="modal-content">
-
-        <div class="modal-icon">
-            <i class="fa-solid fa-right-from-bracket"></i>
-        </div>
-
-        <h3>Logout</h3>
-
-        <p>
-            Are you sure you want to logout from the Welfare Dashboard?
-        </p>
-
-        <div class="modal-buttons">
-
-            <button id="cancelLogout" class="cancel-btn">
-                Cancel
-            </button>
-
-            <button id="confirmLogout" class="logout-btn">
-                Logout
-            </button>
-
-        </div>
-
-    </div>
-
-</div>
-
-<script src="../js/index.js"></script>
+    <script src="../js/logout-confirm.js"></script>
   </body>
 </html>

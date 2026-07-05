@@ -154,7 +154,7 @@ body {
     min-height: 55vh !important;
     /* Clean linear-gradient overlay mirroring your design presets */
     background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4)), 
-                url('../IMAGES/hifz.jpg') no-repeat center center;
+                url('../images/hifz.jpg') no-repeat center center;
     background-size: cover;
     background-position: center;
     background-attachment: fixed; /* Parallax effect */

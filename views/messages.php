@@ -12,13 +12,13 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     />
-  <link rel="shortcut icon" href="../IMAGES/image.png" />
+  <link rel="shortcut icon" href="../images/image.png" />
   </head>
   <body>
     <aside class="sidebar">
       <div class="logo-icon">
         <img
-          src="../IMAGES/image.png"
+          src="../images/image.png"
           alt="mciaalogo"
           height="70px"
           width="70px"
@@ -96,7 +96,7 @@
               <span>3</span>
             </div>
 
-            <img src="../IMAGES/image.png" alt="admin" />
+            <img src="../images/image.png" alt="admin" />
           </div>
         </div>
 

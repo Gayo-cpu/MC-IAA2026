@@ -26,7 +26,7 @@ if (!isset($_SESSION['user_id'])){
 
     <aside class="sidebar">
         <div class="logo-area">
-            <img src="../IMAGES/MC-IAA.jpeg" alt="" class="logo-img" />
+            <img src="../images/MC-IAA.jpeg" alt="" class="logo-img" />
             <div>
                 <h2>Amiri <span>Fedha</span></h2>
                 <span class="subtitle"> Dashboard</span>

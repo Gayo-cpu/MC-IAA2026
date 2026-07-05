@@ -29,7 +29,7 @@ if (!isset($_SESSION['user_id'])){
 
     <aside class="sidebar">
         <div class="logo-area">
-            <img src="../IMAGES/MC-IAA.jpeg" alt="" class="logo-img" />
+            <img src="../images/MC-IAA.jpeg" alt="" class="logo-img" />
             <div>
                 <h2>Amiri <span>Habari</span></h2>
                 <span class="subtitle">Dashboard</span>
@@ -258,7 +258,7 @@ if (!isset($_SESSION['user_id'])){
             </div>
             <div class="settings-card">
                 <div class="settings-profile">
-                    <img src="../IMAGES/image.png" alt="Profile" class="settings-avatar" />
+                    <img src="../images/image.png" alt="Profile" class="settings-avatar" />
                     <div>
                         <h3>Amiri Habari</h3>
                         <p>Information Leader</p>
