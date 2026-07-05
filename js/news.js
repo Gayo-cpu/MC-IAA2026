@@ -49,7 +49,7 @@ async function loadNews() {
 }
 
 function openNews(id) {
-    window.location.href = `single-news.html?id=${id}`;
+    window.location.href = `single-news.php?id=${id}`;
 }
 
 loadNews();

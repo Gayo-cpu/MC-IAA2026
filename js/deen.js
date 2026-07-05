@@ -492,7 +492,7 @@ document.addEventListener(
 
             confirm.onclick = function () {
 
-                window.location.href = "../views/login.html";
+                window.location.href = "../views/login.php";
 
             }
 

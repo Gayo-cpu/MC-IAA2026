@@ -8,7 +8,7 @@ const id = params.get("id");
 
 async function loadArticle() {
     if (!id) {
-        container.innerHTML = '<h2>Makala haijachaguliwa.</h2><p><a href="news.html">Rudi kwenye habari</a></p>';
+        container.innerHTML = '<h2>Makala haijachaguliwa.</h2><p><a href="news.php">Rudi kwenye habari</a></p>';
         return;
     }
 

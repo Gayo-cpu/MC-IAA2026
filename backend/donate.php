@@ -78,7 +78,7 @@ function saveDonation(mysqli $conn, array $donor, float $amount, string $donateT
 }
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST'){
-    header("Location: donate.html");
+    header("Location: donate.php");
     exit;
 }
 
@@ -94,7 +94,7 @@ $message = security($_POST['message']);
 $donation = saveDonation($conn, $donor, $amount, $donateType, $paymentMethod, $transcation_id, $message, $category);
 
 if(isset($donation)){
-    header("Location: ../views/donate.html");
+    header("Location: ../views/donate.php");
     exit;
 }
 

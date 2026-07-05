@@ -273,7 +273,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     if (logoutBtn)     logoutBtn.addEventListener('click', e => { e.preventDefault(); logoutModal?.classList.add('show'); });
     if (cancelLogout)  cancelLogout.addEventListener('click', () => logoutModal?.classList.remove('show'));
-    if (confirmLogout) confirmLogout.addEventListener('click', () => { window.location.href = '../views/login.html'; });
+    if (confirmLogout) confirmLogout.addEventListener('click', () => { window.location.href = '../views/login.php'; });
     if (logoutModal)   logoutModal.addEventListener('click', e => { if (e.target === logoutModal) logoutModal.classList.remove('show'); });
 
     // Load posts on init

@@ -14,7 +14,7 @@
 
     <div class="login-wrapper">
         <!-- Back to Main Portal Link -->
-        <a href="../views/index.html" class="back-home-link"><i class="fa-solid fa-arrow-left"></i> Back to Portal</a>
+        <a href="../views/index.php" class="back-home-link"><i class="fa-solid fa-arrow-left"></i> Back to Portal</a>
 
         <div class="login-card">
             <!-- Brand Header -->

@@ -28,7 +28,7 @@
                 e-MCIAA <span class="global-brand-sub"></span>
             </a>
             <div class="global-nav-links" id="global-nav-links">
-                <a href="index.html" class="global-nav-item">Home</a>
+                <a href="index.php" class="global-nav-item">Home</a>
                 <a href="../views/about.php" class="global-nav-item">About Us</a>
                 <a href="../views/hifz.php" class="global-nav-item">Programs</a>
                 <a href="../views/ask_imam.php" class="global-nav-item">Ask Imam</a>
@@ -36,7 +36,7 @@
                 <a href="../views/donate.php" class="global-nav-item">Donate</a>
                 <a href="../views/loan.php" class="global-nav-item">Loan</a>
                 <a href="../views/contact.php" class="global-nav-item">Contact Us</a>
-                <!-- <a href="donate.html" class="global-nav-btn-cta">Donate Now</a> -->
+                <!-- <a href="donate.php" class="global-nav-btn-cta">Donate Now</a> -->
             </div>
 
             <div class="nav-auth">
@@ -58,7 +58,7 @@
                     the MCIAA Association is a sanctuary for growth. We are a vibrant community dedicated
                     to nurturing the holistic development of Muslim youth by bridging the gap between
                     spiritual enlightenment, rigorous academic achievement, and a lifelong commitment
-                    to selfless community service—empowering the leaders of tomorrow to excel in both
+                    to selfless community service�empowering the leaders of tomorrow to excel in both
                     <strong>Deen and Dunya</strong>.
                 </p>
                 <div class="hero-actions">
@@ -73,14 +73,14 @@
         <div class="wisdom-content">
             <i class="fas fa-heart-pulse"></i>
             <div class="quran-verse">
-                <p class="arabic">"وَتَعَاوَنُوا عَلَى الْبِرِّ وَالتَّقْوَىٰ"</p>
+                <p class="arabic">"????????????? ????? ???????? ?????????????"</p>
                 <h3>"And cooperate in righteousness and piety"</h3>
-                <span>— Surah Al-Ma'idah 5:2</span>
+                <span>� Surah Al-Ma'idah 5:2</span>
             </div>
             <div class="wisdom-divider"></div>
             <div class="hadith-quote">
                 <p>"The best of people are those that bring most benefit to the rest of mankind."</p>
-                <span>— Prophet Muhammad (PBUH)</span>
+                <span>� Prophet Muhammad (PBUH)</span>
             </div>
         </div>
     </section>
@@ -98,7 +98,7 @@
                 <i class="fas fa-book-quran"></i>
                 <h3 style="color: #1e3d1a;">Hifz Program</h3>
                 <p style="color: #444;">Structured levels for Quran memorization and Tajweed excellence.</p>
-                <a href="../views/hifz.html">Learn More</a>
+                <a href="../views/hifz.php">Learn More</a>
             </div>
 
             <!-- 2. Ask Imam -->
@@ -106,7 +106,7 @@
                 <i class="fas fa-comment-dots"></i>
                 <h3 style="color: #1e3d1a;">Ask Imam</h3>
                 <p style="color: #444;">A safe space to get answers to your questions from our scholars.</p>
-                <a href="../views/ask_imam.html">Ask a Question</a>
+                <a href="../views/ask_imam.php">Ask a Question</a>
             </div>
 
             <!-- 3. Give Back -->
@@ -114,7 +114,7 @@
                 <i class="fas fa-hand-holding-heart"></i>
                 <h3 style="color: #1e3d1a;">Give Back</h3>
                 <p style="color: #444;">Support our community initiatives through secure donations.</p>
-                <a href="../views/donate.html">Donate Now</a>
+                <a href="../views/donate.php">Donate Now</a>
             </div>
 
             <!-- 4. Latest News (NEW) -->
@@ -122,7 +122,7 @@
                 <i class="fas fa-newspaper"></i>
                 <h3 style="color: #1e3d1a;">Latest News</h3>
                 <p style="color: #444;">Stay updated with our latest workshops and community events in Arusha.</p>
-                <a href="../views/news.html">View News</a>
+                <a href="../views/news.php">View News</a>
             </div>
 
             <!-- 5. About Us (NEW) -->
@@ -130,7 +130,7 @@
                 <i class="fas fa-users"></i>
                 <h3 style="color: #1e3d1a;">About Us</h3>
                 <p style="color: #444;">Learn about our mission to empower the Muslim youth through education.</p>
-                <a href="../views/about.html">Our Story</a>
+                <a href="../views/about.php">Our Story</a>
             </div>
 
             <!-- 6. Contact Us (NEW) -->
@@ -138,7 +138,7 @@
                 <i class="fas fa-envelope-open-text"></i>
                 <h3 style="color: #1e3d1a;">Contact Us</h3>
                 <p style="color: #444;">Have a question or need support? Our team is here to help you.</p>
-                <a href="../views/contact.html">Get in Touch</a>
+                <a href="../views/contact.php">Get in Touch</a>
             </div>
         </div>
     </section>
@@ -184,7 +184,7 @@
         <div class="program-grid">
             <!-- Card 1 -->
             <div class="testimonial-card-v2">
-                <div class="quote-mark">“</div>
+                <div class="quote-mark">�</div>
                 <p>The Ask Imam feature helped me navigate difficult questions about my faith with total privacy and
                     respect.</p>
                 <div class="user-info">
@@ -195,7 +195,7 @@
 
             <!-- Card 2 -->
             <div class="testimonial-card-v2">
-                <div class="quote-mark">“</div>
+                <div class="quote-mark">�</div>
                 <p>Joining the Hifz program changed my life. The teachers are supportive and the structure is perfect
                     for students.</p>
                 <div class="user-info">
@@ -206,7 +206,7 @@
 
             <!-- Card 3 -->
             <div class="testimonial-card-v2">
-                <div class="quote-mark">“</div>
+                <div class="quote-mark">�</div>
                 <p>I love how easy it is to stay updated with news. The association has truly built a digital home for
                     us.</p>
                 <div class="user-info">

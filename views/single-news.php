@@ -20,7 +20,7 @@
     <div class="article-wrapper">
 
 
-        <a href="news.html" class="back-btn">
+        <a href="news.php" class="back-btn">
             ← Back To News
         </a>
 

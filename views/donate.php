@@ -27,7 +27,7 @@
                 <a href="../views/donate.php" class="global-nav-item">Donate</a>
                 <a href="../views/loan.php" class="global-nav-item">Loan</a>
                 <a href="../views/contact.php" class="global-nav-item">Contact Us</a>
-                <!-- <a href="donate.html" class="global-nav-btn-cta">Donate Now</a> -->
+                <!-- <a href="donate.php" class="global-nav-btn-cta">Donate Now</a> -->
             </div>
 
             <div class="nav-auth">
@@ -43,7 +43,7 @@
         <p>Empowering Muslim students, strengthening communities, and extending a helping hand to those in need. Your
             contribution helps us serve communities, support education, provide emergency assistance, and create lasting
             positive change.</p>
-        <!-- <a href="donate.html" class="btn-main">Donate Now</a> -->
+        <!-- <a href="donate.php" class="btn-main">Donate Now</a> -->
         <button onclick="selectCategory('Support MCIAA Association')" class="btn-main"> Donate
         </button>
     </section>
