@@ -23,7 +23,7 @@
                 <p>Please provide your academic and contact details to verify your membership</p>
             </div>
 
-           <form action="../backend/register.php" method="POST">
+           <form id="registerForm">
 
                 <div class="input-group">
                     <label for="fullName">Full Name</label>
@@ -67,17 +67,30 @@
                 
                 </div>
 
+
                 <div class="input-group">
     <label for="gender">Gender</label>
     <div class="field-container">
         <i class="fa-solid fa-user"></i>
         <select id="gender" name="gender" required>
             <option value="">Select Gender</option>
-            <option value="Male">Male</option>
-            <option value="Female">Female</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
         </select>
     </div>
 </div>
+
+                <div class="input-group">
+                    <label for="role">Register As</label>
+                    <div class="field-container">
+                        <i class="fa-solid fa-id-badge field-icon"></i>
+                        <select id="role" name="role" required>
+                            <option value="" disabled selected>Select your role</option>
+                            <option value="member">Member</option>
+                            <option value="student">Student</option>
+                        </select>
+                    </div>
+                </div>
 
                 <div class="input-group">
                     <label for="contactNumber">Contact Number</label>
@@ -117,6 +130,8 @@
         </div>
     </div>
 
+
+    <script src="../js/register.js" defer></script>
 </body>
 
 </html>
