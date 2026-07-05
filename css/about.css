@@ -248,7 +248,7 @@
     position: relative;
     min-height: 50vh; /* Increased height to cleanly fit the main title + verses */
     background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4)),
-                url('../IMAGES/about.jpg'); 
+                url('../images/about.jpg'); 
     background-size: cover;
     background-position: center;
     background-attachment: fixed; /* Creates a smooth parallax effect on scroll */

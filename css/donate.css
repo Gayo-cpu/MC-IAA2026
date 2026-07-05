@@ -33,7 +33,7 @@ body {
 
 /* Hero Styling */
 .hero { 
-    background: linear-gradient(rgba(15,81,50,0.85), rgba(15,81,50,0.95)), url('../assets/images/hero-bg.jpg') center/cover; 
+    background: linear-gradient(rgba(15,81,50,0.85), rgba(15,81,50,0.95)), url('../images/home.jpg') center/cover; 
     color: #fff; 
     text-align: center; 
     padding: 100px 20px; 
