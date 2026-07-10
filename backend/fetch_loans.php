@@ -1,42 +1,62 @@
 <?php
 // fetch_loans.php
-// Returns all loan records as JSON for the loans table
-
 header("Content-Type: application/json");
+require "../config/db.php";
 
-// ─── DB CONFIG ──────────────────────────────────────────────
-$host   = "localhost";
-$dbname = "mciaa";   // ← your database name
-$user   = "root";          // ← your DB username
-$pass   = "";              // ← your DB password
-// ────────────────────────────────────────────────────────────
-
-$conn = mysqli_connect($host, $user, $pass, $dbname);
-
-if (!$conn) {
+if (!isset($conn)) {
     echo json_encode([
         "success" => false,
-        "message" => "Database connection failed: " . mysqli_connect_error()
+        "message" => "Database connection failed"
     ]);
     exit;
 }
 
-// ─── OPTIONAL SEARCH FILTER ────────────────────────────────
-// Pass ?search=keyword to filter by member name, loan id, or status
+// SEARCH FILTER
 $search = trim($_GET["search"] ?? "");
 
 if (!empty($search)) {
     $search = mysqli_real_escape_string($conn, $search);
-    $sql = "SELECT loan_id, member_name, amount, duration, status, created_at
-            FROM loans
-            WHERE member_name LIKE '%$search%'
-               OR loan_id     LIKE '%$search%'
-               OR status      LIKE '%$search%'
-            ORDER BY created_at DESC";
+
+    // FIXED: Swapped 'loan_id' for 'id' and 'year' for 'year_of_study'
+    $sql = "
+    SELECT 
+        id,
+        full_name,
+        reg_no,
+        course,
+        year_of_study,
+        phone,
+        loan_category,
+        amount,
+        reason,
+        status,
+        created_at AS date
+    FROM loans
+    WHERE 
+        full_name LIKE '%$search%'
+        OR reg_no LIKE '%$search%'
+        OR id LIKE '%$search%'
+        OR status LIKE '%$search%'
+    ORDER BY created_at DESC
+    ";
 } else {
-    $sql = "SELECT loan_id, member_name, amount, duration, status, created_at
-            FROM loans
-            ORDER BY created_at DESC";
+    // FIXED: Swapped 'loan_id' for 'id' and 'year' for 'year_of_study'
+    $sql = "
+    SELECT 
+        id,
+        full_name,
+        reg_no,
+        course,
+        year_of_study,
+        phone,
+        loan_category,
+        amount,
+        reason,
+        status,
+        created_at AS date
+    FROM loans
+    ORDER BY created_at DESC
+    ";
 }
 
 $result = mysqli_query($conn, $sql);
@@ -44,22 +64,26 @@ $result = mysqli_query($conn, $sql);
 if (!$result) {
     echo json_encode([
         "success" => false,
-        "message" => "Query failed: " . mysqli_error($conn)
+        "message" => mysqli_error($conn)
     ]);
     exit;
 }
 
-// ─── BUILD ROWS ARRAY ──────────────────────────────────────
 $loans = [];
 
 while ($row = mysqli_fetch_assoc($result)) {
     $loans[] = [
-        "loan_id"     => $row["loan_id"],
-        "member_name" => $row["member_name"],
-        "amount"      => number_format((float)$row["amount"], 0, '.', ','),
-        "duration"    => $row["duration"],
-        "status"      => $row["status"],
-        "date"        => date("d M Y", strtotime($row["created_at"]))
+        "loan_id"       => $row["id"],
+        "full_name"     => $row["full_name"],
+        "reg_no"        => $row["reg_no"],
+        "course"        => $row["course"],
+        "year"          => $row["year_of_study"],
+        "phone"         => $row["phone"],
+        "loan_category" => $row["loan_category"],
+        "amount" => (float)$row["amount"],
+        "reason"        => $row["reason"],
+        "status"        => !empty($row["status"]) ? $row["status"] : "Pending",
+        "date"          => date("d M Y", strtotime($row["date"]))
     ];
 }
 
@@ -70,4 +94,3 @@ echo json_encode([
 ]);
 
 mysqli_close($conn);
-?>

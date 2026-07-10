@@ -1,13 +1,14 @@
-<?php
-session_start();
+//<?php
+    //session_start();
 
-if (!isset($_SESSION['user_id'])){
-    header("Location: ../views/login.php");
-    exit();
-}
-?>
+    //if (!isset($_SESSION['user_id'])) {
+    //header("Location: ../views/login.php");
+    //  exit();
+    //}
+    ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -22,6 +23,7 @@ if (!isset($_SESSION['user_id'])){
     <!-- Favicon -->
     <link rel="shortcut icon" href="" />
 </head>
+
 <body>
 
     <aside class="sidebar">
@@ -182,56 +184,74 @@ if (!isset($_SESSION['user_id'])){
                 <p>View all loan records</p>
             </div>
 
-            <!-- Add Loan Form -->
-            <div class="add-form" style="background: #f8faf8;">
-                <h3><i class="fa-solid fa-plus-circle"></i> Add New Loan</h3>
-                <div class="form-row">
-                    <div class="form-group">
-                        <label>Member Name</label>
-                        <input type="text" id="loanName" placeholder="Enter member name" />
-                    </div>
-                    <div class="form-group">
-                        <label>Amount (TSh)</label>
-                        <input type="number" id="loanAmount" placeholder="Enter amount" />
-                    </div>
-                    <div class="form-group">
-                        <label>Duration</label>
-                        <select id="loanDuration">
-                            <option value="3 Months">3 Months</option>
-                            <option value="6 Months">6 Months</option>
-                            <option value="12 Months">12 Months</option>
-                            <option value="24 Months">24 Months</option>
-                        </select>
-                    </div>
-                    <div class="form-group" style="align-self: flex-end;">
-                        <button onclick="addLoan()" class="btn-primary" style="background: #c8a34b;">
-                            <i class="fa-solid fa-plus"></i> Add Loan
-                        </button>
-                    </div>
-                </div>
-            </div>
+            <!-- Loan Statistics Info -->
 
+            <div class="add-form" style="background:#f8faf8;">
+
+                <h3>
+                    <i class="fa-solid fa-database"></i>
+                    Student Loan Applications
+                </h3>
+
+
+                <p style="color:#666;font-size:14px;">
+
+                    All loan applications submitted by students
+                    are displayed here. Admin can review,
+                    approve, reject or delete applications.
+
+                </p>
+
+
+            </div>
             <!-- Search -->
             <div class="search-box">
+
                 <i class="fa-solid fa-magnifying-glass"></i>
-                <input type="text" id="loanSearch" placeholder="Search loans..." />
+
+                <input
+                    type="text"
+                    id="loanSearch"
+                    placeholder="Search loans..." />
+
             </div>
 
             <!-- Table -->
             <div class="table-container">
                 <table>
+
                     <thead>
+
                         <tr>
+
                             <th>Loan ID</th>
-                            <th>Member</th>
+
+                            <th>Student Name</th>
+
+                            <th>Registration No</th>
+
+                            <th>Course</th>
+
+                            <th>Year</th>
+
+                            <th>Phone</th>
+
+                            <th>Reason</th>
+                            
                             <th>Amount</th>
-                            <th>Duration</th>
+
                             <th>Status</th>
+
                             <th>Date</th>
+
+                            <th>Action</th>
+
+
                         </tr>
+
                     </thead>
                     <tbody id="loanTableBody">
-                        <!-- Dynamic content -->
+
                     </tbody>
                 </table>
             </div>
@@ -347,6 +367,7 @@ if (!isset($_SESSION['user_id'])){
         </div>
     </div>
 
-    <script src="../js/Amiri-Fedha.js" defer></script>
+    <script src="../js/new_Amiri-fedha.js" defer></script>
 </body>
+
 </html>

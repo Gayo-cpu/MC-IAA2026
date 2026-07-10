@@ -34,7 +34,7 @@
                 <a href="../views/ask_imam.php" class="global-nav-item">Ask Imam</a>
                 <a href="../views/news.php" class="global-nav-item">News</a>
                 <a href="../views/donate.php" class="global-nav-item">Donate</a>
-                <a href="../views/loan.php" class="global-nav-item">Loan</a>
+                <a href="../views/loan_application.php" class="global-nav-item">Loan</a>
                 <a href="../views/contact.php" class="global-nav-item">Contact Us</a>
                 <!-- <a href="donate.php" class="global-nav-btn-cta">Donate Now</a> -->
             </div>
@@ -58,7 +58,7 @@
                     the MCIAA Association is a sanctuary for growth. We are a vibrant community dedicated
                     to nurturing the holistic development of Muslim youth by bridging the gap between
                     spiritual enlightenment, rigorous academic achievement, and a lifelong commitment
-                    to selfless community service—empowering the leaders of tomorrow to excel in both
+                    to selfless community serviceï¿½empowering the leaders of tomorrow to excel in both
                     <strong>Deen and Dunya</strong>.
                 </p>
                 <div class="hero-actions">
@@ -75,12 +75,12 @@
             <div class="quran-verse">
                 <p class="arabic">"????????????? ????? ???????? ?????????????"</p>
                 <h3>"And cooperate in righteousness and piety"</h3>
-                <span>— Surah Al-Ma'idah 5:2</span>
+                <span>ï¿½ Surah Al-Ma'idah 5:2</span>
             </div>
             <div class="wisdom-divider"></div>
             <div class="hadith-quote">
                 <p>"The best of people are those that bring most benefit to the rest of mankind."</p>
-                <span>— Prophet Muhammad (PBUH)</span>
+                <span>ï¿½ Prophet Muhammad (PBUH)</span>
             </div>
         </div>
     </section>
@@ -184,7 +184,7 @@
         <div class="program-grid">
             <!-- Card 1 -->
             <div class="testimonial-card-v2">
-                <div class="quote-mark">“</div>
+                <div class="quote-mark">ï¿½</div>
                 <p>The Ask Imam feature helped me navigate difficult questions about my faith with total privacy and
                     respect.</p>
                 <div class="user-info">
@@ -195,7 +195,7 @@
 
             <!-- Card 2 -->
             <div class="testimonial-card-v2">
-                <div class="quote-mark">“</div>
+                <div class="quote-mark">ï¿½</div>
                 <p>Joining the Hifz program changed my life. The teachers are supportive and the structure is perfect
                     for students.</p>
                 <div class="user-info">
@@ -206,7 +206,7 @@
 
             <!-- Card 3 -->
             <div class="testimonial-card-v2">
-                <div class="quote-mark">“</div>
+                <div class="quote-mark">ï¿½</div>
                 <p>I love how easy it is to stay updated with news. The association has truly built a digital home for
                     us.</p>
                 <div class="user-info">
