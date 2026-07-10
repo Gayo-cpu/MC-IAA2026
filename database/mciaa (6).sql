@@ -74,22 +74,46 @@ INSERT INTO `donation` (`donation_id`, `user_id`, `is_guest`, `amount`, `payment
 -- Table structure for table `loan`
 --
 
-CREATE TABLE `loan` (
+CREATE TABLE `loans` (
   `loan_id` int(11) NOT NULL,
-  `user_id` int(21) DEFAULT NULL,
-  `amount_requested` decimal(10,2) NOT NULL,
-  `purpose` text DEFAULT NULL,
-  `applied_at` timestamp NOT NULL DEFAULT current_timestamp(),
-  `reviewed_by` int(11) DEFAULT NULL,
-  `status` enum('refunded','not refunded') DEFAULT NULL
+  `full_name` varchar(100) NOT NULL,
+  `reg_no` varchar(50) NOT NULL,
+  `course` varchar(100) NOT NULL,
+  `year` varchar(20) NOT NULL,
+  `phone` varchar(20) NOT NULL,
+  `loan_category` enum('Student Loan','Emergency Loan') NOT NULL,
+  `amount` decimal(10,2) NOT NULL,
+  `reason` text NOT NULL,
+  `status` enum('Pending','Approved','Rejected','Completed') DEFAULT 'Pending',
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `approved_by` int(11) DEFAULT NULL,
+  `approved_date` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `loan`
+-- Indexes for dumped tables
 --
 
-INSERT INTO `loan` (`loan_id`, `user_id`, `amount_requested`, `purpose`, `applied_at`, `reviewed_by`, `status`) VALUES
-(1, 1, '350000.00', 'Ada ya shule ya mtoto na mahitaji ya shule', '2026-06-14 09:21:34', NULL, NULL);
+--
+-- Indexes for table `loans`
+--
+ALTER TABLE `loans`
+  ADD PRIMARY KEY (`loan_id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `loans`
+--
+ALTER TABLE `loans`
+  MODIFY `loan_id` int(11) NOT NULL AUTO_INCREMENT;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 
 -- --------------------------------------------------------
 

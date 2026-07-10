@@ -1,7 +1,13 @@
 <?php
 header('Content-Type: application/json');
 header('Access-Control-Allow-Origin: *');
-include '../config/db.php';
+// load database connection
+require_once __DIR__ . '/../config/db.php';
+// ensure $conn is available
+if (!isset($conn) || !$conn) {
+    echo json_encode(['success' => false, 'message' => 'Database connection not available.']);
+    exit();
+}
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     echo json_encode(['success' => false, 'message' => 'Njia batili.']);

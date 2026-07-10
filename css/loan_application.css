@@ -1,0 +1,670 @@
+
+
+:root {
+
+    --brand-green: #2d4a33;
+    --dark-green: #1f3525;
+    --brand-gold: #ffb700;
+    --gold-hover: #e5a400;
+
+    --white: #ffffff;
+    --background: #f7faf7;
+
+    --text-dark: #212529;
+    --text-light: #64748b;
+
+    --border: #d1d5db;
+
+    --shadow:
+    0 10px 30px rgba(0,0,0,0.08);
+
+}
+
+
+
+* {
+    box-sizing: border-box;
+    margin:0;
+    padding:0;
+}
+
+
+
+body {
+
+    font-family:
+    'Segoe UI',
+    Tahoma,
+    Geneva,
+    Verdana,
+    sans-serif;
+
+    background:
+    var(--background);
+
+    color:
+    var(--text-dark);
+
+}
+
+.navbar {
+
+    width:100%;
+
+    background:
+    var(--brand-green);
+
+    padding:15px 0;
+
+    position:fixed;
+
+    top:0;
+
+    z-index:1000;
+
+    box-shadow:
+    0 3px 10px rgba(0,0,0,.2);
+
+}
+
+
+
+.nav-container {
+
+    width:90%;
+
+    max-width:1200px;
+
+    margin:auto;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+}
+
+
+
+.nav-logo {
+
+    color:white;
+
+    text-decoration:none;
+
+    font-size:25px;
+
+    font-weight:700;
+
+}
+
+
+
+.nav-links {
+
+    display:flex;
+
+    gap:22px;
+
+    list-style:none;
+
+}
+
+
+
+.nav-links a {
+
+    color:white;
+
+    text-decoration:none;
+
+    font-size:15px;
+
+    transition:.3s;
+
+}
+
+
+
+.nav-links a:hover,
+.nav-links .active {
+
+    color:
+    var(--brand-gold);
+
+}
+
+
+
+.nav-auth {
+
+    display:flex;
+
+    gap:15px;
+
+}
+
+
+
+.btn-admin,
+.btn-join {
+
+    text-decoration:none;
+
+    color:
+    var(--brand-gold);
+
+}
+
+
+
+
+.loan-hero {
+
+    min-height:650px;
+
+    background:
+
+    linear-gradient(
+    rgba(45,74,51,.75),
+    rgba(45,74,51,.75)
+    ),
+
+    url('../images/loann.jpg');
+
+
+    background-size:cover;
+
+    background-position:center;
+
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    text-align:center;
+
+    color:white;
+
+    padding-top:80px;
+
+}
+
+
+
+.hero-content {
+
+    max-width:800px;
+
+}
+
+
+
+.hero-content h1 {
+
+    font-size:48px;
+
+    margin-bottom:20px;
+
+}
+
+
+
+.hero-content p {
+
+    font-size:20px;
+
+    line-height:1.6;
+
+}
+
+
+
+.hero-btn {
+
+    display:inline-block;
+
+    margin-top:30px;
+
+    padding:15px 35px;
+
+    background:
+    var(--brand-gold);
+
+    color:
+    var(--text-dark);
+
+    text-decoration:none;
+
+    border-radius:30px;
+
+    font-weight:700;
+
+    transition:.3s;
+
+}
+
+
+
+.hero-btn:hover {
+
+    background:
+    var(--gold-hover);
+
+    transform:translateY(-3px);
+
+}
+
+
+.section,
+.application-section,
+.process-section,
+.calculator-section,
+.requirements,
+.terms-section,
+.contact-section {
+
+    width:90%;
+
+    max-width:1100px;
+
+    margin:80px auto;
+
+}
+
+
+
+h2 {
+
+    text-align:center;
+
+    color:
+    var(--brand-green);
+
+    font-size:32px;
+
+    margin-bottom:15px;
+
+}
+
+
+
+.section-description,
+.form-description {
+
+    text-align:center;
+
+    color:
+    var(--text-light);
+
+    margin-bottom:40px;
+
+}
+
+.loan-cards {
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(2,1fr);
+
+    gap:30px;
+
+}
+
+
+
+.loan-card {
+
+    background:white;
+
+    padding:35px;
+
+    border-radius:15px;
+
+    box-shadow:
+    var(--shadow);
+
+    text-align:center;
+
+    transition:.3s;
+
+}
+
+
+
+.loan-card:hover {
+
+    transform:translateY(-8px);
+
+}
+
+
+
+.loan-icon {
+
+    font-size:45px;
+
+    margin-bottom:15px;
+
+}
+
+
+
+.loan-card h3 {
+
+    color:
+    var(--brand-green);
+
+    margin-bottom:10px;
+
+}
+
+
+
+
+.process-container {
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(4,1fr);
+
+    gap:20px;
+
+}
+
+
+
+.process-step {
+
+    background:white;
+
+    padding:25px;
+
+    text-align:center;
+
+    border-radius:12px;
+
+    box-shadow:
+    var(--shadow);
+
+}
+
+
+
+.process-step span {
+
+    display:inline-flex;
+
+    width:45px;
+
+    height:45px;
+
+    align-items:center;
+
+    justify-content:center;
+
+    background:
+    var(--brand-green);
+
+    color:white;
+
+    border-radius:50%;
+
+    font-weight:bold;
+
+}
+
+
+
+
+.requirements-box {
+
+    background:white;
+
+    padding:35px;
+
+    border-radius:15px;
+
+    box-shadow:
+    var(--shadow);
+
+}
+
+
+
+.requirements li {
+
+    list-style:none;
+
+    padding:10px;
+
+}
+
+
+.calculator-box {
+
+    background:white;
+
+    padding:35px;
+
+    border-radius:15px;
+
+    box-shadow:
+    var(--shadow);
+
+}
+
+
+
+.calculator-input {
+
+    margin-bottom:20px;
+
+}
+
+
+
+.calculator-input label {
+
+    display:block;
+
+    margin-bottom:8px;
+
+    font-weight:600;
+
+}
+
+
+
+input,
+select,
+textarea {
+
+
+    width:100%;
+
+    padding:13px;
+
+    border:1px solid var(--border);
+
+    border-radius:8px;
+
+    font-size:15px;
+
+}
+
+
+
+.calculation-result {
+
+    background:
+    #f0fdf4;
+
+    padding:20px;
+
+    border-left:
+    5px solid var(--brand-green);
+
+}
+
+
+
+
+
+.application-section {
+
+    background:white;
+
+    padding:45px;
+
+    border-radius:20px;
+
+    box-shadow:
+    var(--shadow);
+
+}
+
+
+
+.form-section {
+
+    margin-bottom:40px;
+
+}
+
+
+
+.form-section h3 {
+
+    color:
+    var(--brand-green);
+
+    border-bottom:
+    2px solid var(--brand-gold);
+
+    padding-bottom:10px;
+
+    margin-bottom:25px;
+
+}
+
+
+
+.form-grid {
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(2,1fr);
+
+    gap:25px;
+
+}
+
+
+
+.full {
+
+    grid-column:
+    1/-1;
+
+}
+
+
+
+.agreement {
+
+    margin:25px 0;
+
+}
+
+
+
+.submit-btn {
+
+    width:100%;
+
+    padding:16px;
+
+    border:none;
+
+    background:
+    var(--brand-gold);
+
+    font-size:17px;
+
+    font-weight:bold;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+}
+
+
+
+.submit-btn:hover {
+
+    background:
+    var(--gold-hover);
+
+}
+
+
+
+footer {
+
+    background:
+    var(--brand-green);
+
+    color:white;
+
+    text-align:center;
+
+    padding:25px;
+
+}
+
+
+
+@media(max-width:900px){
+
+
+.nav-links{
+
+display:none;
+
+}
+
+
+.loan-cards,
+.process-container,
+.form-grid{
+
+grid-template-columns:1fr;
+
+}
+
+
+
+.hero-content h1{
+
+font-size:35px;
+
+}
+
+
+
+.application-section{
+
+padding:25px;
+
+}
+
+
+}

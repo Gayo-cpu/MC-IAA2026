@@ -31,7 +31,7 @@
                 <a href="../views/ask_imam.php" class="global-nav-item">Ask Imam</a>
                 <a href="../views/news.php" class="global-nav-item">News</a>
                 <a href="../views/donate.php" class="global-nav-item">Donate</a>
-                <a href="../views/loan.php" class="global-nav-item">Loan</a>
+                <a href="../views/loan_application.php" class="global-nav-item">Loan</a>
                 <a href="../views/contact.php" class="global-nav-item">Contact Us</a>
                 <!-- <a href="donate.php" class="global-nav-btn-cta">Donate Now</a> -->
             </div>
