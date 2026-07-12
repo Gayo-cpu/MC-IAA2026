@@ -13,8 +13,8 @@ document.getElementById('registerForm').addEventListener('submit', function (e) 
                 if (data.success) {
                     // Show success message
                     alert('✅ ' + data.message);
-                    // Redirect to login after success
-                    window.location.href = '../views/login.php';
+                    // // Redirect to login after success
+                    // window.location.href = '../views/login.php';
                 } else {
                     alert('❌ ' + data.message);
                     btn.disabled = false;

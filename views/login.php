@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../css/login.css">
     <!-- FontAwesome for the lock and user icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="shortcut icon" href="../IMAGES/MCIAA.png" />
 </head>
 
 <body>

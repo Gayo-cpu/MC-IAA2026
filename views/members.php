@@ -7,6 +7,7 @@
     <title>Registered Members</title>
 
     <link rel="stylesheet" href="../css/members.css" />
+    <link rel="shortcut icon" href="../IMAGES/MCIAA.png" />
 
     <link
       rel="stylesheet"
@@ -120,51 +121,65 @@
             </thead>
 
             <tbody>
-              <tr>
-                <td>M001</td>
-                <td>Ahmed Ali</td>
-                <td>0712345678</td>
-                <td>Male</td>
-                <td>
-                  <span class="active"> Active </span>
-                </td>
-              </tr>
-
-              <tr>
-                <td>M002</td>
-                <td>Fatma Hassan</td>
-                <td>0755555555</td>
-                <td>Female</td>
-                <td>
-                  <span class="active"> Active </span>
-                </td>
-              </tr>
-
-              <tr>
-                <td>M003</td>
-                <td>Omar Yusuf</td>
-                <td>0766666666</td>
-                <td>Male</td>
-                <td>
-                  <span class="inactive"> Inactive </span>
-                </td>
-              </tr>
-
-              <tr>
-                <td>M004</td>
-                <td>Aisha Abdallah</td>
-                <td>0744444444</td>
-                <td>Female</td>
-                <td>
-                  <span class="active"> Active </span>
-                </td>
-              </tr>
+              <!-- Loaded dynamically from users table -->
             </tbody>
           </table>
         </div>
       </div>
     </main>
-    <script src="../js/membvers.js" defer></script>
+    <script src="../js/members.js" defer></script>
     <script src="../js/logout-confirm.js" defer></script>
+
+    <!-- PHP Fetch Integration – fetch_members.php -->
+    <script>
+        // ── Load members from DB ───────────────────────────────
+        function loadMembers(search = '') {
+            fetch('../backend/fetch_members.php?search=' + encodeURIComponent(search))
+            .then(res => res.json())
+            .then(data => {
+                const tbody = document.querySelector('#membersTable tbody');
+                tbody.innerHTML = '';
+
+                // Update member count
+                document.querySelector('.member-count span').textContent =
+                    (data.count ?? 0).toLocaleString() + ' Members';
+
+                if (!data.success || data.count === 0) {
+                    tbody.innerHTML = `<tr>
+                        <td colspan="5" style="text-align:center;color:#999;padding:30px;">
+                            No members found.
+                        </td>
+                    </tr>`;
+                    return;
+                }
+
+                data.members.forEach((m, index) => {
+                    const statusClass = m.status === 'active' ? 'active' : 'inactive';
+                    const statusLabel = m.status === 'active' ? 'Active' : 'Inactive';
+                    const id = 'M' + String(m.id).padStart(3, '0');
+
+                    tbody.innerHTML += `
+                        <tr>
+                            <td>${id}</td>
+                            <td>${m.name}</td>
+                            <td>${m.phone}</td>
+                            <td>${m.gender}</td>
+                            <td><span class="${statusClass}">${statusLabel}</span></td>
+                        </tr>`;
+                });
+            })
+            .catch(err => console.error('Members fetch error:', err));
+        }
+
+        // ── Search listener ────────────────────────────────────
+        document.getElementById('searchInput').addEventListener('input', function () {
+            loadMembers(this.value);
+        });
+
+        // ── Load on page ready ─────────────────────────────────
+        document.addEventListener('DOMContentLoaded', function () {
+            loadMembers();
+        });
+    </script>
   </body>
 </html>

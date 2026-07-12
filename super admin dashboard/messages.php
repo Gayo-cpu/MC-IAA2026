@@ -6,7 +6,7 @@
 
     <title>Messages Center</title>
 
-    <link rel="stylesheet" href="../css/mciaa/messages.css" />
+    <link rel="stylesheet" href="../css/messages.css" />
 
     <link
       rel="stylesheet"

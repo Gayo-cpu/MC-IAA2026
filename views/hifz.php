@@ -19,6 +19,7 @@
     <!-- 2. Link the Hifz Specific Styles (This has your badges and hero logic) -->
     <link rel="stylesheet" href="../css/index.css">
     <link rel="stylesheet" href="../css/hifz.css">
+    <link rel="shortcut icon" href="../IMAGES/MCIAA.png" />
 </head>
 
 <body>

@@ -7,6 +7,7 @@
     <title>System Logs</title>
 
     <link rel="stylesheet" href="../css/logs.css" />
+    <link rel="shortcut icon" href="../IMAGES/MCIAA.png" />
 
     <link
       rel="stylesheet"

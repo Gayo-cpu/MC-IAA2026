@@ -7,6 +7,7 @@
     <title>Messages Center</title>
 
     <link rel="stylesheet" href="../css/messages.css" />
+    <link rel="shortcut icon" href="../IMAGES/MCIAA.png" />
 
     <link
       rel="stylesheet"
@@ -137,27 +138,36 @@
             <div class="form-group">
               <label>Recipient</label>
 
-              <select>
-                <option>Select Recipient</option>
+              <select id="msgRecipient">
+                <option value="">Select Recipient</option>
 
-                <option>Amir Mkuu</option>
+                <option value="amir">Amir Mkuu</option>
 
-                <option>Katibu</option>
+                <option value="super admin">Super Admin</option>
 
-                <option>Amirati</option>
+                <option value="dean of student">Dean of Student</option>
+
+                <option value="amirat">Amirati</option>
+
+                <option value="secretary">Secretary</option>
+
+                <option value="fedha">Amir Fedha</option>
+
+                <option value="habari">Amir Habari</option>
               </select>
             </div>
 
             <div class="form-group">
               <label>Subject</label>
 
-              <input type="text" placeholder="Enter subject" />
+              <input type="text" id="msgSubject" placeholder="Enter subject" />
             </div>
 
             <div class="form-group">
               <label>Message</label>
 
               <textarea
+                id="msgContent"
                 rows="6"
                 placeholder="Write your message here..."
               ></textarea>

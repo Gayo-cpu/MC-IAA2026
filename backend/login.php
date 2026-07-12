@@ -48,7 +48,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             } elseif ($role_desc === 'fedha') {
                 header("Location: ../views/amiri-fedha.php");
             } else {
-                header("Location: ../views/dashboard.php");
+                header("Location: ../views/dashboard1.php");
             }
             exit();
 

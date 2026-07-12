@@ -7,6 +7,7 @@
     <title>Loans Management</title>
 
     <link rel="stylesheet" href="../css/loans.css" />
+    <link rel="shortcut icon" href="../IMAGES/MCIAA.png" />
 
     <link
       rel="stylesheet"

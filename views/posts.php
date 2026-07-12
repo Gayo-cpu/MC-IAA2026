@@ -7,6 +7,7 @@
     <title>Posts Management</title>
 
     <link rel="stylesheet" href="../css/posts.css" />
+    <link rel="shortcut icon" href="../IMAGES/MCIAA.png" />
 
     <link
       rel="stylesheet"
@@ -32,7 +33,7 @@
 
       <ul>
         <li>
-          <a href="index.php">
+          <a href="dashboard.php">
             <i class="fa-solid fa-house"></i>
             Dashboard
           </a>

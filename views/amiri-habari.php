@@ -21,7 +21,7 @@ if (!isset($_SESSION['user_id'])){
     <link rel="stylesheet" href="../css/amiri-habari.css" />
 
     <!-- Favicon -->
-    <link rel="shortcut icon" href="" />
+    <link rel="shortcut icon" href="../IMAGES/MCIAA.png" />
 </head>
 
 <body>

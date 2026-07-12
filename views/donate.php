@@ -10,6 +10,7 @@
     <!-- Link to Separate CSS Stylesheet -->
     <link rel="stylesheet" href="../css/donate.css">
     <link rel="stylesheet" href="../css/contact.css">
+    <link rel="shortcut icon" href="../IMAGES/MCIAA.png" />
 </head>
 
 <body>

@@ -107,3 +107,70 @@ document.querySelectorAll(".delete-btn").forEach((button) => {
     button.closest("tr").remove();
   });
 });
+
+// ── PHP FETCH INTEGRATION ─────────────────────────────────────
+// Overrides the demo submit above — sends real data to database
+
+form.addEventListener("submit", function () {
+    // e.preventDefault() was already called by the listener above
+    // so we just run the fetch here
+
+    const recipient = document.getElementById("msgRecipient")?.value.trim()  ?? "";
+    const subject   = document.getElementById("msgSubject")?.value.trim()    ?? "";
+    const content   = document.getElementById("msgContent")?.value.trim()    ?? "";
+
+    // Stop if fields are empty
+    if (!recipient || !subject || !content) return;
+
+    const formData = new FormData();
+    formData.append("recipient", recipient);
+    formData.append("subject",   subject);
+    formData.append("content",   content);
+
+    fetch("../backend/send_message.php", { method: "POST", body: formData })
+    .then(res => res.json())
+    .then(data => {
+        if (data.success) {
+            // Reload sent messages table to show new entry
+            loadSentMessages();
+        } else {
+            alert("Failed to send: " + data.message);
+        }
+    })
+    .catch(err => console.error("Send message error:", err));
+});
+
+// ── LOAD SENT MESSAGES FROM DB ────────────────────────────────
+function loadSentMessages() {
+    fetch("../backend/fetch_messages.php")
+    .then(res => res.json())
+    .then(data => {
+        const tbody = document.querySelector("#messageTable tbody");
+        if (!tbody) return;
+        tbody.innerHTML = "";
+
+        if (!data.success || data.count === 0) {
+            tbody.innerHTML = `<tr>
+                <td colspan="4" style="text-align:center;color:#999;padding:20px;">
+                    No sent messages.
+                </td>
+            </tr>`;
+            return;
+        }
+
+        data.messages.forEach(m => {
+            tbody.innerHTML += `<tr>
+                <td>${m.recipient_name}</td>
+                <td>${m.subject}</td>
+                <td>${m.date}</td>
+                <td><span class="sent">${m.status}</span></td>
+            </tr>`;
+        });
+    })
+    .catch(err => console.error("Fetch messages error:", err));
+}
+
+// ── AUTO-LOAD on page ready ───────────────────────────────────
+document.addEventListener("DOMContentLoaded", function () {
+    loadSentMessages();
+});

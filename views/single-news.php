@@ -10,6 +10,7 @@
     <title>MCIAA News Details</title>
 
     <link rel="stylesheet" href="../css/single-news.css">
+    <link rel="shortcut icon" href="../IMAGES/MCIAA.png" />
 
 </head>
 

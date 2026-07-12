@@ -1,9 +1,11 @@
 <?php
+session_start();
 header("Content-Type: application/json");
 require_once "../config/db.php";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
+    // ── STEP 1: Get all fields ───────────────────────────────
     $full_name      = trim($_POST['full_name']      ?? '');
     $reg_number     = trim($_POST['reg_number']     ?? '');
     $course_name    = trim($_POST['course_name']    ?? '');
@@ -14,12 +16,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $gender         = trim($_POST['gender']         ?? '');
     $role           = trim($_POST['role']           ?? 'member');
 
-    // role_description itawekwa na  super admin baadae sio kwenye regitration
-
+    // ── STEP 2: Validate required fields ────────────────────
     if (empty($full_name) || empty($reg_number) || empty($email) || empty($password) || empty($gender) || empty($role)) {
         echo json_encode([
             "success" => false,
             "message" => "All required fields must be filled in."
+        ]);
+        exit;
+    }
+
+    // ── SECURITY: Whitelist roles ────────────────────────────
+    // Only member or student allowed through registration
+    // Leader roles can ONLY be assigned by super admin
+    $allowed_roles = ['member', 'student'];
+    if (!in_array($role, $allowed_roles)) {
+        echo json_encode([
+            "success" => false,
+            "message" => "Invalid role. Only member or student allowed."
         ]);
         exit;
     }
@@ -32,7 +45,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit;
     }
 
-    // kucheck email kama imejirudia
+    // ── STEP 3: Check if email already exists ────────────────
     $stmt = $conn->prepare("SELECT userid FROM users WHERE email = ? LIMIT 1");
     $stmt->bind_param("s", $email);
     $stmt->execute();
@@ -48,16 +61,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
     $stmt->close();
 
-    // kuficha password
+    // ── STEP 4: Hash the password ────────────────────────────
     $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
-    // kuingiza data
+    // ── STEP 5: Insert using prepare and bind_param ──────────
+    // role_description always NULL on registration
+    // super admin assigns it later through the dashboard
+    $role_description = null;
+
     $stmt = $conn->prepare(
-        "INSERT INTO users (fullname, phonenumber, email, password, gender, registration_no, academic_year, role)
-         VALUES (?, ?, ?, ?, ?, ?, ?, ?)"
+        "INSERT INTO users (fullname, phonenumber, email, password, gender, registration_no, academic_year, role, role_description)
+         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)"
     );
     $stmt->bind_param(
-        "ssssssss",
+        "sssssssss",
         $full_name,
         $contact_number,
         $email,
@@ -65,14 +82,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $gender,
         $reg_number,
         $study_year,
-        $role
+        $role,
+        $role_description
     );
-    //interaction ya PHP na JS pindi data zikiwa zinatumwa 
+
     if ($stmt->execute()) {
         $new_id = $conn->insert_id;
         echo json_encode([
             "success" => true,
-            "message" => "Registration successful! You can now log in.",
+            "message" => "Registration successful!",
             "user_id" => $new_id,
             "name"    => $full_name,
             "role"    => $role

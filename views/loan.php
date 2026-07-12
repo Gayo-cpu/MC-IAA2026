@@ -8,6 +8,7 @@
     <!-- Linking External CSS -->
     <link rel="stylesheet" href="../css/index.css">
     <link rel="stylesheet" href="../css/loan.css?v=1">
+    <link rel="shortcut icon" href="../IMAGES/MCIAA.png" />
 </head>
 
 <body>

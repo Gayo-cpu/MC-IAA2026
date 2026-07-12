@@ -10,6 +10,7 @@
     <!-- Links to your global style rules and new specific stylesheet -->
     <link rel="stylesheet" href="../css/index.css">
     <link rel="stylesheet" href="../css/ask_imam.css">
+    <link rel="shortcut icon" href="../IMAGES/MCIAA.png" />
 </head>
 
 <body>
